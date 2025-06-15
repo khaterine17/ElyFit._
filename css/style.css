@@ -1,0 +1,156 @@
+:root {
+  --color-naranja: #FF7F50;
+  --color-turquesa: #40E0D0;
+  --color-morado: #9370DB;
+  --color-naranja-claro: #FFA07A;
+  --color-turquesa-claro: #AFEEEE;
+  --color-morado-claro: #D8BFD8;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #340068, #5f00e0, #d4a3b7); /* Deep, sophisticated purple-blue to soft lavender-rose gradient */
+  background-size: 300% 300%;
+  animation: gradient-animation 10s ease infinite;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--color-naranja), var(--color-morado));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.team-card .team-info {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.team-card:hover .team-info {
+  opacity: 1;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, var(--color-naranja), var(--color-turquesa));
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, var(--color-turquesa), var(--color-naranja));
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.header-nav {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-nav.scrolled {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.social-icon {
+  transition: transform 0.3s;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.footer-animation {
+  background: linear-gradient(90deg, var(--color-turquesa-claro), var(--color-naranja-claro), var(--color-morado-claro));
+  background-size: 300% 300%;
+  animation: gradient-animation 15s ease infinite;
+  height: 5px;
+}
+
+.error-message {
+  color: #e53e3e;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.success-message {
+  background-color: rgba(72, 187, 120, 0.9);
+  color: white;
+}
+
+.error-notification {
+  background-color: rgba(229, 62, 62, 0.9);
+  color: white;
+}
+
+/* Navigation Styles */
+.nav-link {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  transform: translateY(-2px);
+}
+
+.nav-link i {
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover i {
+  transform: scale(1.2);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #9333ea, #7e22ce);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 80%;
+}
+
+/* Header Styles */
+.logo-container h1 {
+  background: linear-gradient(90deg, #9333ea, #7e22ce);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
