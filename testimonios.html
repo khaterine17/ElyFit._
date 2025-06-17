@@ -4,220 +4,84 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ElyFit | Testimonios</title>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="imagenes/ely-fitness-favicon.png">
-
-  <!-- CDNs -->
+  <title>Testimonios - Transforma tu cuerpo, potencia tu mente</title>
+  <link rel="icon" type="image/png" href="img/dumbbell-favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
-  <!-- Custom CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+  <style>
+    body { font-family: 'Montserrat', sans-serif; }
+    .hero-overlay { background: linear-gradient(90deg, #a78bfaee 0%, #c4b5fdcc 100%); position: absolute; inset: 0; z-index: 1; }
+    .section-title { color: #7c3aed; font-weight: 700; }
+    .divider { width: 60px; height: 4px; background: #a78bfa; border-radius: 2px; margin: 0.5rem auto 2rem auto; }
+    .footer-contact { background: #18181b; color: #fff; border-radius: 1rem; }
+    .footer-contact i { color: #a78bfa; }
+    .btn-pink { background: #f472b6; color: #fff; border-radius: 9999px; padding: 0.75rem 2.5rem; font-weight: 600; transition: background 0.2s; }
+    .btn-pink:hover { background: #e879f9; }
+  </style>
 </head>
-
 <body class="bg-gray-100 text-gray-900">
-
-  <!-- Header -->
-  <!-- Usa este bloque para el header en testimonios.html e index.html -->
-  <header class="w-full py-6 px-4 md:px-8 bg-gradient-to-r from-purple-400 to-purple-200 shadow-md relative z-20">
-    <div class="flex justify-between items-center">
-      <div class="text-2xl font-bold text-white">ElyFit.</div>
-      <!-- Botón hamburguesa -->
-      <button id="menu-btn" class="md:hidden text-white text-3xl focus:outline-none">
-        <i class="fas fa-bars"></i>
-      </button>
-      <!-- Menú desktop -->
-      <nav class="hidden md:block">
-        <ul class="flex space-x-8 text-white font-medium items-center">
-          <li><a href="index.html" class="hover:underline">Home</a></li>
-          <li><a href="retos.html" class="hover:underline">Reto 21 Días</a></li>
-          <li><a href="testimonios.html" class="hover:underline">Testimonios</a></li>
-          <li><a href="index.html#quien" class="hover:underline">¿Quién Soy?</a></li>
-          <li><a href="index.html#contacto" class="hover:underline">Contáctame</a></li>
-        </ul>
-      </nav>
-    </div>
-    <!-- Menú móvil lateral -->
-    <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-40 z-50 hidden">
-      <div class="bg-white w-64 h-full p-8 flex flex-col space-y-6 shadow-lg animate-slide-in-left relative">
-        <button id="close-menu" class="absolute top-4 right-4 text-2xl text-gray-700 focus:outline-none">
-          <i class="fas fa-times"></i>
-        </button>
-        <a href="index.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Home</a>
-                <a href="retos.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Reto 21 Días</a>
-                <a href="testimonios.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Testimonios</a>
-                <a href="index.html#quien" class="text-gray-900 font-medium text-lg hover:text-purple-500">¿Quién Soy?</a>
-                <a href="index.html#contacto" class="text-gray-900 font-medium text-lg hover:text-purple-500">Contactame</a>
-            </div>
-    </div>
-    <style>
-      @keyframes slide-in-left {
-        0% {
-          transform: translateX(-100%);
-        }
-
-        100% {
-          transform: translateX(0);
-        }
-      }
-
-      .animate-slide-in-left {
-        animation: slide-in-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-    </style>
+  <header class="w-full py-6 px-8 flex justify-between items-center bg-transparent absolute z-20">
+    <div class="text-2xl font-bold text-white">&nbsp;</div>
+    <nav>
+      <ul class="flex space-x-8 text-white font-medium">
+        <li><a href="index.html" class="hover:underline">Home</a></li>
+        <li><a href="index.html#reto" class="hover:underline">Reto 21 Días</a></li>
+        <li><a href="testimonios.html" class="hover:underline">Testimonios</a></li>
+        <li><a href="quien-soy.html" class="hover:underline">¿Quién Soy?</a></li>
+        <li><a href="contacto.html" class="hover:underline">Contáctame</a></li>
+      </ul>
+    </nav>
   </header>
-
-  <!-- Hero -->
-  <section
-    class="relative h-72 flex items-center justify-center bg-[url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGhlJTIwZ3ltfGVufDB8fDB8fHww')] bg-cover bg-center">
-    <div class="absolute inset-0 bg-purple-700/60"></div>
-    <div class="relative z-10 text-center">
-      <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">Testimonios</h1>
-      <p class="text-lg md:text-xl text-white mb-6">Resultados reales de nuestra comunidad</p>
+  <section class="relative h-[60vh] flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=1500&q=80'); background-size: cover; background-position: center;">
+    <div class="hero-overlay"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center text-center">
+      <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4" style="text-shadow:0 2px 8px #0008">Testimonios</h1>
+      <p class="text-lg text-white">Historias reales de transformación y motivación</p>
     </div>
   </section>
-
-  <!-- Carrusel SOLO FOTOS -->
-  <section class="py-16 bg-white">
-    <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center text-purple-700 mb-10">Pérdida de Peso</h2>
-      <div class="relative">
-        <div id="carousel-fotos" class="flex overflow-x-auto snap-x snap-mandatory gap-8 pb-4 scroll-smooth">
-          <!-- Foto 1 -->
-          <div
-            class="min-w-[220px] max-w-xs bg-purple-100 rounded-2xl shadow-lg p-2 snap-center flex-shrink-0 flex flex-col items-center">
-            <img src="imagenes/testimonio1.jpg" alt="Testimonio ElyFit"
-              class="w-full h-64 object-cover rounded-xl shadow">
-          </div>
-          <!-- Foto 2 -->
-          <div
-            class="min-w-[220px] max-w-xs bg-purple-100 rounded-2xl shadow-lg p-2 snap-center flex-shrink-0 flex flex-col items-center">
-            <img src="imagenes/testimonio2.jpg" alt="Testimonio ElyFit"
-              class="w-full h-64 object-cover rounded-xl shadow">
-          </div>
-          <!-- Foto 3 -->
-          <div
-            class="min-w-[220px] max-w-xs bg-purple-100 rounded-2xl shadow-lg p-2 snap-center flex-shrink-0 flex flex-col items-center">
-            <img src="imagenes/testimonio3.jpg" alt="Testimonio ElyFit"
-              class="w-full h-64 object-cover rounded-xl shadow">
-          </div>
-          <!-- Agrega más fotos aquí -->
-          <div
-            class="min-w-[220px] max-w-xs bg-purple-100 rounded-2xl shadow-lg p-2 snap-center flex-shrink-0 flex flex-col items-center">
-            <img src="imagenes/testimonio3.jpg" alt="Testimonio ElyFit"
-              class="w-full h-64 object-cover rounded-xl shadow">
-          </div>
+  <section class="py-20 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-2 section-title">Lo Que Dicen Mis Clientes</h2>
+      <div class="divider"></div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+        <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center" data-aos="fade-up">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Testimonio 1" class="w-20 h-20 rounded-full mb-4">
+          <p class="text-gray-700 italic mb-4">"Gracias a este reto, logré cambiar mi mentalidad y mi cuerpo. ¡Nunca me sentí tan motivada!"</p>
+          <span class="font-bold text-pink-500">María G.</span>
         </div>
-        <!-- Flechas para el carrusel -->
-        <button onclick="document.getElementById('carousel-fotos').scrollBy({left: -240, behavior: 'smooth'})"
-          class="absolute left-0 top-1/2 -translate-y-1/2 bg-purple-500 hover:bg-purple-700 text-white rounded-full p-2 shadow-lg z-10">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <button onclick="document.getElementById('carousel-fotos').scrollBy({left: 240, behavior: 'smooth'})"
-          class="absolute right-0 top-1/2 -translate-y-1/2 bg-purple-500 hover:bg-purple-700 text-white rounded-full p-2 shadow-lg z-10">
-          <i class="fas fa-chevron-right"></i>
-        </button>
+        <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Testimonio 2" class="w-20 h-20 rounded-full mb-4">
+          <p class="text-gray-700 italic mb-4">"El acompañamiento y la rutina personalizada hicieron la diferencia. ¡Recomendado!"</p>
+          <span class="font-bold text-pink-500">Carlos R.</span>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Testimonio 3" class="w-20 h-20 rounded-full mb-4">
+          <p class="text-gray-700 italic mb-4">"No solo bajé de peso, sino que gané confianza y energía. ¡Gracias por todo!"</p>
+          <span class="font-bold text-pink-500">Lucía P.</span>
+        </div>
       </div>
     </div>
   </section>
-
-  <!-- Carrusel Pérdida de Peso -->
-  <section class="py-12 bg-white">
-    <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-2xl sm:text-3xl font-bold text-center text-pink-500 mb-8">Aumento de masa Muscular</h2>
-      <div class="relative">
-        <div id="carousel-aumento" class="flex overflow-x-auto snap-x snap-mandatory gap-8 pb-4 scroll-smooth">
-          <!-- Foto 1 -->
-          <div
-            class="min-w-[220px] max-w-xs bg-purple-100 rounded-2xl shadow-lg p-2 snap-center flex-shrink-0 flex flex-col items-center">
-            <img src="imagenes/aumento1.jpg" alt="Aumento de Masa ElyFit"
-              class="w-full h-64 object-cover rounded-xl shadow">
-          </div>
-          <!-- Foto 2 -->
-          <div
-            class="min-w-[220px] max-w-xs bg-purple-100 rounded-2xl shadow-lg p-2 snap-center flex-shrink-0 flex flex-col items-center">
-            <img src="imagenes/aumento2.jpg" alt="Aumento de Masa ElyFit"
-              class="w-full h-64 object-cover rounded-xl shadow">
-          </div>
-          <!-- Agrega más fotos aquí -->
-          <div
-            class="min-w-[220px] max-w-xs bg-purple-100 rounded-2xl shadow-lg p-2 snap-center flex-shrink-0 flex flex-col items-center">
-            <img src="imagenes/aumento2.jpg" alt="Aumento de Masa ElyFit"
-              class="w-full h-64 object-cover rounded-xl shadow">
-          </div>
-          <!-- Foto 3 -->
-          <div
-            class="min-w-[220px] max-w-xs bg-purple-100 rounded-2xl shadow-lg p-2 snap-center flex-shrink-0 flex flex-col items-center">
-            <img src="imagenes/aumento3.jpg" alt="Aumento de Masa ElyFit"
-              class="w-full h-64 object-cover rounded-xl shadow">
-          </div>
-        </div>
-        <!-- Flechas -->
-        <button onclick="document.getElementById('carousel-aumento').scrollBy({left: -240, behavior: 'smooth'})"
-          class="absolute left-0 top-1/2 -translate-y-1/2 bg-pink-500 hover:bg-pink-600 text-white rounded-full p-2 shadow-lg z-10">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <button onclick="document.getElementById('carousel-aumento').scrollBy({left: 240, behavior: 'smooth'})"
-          class="absolute right-0 top-1/2 -translate-y-1/2 bg-pink-500 hover:bg-pink-600 text-white rounded-full p-2 shadow-lg z-10">
-          <i class="fas fa-chevron-right"></i>
-        </button>
+  <footer class="py-10 bg-gray-900 text-white">
+    <div class="container mx-auto px-4">
+      <div class="footer-contact flex flex-col md:flex-row justify-between items-center p-6 mb-6 gap-6">
+        <div class="flex items-center gap-2"><i class="fab fa-instagram"></i> Instagram <span class="ml-2">@elyfit</span></div>
+        <div class="flex items-center gap-2"><i class="fab fa-telegram"></i> Escribir al Telegram <span class="ml-2">+849 502 1730</span></div>
+        <div class="flex items-center gap-2"><i class="fas fa-envelope"></i> Para más Info <span class="ml-2">info@elyfit.com</span></div>
+        <div class="flex items-center gap-2"><i class="fas fa-clock"></i> Asistencia <span class="ml-2">24 Horas</span></div>
       </div>
-    </div>
-  </section>
-
-
-  </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-8 bg-gray-900 text-white text-center">
-    <div class="mb-2">
-      <span class="mr-4"><i class="fab fa-instagram text-pink-400"></i> @elyfit</span>
-      <span class="mr-4"><i class="fab fa-telegram text-blue-400"></i> +849 502 1730</span>
-      <span><i class="fas fa-envelope text-purple-400"></i> info@elyfit.com</span>
+      <div class="text-center text-gray-400 text-sm">
+        <p>&copy; 2024 ElyFit. Todos los derechos reservados.</p>
+        <p>ElyFit made by Alexander Lorenzo</p>
+      </div>
     </div>
     <p class="text-gray-400 text-sm">&copy; 2025 ElyFit. Todos los derechos reservados.</p>
   </footer>
-
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    // Initialize AOS
-    AOS.init({
-      duration: 800,
-      once: true
-    });
-
-    // Menú hamburguesa lateral
-    document.addEventListener('DOMContentLoaded', function () {
-      const menuBtn = document.getElementById('menu-btn');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const closeMenu = document.getElementById('close-menu');
-      if (menuBtn && mobileMenu && closeMenu) {
-        menuBtn.addEventListener('click', () => {
-          mobileMenu.classList.remove('hidden');
-        });
-        closeMenu.addEventListener('click', () => {
-          mobileMenu.classList.add('hidden');
-        });
-        mobileMenu.addEventListener('click', (e) => {
-          if (e.target === mobileMenu) {
-            mobileMenu.classList.add('hidden');
-          }
-        });
-      }
-    });
-  </script>
+  <script>AOS.init({ duration: 800, once: true, offset: 100, easing: 'ease-out-cubic' });</script>
 </body>
 
 </html>
