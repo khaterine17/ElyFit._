@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EliteForce - Testimonios</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/dumbbell-favicon.png">
+
+  <!-- CDNs -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+</head>
+<body class="bg-gray-900 text-white">
+  <!-- Header -->
+  <header class="header-nav fixed w-full z-50 py-4">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between">
+        <div class="logo-container text-center">
+          <!-- No brand name here -->
+        </div>
+        <nav class="hidden md:block">
+          <ul class="flex space-x-8">
+            <li>
+              <a href="index.html#entrenamientos" class="nav-link flex items-center gap-2 font-medium text-gray-300 hover:text-white transition-colors">
+                <i class="fas fa-dumbbell text-red-500"></i>
+                <span>Entrenamientos</span>
+              </a>
+            </li>
+            <li>
+              <a href="index.html#planes" class="nav-link flex items-center gap-2 font-medium text-gray-300 hover:text-white transition-colors">
+                <i class="fas fa-crown text-red-500"></i>
+                <span>Planes</span>
+              </a>
+            </li>
+            <li>
+              <a href="testimonios.html" class="nav-link flex items-center gap-2 font-medium text-gray-300 hover:text-white transition-colors">
+                <i class="fas fa-users text-red-500"></i>
+                <span>Testimonios</span>
+              </a>
+            </li>
+            <li>
+              <a href="index.html#contacto" class="nav-link flex items-center gap-2 font-medium text-gray-300 hover:text-white transition-colors">
+                <i class="fas fa-envelope text-red-500"></i>
+                <span>Contacto</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section relative h-[60vh] overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGhlJTIwZ3ltfGVufDB8fDB8fHww'); background-size: cover; background-position: center;">
+    <div class="hero-overlay"></div>
+    <div class="relative z-10 h-full flex flex-col items-center justify-center text-center p-4">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6" data-aos="fade-up">TESTIMONIOS</h1>
+      <p class="text-xl text-gray-300 mb-8 max-w-2xl" data-aos="fade-up" data-aos-delay="100">
+        Descubre las historias de transformación de nuestros miembros
+      </p>
+    </div>
+  </section>
+
+  <!-- Testimonios Form Section -->
+  <section class="py-20 bg-gray-800">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-3xl font-bold gradient-text text-center mb-8" data-aos="fade-up">COMPARTE TU HISTORIA</h2>
+        <form id="testimonio-form" class="bg-gray-900 rounded-2xl p-8 space-y-6" data-aos="fade-up" data-aos-delay="100">
+          <div>
+            <label for="nombre" class="block text-gray-300 font-medium mb-2">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required class="w-full px-4 py-3 rounded-xl">
+          </div>
+          <div>
+            <label for="testimonio" class="block text-gray-300 font-medium mb-2">Tu testimonio</label>
+            <textarea id="testimonio" name="testimonio" rows="4" required class="w-full px-4 py-3 rounded-xl"></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn-primary text-white font-bold py-4 px-8 rounded-xl text-lg w-full">
+              <span>ENVIAR TESTIMONIO</span>
+              <span class="loading-spinner hidden"></span>
+            </button>
+          </div>
+          <div id="form-message" class="hidden mt-4 p-4 rounded-xl text-center"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios List Section -->
+  <section class="py-20 bg-gray-900">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold gradient-text text-center mb-12" data-aos="fade-up">HISTORIAS DE ÉXITO</h2>
+      <div id="testimonios-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Los testimonios se cargarán dinámicamente aquí -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Notification -->
+  <div id="notification" class="fixed top-20 right-4 p-4 rounded-xl shadow-lg max-w-md transform translate-x-full transition-transform duration-300 z-50"></div>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white pt-12 pb-6">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <!-- No brand name here -->
+          <p class="text-gray-400">Transformando vidas a través del fitness personalizado.</p>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-4 text-white">ENLACES</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html#entrenamientos" class="text-gray-400 hover:text-white transition-colors">Entrenamientos</a></li>
+            <li><a href="index.html#planes" class="text-gray-400 hover:text-white transition-colors">Planes</a></li>
+            <li><a href="testimonios.html" class="text-gray-400 hover:text-white transition-colors">Testimonios</a></li>
+            <li><a href="index.html#contacto" class="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-4 text-white">LEGAL</h4>
+          <ul class="space-y-2">
+            <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Términos y condiciones</a></li>
+            <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Política de privacidad</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="text-center text-gray-500 text-sm">
+        <p>&copy; 2025 EliteForce. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.header-nav');
+      const heroSection = document.querySelector('.hero-section');
+      
+      if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+        heroSection.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+        heroSection.classList.remove('scrolled');
+      }
+    });
+
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      authDomain: "elyfit-xxxxx.firebaseapp.com",
+      projectId: "elyfit-xxxxx",
+      storageBucket: "elyfit-xxxxx.appspot.com",
+      messagingSenderId: "XXXXXXXXXXXX",
+      appId: "1:XXXXXXXXXXXX:web:XXXXXXXXXXXXXXXX"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    // Form submission
+    const testimonioForm = document.getElementById('testimonio-form');
+    const formMessage = document.getElementById('form-message');
+    const loadingSpinner = testimonioForm.querySelector('.loading-spinner');
+
+    testimonioForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const submitBtn = this.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.querySelector('span:not(.loading-spinner)').classList.add('hidden');
+      loadingSpinner.classList.remove('hidden');
+      
+      const nombre = document.getElementById('nombre').value;
+      const testimonio = document.getElementById('testimonio').value;
+      
+      try {
+        await db.collection('testimonios').add({
+          nombre: nombre,
+          testimonio: testimonio,
+          fecha: firebase.firestore.FieldValue.serverTimestamp()
+        });
+        
+        formMessage.classList.remove('hidden', 'bg-red-100', 'text-red-700');
+        formMessage.classList.add('bg-green-100', 'text-green-700');
+        formMessage.textContent = '¡Gracias por compartir tu historia!';
+        
+        testimonioForm.reset();
+      } catch (error) {
+        formMessage.classList.remove('hidden', 'bg-green-100', 'text-green-700');
+        formMessage.classList.add('bg-red-100', 'text-red-700');
+        formMessage.textContent = 'Hubo un error al enviar tu testimonio. Por favor, intenta nuevamente.';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.querySelector('span:not(.loading-spinner)').classList.remove('hidden');
+        loadingSpinner.classList.add('hidden');
+      }
+    });
+
+    // Load testimonios
+    const testimoniosContainer = document.getElementById('testimonios-container');
+
+    db.collection('testimonios')
+      .orderBy('fecha', 'desc')
+      .limit(6)
+      .onSnapshot((snapshot) => {
+        testimoniosContainer.innerHTML = '';
+        
+        snapshot.forEach((doc) => {
+          const data = doc.data();
+          const testimonio = document.createElement('div');
+          testimonio.className = 'card rounded-2xl p-8';
+          testimonio.innerHTML = `
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-12 h-12 bg-red-900 rounded-full flex items-center justify-center">
+                <i class="fas fa-user text-red-500"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white">${data.nombre}</h3>
+                <p class="text-sm text-gray-400">${new Date(data.fecha?.toDate()).toLocaleDateString()}</p>
+              </div>
+            </div>
+            <p class="text-gray-300">${data.testimonio}</p>
+          `;
+          testimoniosContainer.appendChild(testimonio);
+        });
+      });
+  </script>
+</body>
+</html> 

@@ -3,17 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ElyFit - Tu próximo desafío empieza aquí</title>
+  <title>Transforma tu cuerpo, potencia tu mente</title>
   
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="img/dumbbell-favicon.png"> <!-- Reemplaza esta ruta con tu imagen de pesa -->
+  <link rel="icon" type="image/png" href="img/dumbbell-favicon.png">
 
   <!-- CDNs -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-
+  
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Custom CSS -->
@@ -23,195 +22,203 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script type="text/javascript">
     (function() {
-      emailjs.init("poRtU7QHXPMl7JQZh"); // Reemplaza esto con tu clave pública de EmailJS
+      emailjs.init("poRtU7QHXPMl7JQZh");
     })();
   </script>
-  
-  <!-- Firebase SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
 </head>
-<body>
+<body class="bg-gray-900 text-white">
   <!-- Header -->
   <header class="header-nav fixed w-full z-50 py-4">
     <div class="container mx-auto px-4">
       <div class="flex items-center justify-between">
-        <div class="logo-container text-center w-full">
-          <h1 class="text-3xl font-bold gradient-text">Ely_fit</h1>
+        <div class="logo-container text-center">
+          <!-- No brand name here -->
         </div>
+        <nav class="hidden md:block">
+          <ul class="flex space-x-8">
+            <li>
+              <a href="#entrenamientos" class="nav-link flex items-center gap-2 font-medium text-gray-300 hover:text-white transition-colors">
+                <i class="fas fa-dumbbell text-red-500"></i>
+                <span>Entrenamientos</span>
+              </a>
+            </li>
+            <li>
+              <a href="#planes" class="nav-link flex items-center gap-2 font-medium text-gray-300 hover:text-white transition-colors">
+                <i class="fas fa-crown text-red-500"></i>
+                <span>Planes</span>
+              </a>
+            </li>
+            <li>
+              <a href="testimonios.html" class="nav-link flex items-center gap-2 font-medium text-gray-300 hover:text-white transition-colors">
+                <i class="fas fa-users text-red-500"></i>
+                <span>Testimonios</span>
+              </a>
+            </li>
+            <li>
+              <a href="#contacto" class="nav-link flex items-center gap-2 font-medium text-gray-300 hover:text-white transition-colors">
+                <i class="fas fa-envelope text-red-500"></i>
+                <span>Contacto</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <nav class="flex justify-center mt-4">
-        <ul class="flex flex-wrap justify-center space-x-2 md:space-x-8">
-          
-          <li>
-            <a href="#reto" class="nav-link flex items-center gap-2 font-medium hover:text-purple-600 transition-colors px-4 py-2 rounded-full hover:bg-purple-50">
-              <i class="fas fa-calendar-check text-purple-600"></i>
-              <span>Reto de 21 Días</span>
-            </a>
-          </li>
-          <li>
-            <a href="#mision-vision-objetivos" class="nav-link flex items-center gap-2 font-medium hover:text-purple-600 transition-colors px-4 py-2 rounded-full hover:bg-purple-50">
-              <i class="fas fa-lightbulb text-purple-600"></i>
-              <span>Misión y Valores</span>
-            </a>
-          </li>
-          <li>
-            <a href="#testimonios" class="nav-link flex items-center gap-2 font-medium hover:text-purple-600 transition-colors px-4 py-2 rounded-full hover:bg-purple-50">
-              <i class="fas fa-users text-purple-600"></i>
-              <span>Testimonios</span>
-            </a>
-          </li>
-          <li>
-            <a href="#contacto" class="nav-link flex items-center gap-2 font-medium hover:text-purple-600 transition-colors px-4 py-2 rounded-full hover:bg-purple-50">
-              <i class="fas fa-envelope text-purple-600"></i>
-              <span>Contacto</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
     </div>
   </header>
 
-  <!-- Hero Banner -->
-  <section class="relative h-screen overflow-hidden bg-gray-900">
-    <div class="swiper heroSwiper h-full">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="https://cdn.pixabay.com/photo/2017/08/07/14/02/people-2604149_1280.jpg" class="w-full h-full object-cover" alt="Entrenamiento 1">
-        </div>
-        <div class="swiper-slide">
-          <img src="https://cdn.pixabay.com/photo/2015/07/02/10/22/training-828726_1280.jpg" class="w-full h-full object-cover" alt="Entrenamiento 2">
-        </div>
-        <div class="swiper-slide">
-          <img src="https://cdn.pixabay.com/photo/2016/03/27/23/00/weight-lifting-1284616_1280.jpg" class="w-full h-full object-cover" alt="Entrenamiento 3">
-        </div>
-      </div>
-    </div>
-    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center p-4">
-      <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6" data-aos="fade-up">Tu próximo desafío empieza aquí</h1>
+  <!-- Hero Section -->
+  <section class="hero-section relative h-screen overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGhlJTIwZ3ltfGVufDB8fDB8fHww'); background-size: cover; background-position: center;">
+    <div class="hero-overlay"></div>
+    <div class="relative z-10 h-full flex flex-col items-center justify-center text-center p-4">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6" data-aos="fade-up">TRANSFORMA TU CUERPO, POTENCIA TU MENTE</h1>
+      <p class="text-xl text-gray-300 mb-8 max-w-2xl" data-aos="fade-up" data-aos-delay="100">
+        Entrenamiento personalizado que te llevará al siguiente nivel
+      </p>
       <div class="flex flex-col sm:flex-row gap-4 mt-8" data-aos="fade-up" data-aos-delay="200">
-        <a href="#plan-personalizado" class="btn-primary text-white font-bold py-3 px-8 rounded-full text-lg">Solicita tu plan</a>
-        <a href="#reto" class="bg-white text-purple-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition-colors text-lg">Únete al reto</a>
+        <a href="#planes" class="btn-primary text-white font-bold py-4 px-8 rounded-xl text-lg">COMENZAR AHORA</a>
+        <a href="#entrenamientos" class="bg-white text-red-500 font-bold py-4 px-8 rounded-xl hover:bg-gray-100 transition-all text-lg">VER ENTRENAMIENTOS</a>
       </div>
     </div>
   </section>
 
-  <!-- Misión, Visión y Objetivos Section -->
-  <section id="mision-vision-objetivos" class="py-20 bg-white">
+  <!-- Entrenamientos Section -->
+  <section id="entrenamientos" class="py-20 bg-gray-800">
     <div class="container mx-auto px-4">
-      <h2 class="text-4xl md:text-5xl font-bold gradient-text text-center mb-12" data-aos="fade-up">Nuestra Esencia: Misión, Visión y Valores</h2>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="card bg-gray-50 rounded-lg shadow-lg p-6" data-aos="fade-up" data-aos-delay="100">
-          <h3 class="text-2xl font-bold text-purple-600 mb-4">Misión</h3>
-          <p class="text-gray-700">Empoderar a cada persona para que alcance su mejor versión física y mental, a través de programas de entrenamiento y nutrición personalizados, efectivos y sostenibles.</p>
-        </div>
-        <div class="card bg-gray-50 rounded-lg shadow-lg p-6" data-aos="fade-up" data-aos-delay="200">
-          <h3 class="text-2xl font-bold text-purple-600 mb-4">Visión</h3>
-          <p class="text-gray-700">Nuestra visión es que ElyFit sea el lugar al que acuda la gente cuando quiera transformar su bienestar, no solo físicamente, sino en cada aspecto de su vida, creando una comunidad fuerte y feliz donde todos se sientan apoyados.</p>
-        </div>
-        <div class="card bg-gray-50 rounded-lg shadow-lg p-6" data-aos="fade-up" data-aos-delay="300">
-          <h3 class="text-2xl font-bold text-purple-600 mb-4">Valores</h3>
-          <ul class="list-disc list-inside text-gray-700 space-y-2">
-            <li>Personalización</li>
-            <li>Compromiso</li>
-            <li>Innovación</li>
-            <li>Integridad</li>
-            <li>Resultados</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Reto 21 Días Section -->
-  <section id="reto" class="py-20 bg-gray-100">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl md:text-5xl font-bold gradient-text text-center mb-12" data-aos="fade-up">Reto de 21 Días</h2>
+      <h2 class="text-4xl md:text-5xl font-bold gradient-text text-center mb-12" data-aos="fade-up">ENTRENAMIENTOS</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        <!-- Fase 1 -->
-        <div class="card bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-          <div class="p-6">
-            <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-              <i class="fas fa-seedling text-2xl text-orange-500"></i>
+        <!-- Entrenamiento 1 -->
+        <div class="card rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+          <div class="p-8">
+            <div class="w-16 h-16 bg-red-900 rounded-full flex items-center justify-center mb-6 mx-auto">
+              <i class="fas fa-fire text-2xl text-red-500"></i>
             </div>
-            <h3 class="text-xl font-bold text-center mb-2">Fase 1: Activación</h3>
-            <p class="text-gray-600 text-center">Días 1-7. Comienza a despertar tu cuerpo con ejercicios básicos para activar tu metabolismo y prepararte para las siguientes etapas.</p>
+            <h3 class="text-2xl font-bold text-center mb-4 text-white">HIIT</h3>
+            <p class="text-gray-300 text-center">Entrenamiento de alta intensidad que quema grasa y mejora tu resistencia cardiovascular.</p>
           </div>
         </div>
         
-        <!-- Fase 2 -->
-        <div class="card bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-          <div class="p-6">
-            <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-              <i class="fas fa-fire text-2xl text-teal-500"></i>
+        <!-- Entrenamiento 2 -->
+        <div class="card rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+          <div class="p-8">
+            <div class="w-16 h-16 bg-red-900 rounded-full flex items-center justify-center mb-6 mx-auto">
+              <i class="fas fa-dumbbell text-2xl text-red-500"></i>
             </div>
-            <h3 class="text-xl font-bold text-center mb-2">Fase 2: Intensificación</h3>
-            <p class="text-gray-600 text-center">Días 8-14. Aumenta la intensidad con ejercicios más desafiantes que acelerarán tu progreso y te empujarán hacia nuevos límites.</p>
+            <h3 class="text-2xl font-bold text-center mb-4 text-white">Fuerza</h3>
+            <p class="text-gray-300 text-center">Desarrolla músculo y aumenta tu fuerza con ejercicios compuestos y progresivos.</p>
           </div>
         </div>
         
-        <!-- Fase 3 -->
-        <div class="card bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-          <div class="p-6">
-            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-              <i class="fas fa-bolt text-2xl text-purple-500"></i>
+        <!-- Entrenamiento 3 -->
+        <div class="card rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+          <div class="p-8">
+            <div class="w-16 h-16 bg-red-900 rounded-full flex items-center justify-center mb-6 mx-auto">
+              <i class="fas fa-heartbeat text-2xl text-red-500"></i>
             </div>
-            <h3 class="text-xl font-bold text-center mb-2">Fase 3: Transformación</h3>
-            <p class="text-gray-600 text-center">Días 15-21. Consolida tus resultados con rutinas avanzadas que definirán tu físico y establecerán hábitos duraderos.</p>
+            <h3 class="text-2xl font-bold text-center mb-4 text-white">Cardio</h3>
+            <p class="text-gray-300 text-center">Mejora tu condición física y quema calorías con rutinas dinámicas y efectivas.</p>
           </div>
         </div>
-      </div>
-      
-      <div class="text-center" data-aos="fade-up">
-        <a href="https://wa.me/18495021730" target="_blank" class="btn-primary text-white font-bold py-3 px-8 rounded-full text-lg flex items-center justify-center mx-auto max-w-xs">
-          <i class="fab fa-whatsapp mr-2"></i> Escríbenos por WhatsApp
-        </a>
       </div>
     </div>
   </section>
 
-  <!-- Testimonios Section -->
-  <section id="testimonios" class="py-20 bg-white">
+  <!-- Planes Section -->
+  <section id="planes" class="py-20 bg-gray-900">
     <div class="container mx-auto px-4">
-      <h2 class="text-4xl md:text-5xl font-bold gradient-text text-center mb-12" data-aos="fade-up">Lo que dicen nuestros clientes</h2>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div data-aos="fade-right">
-          <h3 class="text-2xl font-bold mb-6 text-purple-600">Comparte tu Experiencia</h3>
-          <form id="testimonial-form" class="bg-gray-50 rounded-lg shadow-xl p-8 space-y-6">
-            <div>
-              <label for="testimonial-name" class="block text-gray-700 font-medium mb-2">Tu Nombre</label>
-              <input type="text" id="testimonial-name" name="name" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+      <h2 class="text-4xl md:text-5xl font-bold gradient-text text-center mb-12" data-aos="fade-up">PLANES</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <!-- Plan Básico -->
+        <div class="card rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+          <div class="p-8">
+            <div class="w-16 h-16 bg-red-900 rounded-full flex items-center justify-center mb-6 mx-auto">
+              <i class="fas fa-star text-2xl text-red-500"></i>
             </div>
-            <div>
-              <label for="testimonial-text" class="block text-gray-700 font-medium mb-2">Tu Testimonio</label>
-              <textarea id="testimonial-text" name="text" rows="5" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
-            </div>
-            <div class="text-center">
-              <button type="submit" class="btn-primary text-white font-bold py-3 px-8 rounded-full text-lg">
-                <span>Enviar Testimonio</span>
-                <span class="loading-spinner hidden">
-                  <i class="fas fa-spinner fa-spin"></i>
-                </span>
-              </button>
-            </div>
-            <div id="testimonial-form-message" class="hidden mt-4 p-4 rounded-lg text-center"></div>
-          </form>
+            <h3 class="text-2xl font-bold text-center mb-4 text-white">Básico</h3>
+            <ul class="text-gray-300 space-y-4 mb-8">
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-red-500"></i>
+                <span>2 sesiones semanales</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-red-500"></i>
+                <span>Rutina personalizada</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-red-500"></i>
+                <span>Acceso a la app</span>
+              </li>
+            </ul>
+            <a href="#contacto" class="btn-primary text-white font-bold py-3 px-6 rounded-xl text-lg w-full block text-center">COMENZAR</a>
+          </div>
         </div>
-        
-        <div data-aos="fade-left">
-          <h3 class="text-2xl font-bold mb-6 text-purple-600">Testimonios Recientes</h3>
-          <div id="testimonials-container" class="space-y-6">
-            <!-- Testimonios se cargarán aquí -->
-            <div class="p-6 bg-white rounded-lg shadow-md">
-              <p class="text-gray-700 italic mb-4">"¡Increíble experiencia! Logré mis objetivos en poco tiempo gracias a ElyFit. Recomendado al 100%."</p>
-              <p class="text-right font-semibold text-purple-600">- María G.</p>
+
+        <!-- Plan Pro -->
+        <div class="card rounded-2xl overflow-hidden transform scale-105" data-aos="fade-up" data-aos-delay="200">
+          <div class="p-8">
+            <div class="w-16 h-16 bg-red-900 rounded-full flex items-center justify-center mb-6 mx-auto">
+              <i class="fas fa-crown text-2xl text-red-500"></i>
             </div>
-            <div class="p-6 bg-white rounded-lg shadow-md">
-              <p class="text-gray-700 italic mb-4">"El reto de 21 días me cambió la vida. La personalización del plan es excelente."</p>
-              <p class="text-right font-semibold text-purple-600">- Juan P.</p>
+            <h3 class="text-2xl font-bold text-center mb-4 text-white">Pro</h3>
+            <ul class="text-gray-300 space-y-4 mb-8">
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-red-500"></i>
+                <span>4 sesiones semanales</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-red-500"></i>
+                <span>Rutina personalizada</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-red-500"></i>
+                <span>Acceso a la app</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-red-500"></i>
+                <span>Asesoría nutricional</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-red-500"></i>
+                <span>Acceso a clases grupales</span>
+              </li>
+            </ul>
+            <a href="#contacto" class="btn-primary text-white font-bold py-3 px-6 rounded-xl text-lg w-full block text-center">COMENZAR</a>
+          </div>
+        </div>
+
+        <!-- Plan Elite -->
+        <div class="card rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+          <div class="p-8">
+            <div class="w-16 h-16 bg-red-900 rounded-full flex items-center justify-center mb-6 mx-auto">
+              <i class="fas fa-trophy text-2xl text-red-500"></i>
             </div>
+            <h3 class="text-2xl font-bold text-center mb-4 text-white">Elite</h3>
+            <ul class="text-gray-300 space-y-4 mb-8">
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-red-500"></i>
+                <span>Sesiones ilimitadas</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-red-500"></i>
+                <span>Rutina personalizada</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-red-500"></i>
+                <span>Acceso a la app</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-red-500"></i>
+                <span>Asesoría nutricional</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-red-500"></i>
+                <span>Acceso a todas las clases</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-red-500"></i>
+                <span>Entrenador personal</span>
+              </li>
+            </ul>
+            <a href="#contacto" class="btn-primary text-white font-bold py-3 px-6 rounded-xl text-lg w-full block text-center">COMENZAR</a>
           </div>
         </div>
       </div>
@@ -219,101 +226,90 @@
   </section>
 
   <!-- Contacto Section -->
-  <section id="contacto" class="py-20 bg-gray-100">
+  <section id="contacto" class="py-20 bg-gray-800">
     <div class="container mx-auto px-4">
-      <h2 class="text-4xl md:text-5xl font-bold gradient-text text-center mb-12" data-aos="fade-up">Contacto</h2>
+      <h2 class="text-4xl md:text-5xl font-bold gradient-text text-center mb-12" data-aos="fade-up">CONTACTO</h2>
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div data-aos="fade-right">
-          <h3 class="text-2xl font-bold mb-6 text-purple-600">Envíanos tu Solicitud para planes personalizados</h3>
-          <form id="plan-form" class="bg-white rounded-lg shadow-xl p-8 space-y-6" onsubmit="return sendEmail(event)">
+          <h3 class="text-2xl font-bold mb-6 text-red-500">¡ÚNETE A NOSOTROS!</h3>
+          <form id="plan-form" class="bg-gray-900 rounded-2xl p-8 space-y-6" onsubmit="return sendEmail(event)">
             <div>
-              <label for="nombre" class="block text-gray-700 font-medium mb-2">Nombre completo</label>
-              <input type="text" id="nombre" name="nombre" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+              <label for="nombre" class="block text-gray-300 font-medium mb-2">Nombre completo</label>
+              <input type="text" id="nombre" name="nombre" required class="w-full px-4 py-3 rounded-xl">
             </div>
             <div>
-              <label for="email" class="block text-gray-700 font-medium mb-2">Correo electrónico</label>
-              <input type="email" id="email" name="email" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+              <label for="email" class="block text-gray-300 font-medium mb-2">Correo electrónico</label>
+              <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl">
             </div>
             <div>
-              <label for="edad" class="block text-gray-700 font-medium mb-2">Edad</label>
-              <input type="number" id="edad" name="edad" required min="16" max="99" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
-            </div>
-            <div>
-              <label for="objetivo" class="block text-gray-700 font-medium mb-2">Objetivo principal</label>
-              <select id="objetivo" name="objetivo" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
-                <option value="" disabled selected>Selecciona tu objetivo</option>
-                <option value="perder_peso">Perder peso</option>
-                <option value="ganar_musculo">Ganar músculo</option>
-                <option value="tonificar">Tonificar</option>
-                <option value="resistencia">Mejorar resistencia</option>
+              <label for="plan" class="block text-gray-300 font-medium mb-2">Plan de interés</label>
+              <select id="plan" name="plan" required class="w-full px-4 py-3 rounded-xl">
+                <option value="" disabled selected>Selecciona tu plan</option>
+                <option value="basico">Básico</option>
+                <option value="pro">Pro</option>
+                <option value="elite">Elite</option>
               </select>
             </div>
             <div>
-              <label for="nivel" class="block text-gray-700 font-medium mb-2">Nivel actual</label>
-              <select id="nivel" name="nivel" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
-                <option value="" disabled selected>Selecciona tu nivel</option>
-                <option value="principiante">Principiante</option>
-                <option value="intermedio">Intermedio</option>
-                <option value="avanzado">Avanzado</option>
-              </select>
-            </div>
-            <div>
-              <label for="comentarios" class="block text-gray-700 font-medium mb-2">Comentarios adicionales</label>
-              <textarea id="comentarios" name="comentarios" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+              <label for="mensaje" class="block text-gray-300 font-medium mb-2">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" rows="4" class="w-full px-4 py-3 rounded-xl"></textarea>
             </div>
             <div class="text-center">
-              <button type="submit" class="btn-primary text-white font-bold py-3 px-8 rounded-full text-lg">
-                <span>Enviar solicitud</span>
-                <span class="loading-spinner hidden">
-                  <i class="fas fa-spinner fa-spin"></i>
-                </span>
+              <button type="submit" class="btn-primary text-white font-bold py-4 px-8 rounded-xl text-lg w-full">
+                <span>ENVIAR SOLICITUD</span>
+                <span class="loading-spinner hidden"></span>
               </button>
             </div>
-            <div id="form-message" class="hidden mt-4 p-4 rounded-lg text-center"></div>
+            <div id="form-message" class="hidden mt-4 p-4 rounded-xl text-center"></div>
           </form>
         </div>
         
         <div data-aos="fade-left" class="flex flex-col justify-between">
           <div>
-            <h3 class="text-2xl font-bold mb-6 text-purple-600">Información de contacto</h3>
-            <div class="flex items-start mb-4">
-              <i class="fas fa-phone text-purple-500 mr-4 mt-1"></i>
-              <div>
-                <h4 class="font-bold text-gray-800">Teléfono</h4>
-                <p class="text-gray-600">+849 502 1730</p>
+            <h3 class="text-2xl font-bold mb-6 text-red-500">INFORMACIÓN</h3>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="w-12 h-12 bg-red-900 rounded-full flex items-center justify-center">
+                  <i class="fas fa-phone text-red-500"></i>
+                </div>
+                <div class="ml-4">
+                  <h4 class="font-bold text-white">Teléfono</h4>
+                  <p class="text-gray-300">+849 502 1730</p>
+                </div>
               </div>
-            </div>
-            <div class="flex items-start mb-4">
-              <i class="fas fa-envelope text-purple-500 mr-4 mt-1"></i>
-              <div>
-                <h4 class="font-bold text-gray-800">Email</h4>
-                <p class="text-gray-600">info@elyfit.com</p>
+              <div class="flex items-start">
+                <div class="w-12 h-12 bg-red-900 rounded-full flex items-center justify-center">
+                  <i class="fas fa-envelope text-red-500"></i>
+                </div>
+                <div class="ml-4">
+                  <h4 class="font-bold text-white">Email</h4>
+                  <p class="text-gray-300">info@eliteforce.com</p>
+                </div>
               </div>
-            </div>
-            <div class="flex items-start mb-12">
-              <i class="fas fa-map-marker-alt text-purple-500 mr-4 mt-1"></i>
-              <div>
-                <h4 class="font-bold text-gray-800">Ubicación</h4>
-                <p class="text-gray-600">Santiago, Rep. Dom.<br>Clases virtuales disponibles a nivel internacional</p>
+              <div class="flex items-start">
+                <div class="w-12 h-12 bg-red-900 rounded-full flex items-center justify-center">
+                  <i class="fas fa-map-marker-alt text-red-500"></i>
+                </div>
+                <div class="ml-4">
+                  <h4 class="font-bold text-white">Ubicación</h4>
+                  <p class="text-gray-300">Santiago, Rep. Dom.<br>Clases virtuales disponibles</p>
+                </div>
               </div>
             </div>
           </div>
           
-          <div>
-            <h3 class="text-2xl font-bold mb-6 text-purple-600">Síguenos en redes</h3>
+          <div class="mt-12">
+            <h3 class="text-2xl font-bold mb-6 text-red-500">SÍGUENOS</h3>
             <div class="flex space-x-4">
-              <a href="javascript:void(0)" class="social-icon w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white">
-                <i class="fab fa-facebook-f text-xl"></i>
-              </a>
-              <a href="javascript:void(0)" class="social-icon w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 flex items-center justify-center text-white">
+              <a href="javascript:void(0)" class="social-icon w-12 h-12 rounded-full flex items-center justify-center text-white">
                 <i class="fab fa-instagram text-xl"></i>
               </a>
-              <a href="javascript:void(0)" class="social-icon w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white">
-                <i class="fab fa-youtube text-xl"></i>
+              <a href="javascript:void(0)" class="social-icon w-12 h-12 rounded-full flex items-center justify-center text-white">
+                <i class="fab fa-tiktok text-xl"></i>
               </a>
-              <a href="javascript:void(0)" class="social-icon w-12 h-12 rounded-full bg-blue-400 flex items-center justify-center text-white">
-                <i class="fab fa-twitter text-xl"></i>
+              <a href="javascript:void(0)" class="social-icon w-12 h-12 rounded-full flex items-center justify-center text-white">
+                <i class="fab fa-youtube text-xl"></i>
               </a>
             </div>
           </div>
@@ -323,93 +319,106 @@
   </section>
 
   <!-- Notification -->
-  <div id="notification" class="fixed top-20 right-4 p-4 rounded-lg shadow-lg max-w-md transform translate-x-full transition-transform duration-300 z-50"></div>
+  <div id="notification" class="fixed top-20 right-4 p-4 rounded-xl shadow-lg max-w-md transform translate-x-full transition-transform duration-300 z-50"></div>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white pt-12 pb-6">
+  <footer class="bg-black text-white pt-12 pb-6">
     <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
         <div>
-          <h3 class="text-xl font-bold mb-4">ely_fit</h3>
-          <p class="text-gray-400">Transformando vidas a través del fitness personalizado y una comunidad comprometida.</p>
+          <!-- No brand name here -->
+          <p class="text-gray-400">Transformando vidas a través del fitness personalizado.</p>
         </div>
         <div>
-          <h4 class="text-lg font-bold mb-4">Enlaces rápidos</h4>
+          <h4 class="text-lg font-bold mb-4 text-white">ENLACES</h4>
           <ul class="space-y-2">
-            <li><a href="#reto" class="text-gray-400 hover:text-white transition-colors">Reto de 21 Días</a></li>
-            <li><a href="#mision-vision-objetivos" class="text-gray-400 hover:text-white transition-colors">Misión y Valores</a></li>
-            <li><a href="#testimonios" class="text-gray-400 hover:text-white transition-colors">Testimonios</a></li>
+            <li><a href="#entrenamientos" class="text-gray-400 hover:text-white transition-colors">Entrenamientos</a></li>
+            <li><a href="#planes" class="text-gray-400 hover:text-white transition-colors">Planes</a></li>
+            <li><a href="testimonios.html" class="text-gray-400 hover:text-white transition-colors">Testimonios</a></li>
             <li><a href="#contacto" class="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="text-lg font-bold mb-4">Programas</h4>
-          <ul class="space-y-2">
-            <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Pérdida de peso</a></li>
-            <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Ganancia muscular</a></li>
-            <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Fitness para principiantes</a></li>
-            <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Nutrición deportiva</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-lg font-bold mb-4">Legal</h4>
+          <h4 class="text-lg font-bold mb-4 text-white">LEGAL</h4>
           <ul class="space-y-2">
             <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Términos y condiciones</a></li>
             <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Política de privacidad</a></li>
-            <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Política de cookies</a></li>
           </ul>
         </div>
       </div>
       
-      <div class="footer-animation mb-6"></div>
-      
       <div class="text-center text-gray-500 text-sm">
-        <p>&copy; 2025 ely_fit. Todos los derechos reservados.</p>
+        <p>&copy; 2025 EliteForce. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   
-  <script id="app-script">
-    // Initialize AOS
+  <script>
+    // Initialize AOS with enhanced settings
     AOS.init({
       duration: 800,
-      once: true
+      once: true,
+      offset: 100,
+      easing: 'ease-out-cubic'
     });
 
-    // Initialize Swiper
-    const swiper = new Swiper('.heroSwiper', {
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true
-      },
-    });
-
-    // Header scroll effect
+    // Enhanced header scroll effect
     window.addEventListener('scroll', function() {
       const header = document.querySelector('.header-nav');
-      if (window.scrollY > 10) {
+      const heroSection = document.querySelector('.hero-section');
+      const scrollPosition = window.scrollY;
+      
+      if (scrollPosition > 10) {
         header.classList.add('scrolled');
+        heroSection.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
+        heroSection.classList.remove('scrolled');
       }
+
+      // Parallax effect for hero section
+      const parallaxElements = document.querySelectorAll('.parallax');
+      parallaxElements.forEach(element => {
+        const speed = element.dataset.speed || 0.5;
+        element.style.setProperty('--parallax-offset', `${scrollPosition * speed}px`);
+      });
     });
 
-    // Notification system
+    // Enhanced section transitions
+    const sections = document.querySelectorAll('section');
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // Add staggered animation to child elements
+          const children = entry.target.querySelectorAll('.animate-stagger');
+          children.forEach((child, index) => {
+            child.style.animationDelay = `${index * 0.1}s`;
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => {
+      section.classList.add('section-transition');
+      observer.observe(section);
+    });
+
+    // Enhanced notification system
     function showNotification(message, isSuccess = true) {
       const notification = document.getElementById('notification');
       notification.textContent = message;
       notification.className = isSuccess 
-        ? 'fixed top-20 right-4 p-4 rounded-lg shadow-lg max-w-md success-message z-50' 
-        : 'fixed top-20 right-4 p-4 rounded-lg shadow-lg max-w-md error-notification z-50';
+        ? 'fixed top-20 right-4 p-4 rounded-xl shadow-lg max-w-md success-message z-50' 
+        : 'fixed top-20 right-4 p-4 rounded-xl shadow-lg max-w-md error-notification z-50';
       
       notification.style.transform = 'translateX(0)';
       
@@ -418,7 +427,7 @@
       }, 5000);
     }
 
-    // Form validations
+    // Enhanced form validations with animations
     const planForm = document.getElementById('plan-form');
     planForm.addEventListener('submit', function(e) {
       e.preventDefault();
@@ -430,7 +439,7 @@
       submitBtn.querySelector('span:not(.loading-spinner)').classList.add('hidden');
       loadingSpinner.classList.remove('hidden');
       
-      // Simulate API call
+      // Simulate API call with enhanced animation
       setTimeout(() => {
         submitBtn.disabled = false;
         submitBtn.querySelector('span:not(.loading-spinner)').classList.remove('hidden');
@@ -438,10 +447,14 @@
         
         showNotification('¡Solicitud enviada con éxito! Pronto nos pondremos en contacto contigo.');
         planForm.reset();
+        
+        // Add success animation to form
+        planForm.classList.add('animate-success');
+        setTimeout(() => planForm.classList.remove('animate-success'), 1000);
       }, 1500);
     });
 
-    // Smooth scrolling for anchor links
+    // Enhanced smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -457,11 +470,15 @@
             top: targetPosition,
             behavior: 'smooth'
           });
+
+          // Add highlight effect to target section
+          targetElement.classList.add('highlight-section');
+          setTimeout(() => targetElement.classList.remove('highlight-section'), 1000);
         }
       });
     });
 
-    // Función para enviar el email
+    // Enhanced email sending with animations
     function sendEmail(e) {
       e.preventDefault();
       
@@ -469,132 +486,63 @@
       const loadingSpinner = form.querySelector('.loading-spinner');
       const formMessage = document.getElementById('form-message');
       
-      // Mostrar spinner
       loadingSpinner.classList.remove('hidden');
       
-      // Obtener los datos del formulario
       const templateParams = {
         from_name: document.getElementById('nombre').value,
         from_email: document.getElementById('email').value,
-        edad: document.getElementById('edad').value,
-        objetivo: document.getElementById('objetivo').value,
-        nivel: document.getElementById('nivel').value,
-        comentarios: document.getElementById('comentarios').value
+        plan: document.getElementById('plan').value,
+        mensaje: document.getElementById('mensaje').value
       };
 
-      // Enviar el email usando EmailJS
       emailjs.send('service_04f13sv', 'template_mii5xos', templateParams)
         .then(function(response) {
-          // Mostrar mensaje de éxito
           formMessage.classList.remove('hidden', 'bg-red-100', 'text-red-700');
           formMessage.classList.add('bg-green-100', 'text-green-700');
           formMessage.textContent = '¡Solicitud enviada con éxito! Nos pondremos en contacto contigo pronto.';
           
-          // Limpiar el formulario
           form.reset();
+          
+          // Add success animation
+          form.classList.add('animate-success');
+          setTimeout(() => form.classList.remove('animate-success'), 1000);
         })
         .catch(function(error) {
-          // Mostrar mensaje de error
           formMessage.classList.remove('hidden', 'bg-green-100', 'text-green-700');
           formMessage.classList.add('bg-red-100', 'text-red-700');
           formMessage.textContent = 'Hubo un error al enviar la solicitud. Por favor, intenta nuevamente.';
+          
+          // Add error shake animation
+          form.classList.add('animate-error');
+          setTimeout(() => form.classList.remove('animate-error'), 1000);
         })
         .finally(function() {
-          // Ocultar spinner
           loadingSpinner.classList.add('hidden');
         });
 
       return false;
     }
 
-    // Tu configuración de Firebase
-    const firebaseConfig = {
-      apiKey: "AIzaSyANZoHyUyxzg93FYD3AnoEMja5zOiQf56E",
-      authDomain: "elyfit-75a6f.firebaseapp.com",
-      projectId: "elyfit-75a6f",
-      storageBucket: "elyfit-75a6f.firebasestorage.app",
-      messagingSenderId: "70339214607",
-      appId: "1:70339214607:web:0a22ecf6d3a7eeae0b927a"
-    };
-
-    // Inicializar Firebase
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-
-    // Función para añadir un testimonio
-    async function addTestimonial(name, text) {
-      try {
-        await db.collection("testimonios").add({
-          name: name,
-          text: text,
-          timestamp: firebase.firestore.FieldValue.serverTimestamp()
-        });
-        console.log("Testimonio añadido con éxito!");
-        return { success: true };
-      } catch (error) {
-        console.error("Error añadiendo testimonio: ", error);
-        return { success: false, error: error.message };
-      }
-    }
-
-    // Función para mostrar testimonios
-    function displayTestimonials(testimonios) {
-      const container = document.getElementById('testimonials-container');
-      container.innerHTML = '';
-      testimonios.forEach(doc => {
-        const data = doc.data();
-        const testimonialDiv = document.createElement('div');
-        testimonialDiv.className = 'p-6 bg-white rounded-lg shadow-md';
-        testimonialDiv.innerHTML = `
-          <p class="text-gray-700 italic mb-4">"${data.text}"</p>
-          <p class="text-right font-semibold text-purple-600">- ${data.name}</p>
-        `;
-        container.prepend(testimonialDiv);
+    // Add hover effects to cards
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px) scale(1.02)';
       });
-    }
-
-    // Cargar testimonios en tiempo real (listener)
-    db.collection("testimonios").orderBy("timestamp", "desc").onSnapshot(snapshot => {
-      const testimonios = [];
-      snapshot.forEach(doc => {
-        testimonios.push(doc);
+      
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
       });
-      displayTestimonials(testimonios);
-    }, error => {
-      console.error("Error al obtener testimonios en tiempo real: ", error);
     });
 
-    // Manejar envío del formulario de testimonio
-    const testimonialForm = document.getElementById('testimonial-form');
-    testimonialForm.addEventListener('submit', async function(e) {
-      e.preventDefault();
+    // Add parallax effect to hero section
+    const heroSection = document.querySelector('.hero-section');
+    window.addEventListener('mousemove', function(e) {
+      const { clientX, clientY } = e;
+      const { left, top, width, height } = heroSection.getBoundingClientRect();
+      const x = (clientX - left) / width;
+      const y = (clientY - top) / height;
       
-      const nameInput = document.getElementById('testimonial-name');
-      const textInput = document.getElementById('testimonial-text');
-      const submitBtn = this.querySelector('button[type="submit"]');
-      const loadingSpinner = submitBtn.querySelector('.loading-spinner');
-      const formMessage = document.getElementById('testimonial-form-message');
-
-      submitBtn.disabled = true;
-      loadingSpinner.classList.remove('hidden');
-      formMessage.classList.add('hidden');
-
-      const result = await addTestimonial(nameInput.value, textInput.value);
-      
-      submitBtn.disabled = false;
-      loadingSpinner.classList.add('hidden');
-      formMessage.classList.remove('hidden');
-
-      if (result.success) {
-        formMessage.classList.remove('bg-red-100', 'text-red-700');
-        formMessage.classList.add('bg-green-100', 'text-green-700');
-        formMessage.textContent = '¡Testimonio enviado con éxito!';
-        testimonialForm.reset();
-      } else {
-        formMessage.classList.remove('bg-green-100', 'text-green-700');
-        formMessage.classList.add('bg-red-100', 'text-red-700');
-        formMessage.textContent = `Error: ${result.error}. Intenta de nuevo.`;
-      }
+      heroSection.style.transform = `perspective(1000px) rotateX(${(y - 0.5) * 5}deg) rotateY(${(x - 0.5) * 5}deg)`;
     });
   </script>
 </body>
