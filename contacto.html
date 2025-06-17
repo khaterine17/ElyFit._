@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Testimonios - Transforma tu cuerpo, potencia tu mente</title>
+  <title>Contáctame - Transforma tu cuerpo, potencia tu mente</title>
   <link rel="icon" type="image/png" href="img/dumbbell-favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -37,30 +37,33 @@
   <section class="relative h-[60vh] flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=1500&q=80'); background-size: cover; background-position: center;">
     <div class="hero-overlay"></div>
     <div class="relative z-10 flex flex-col items-center justify-center text-center">
-      <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4" style="text-shadow:0 2px 8px #0008">Testimonios</h1>
-      <p class="text-lg text-white">Historias reales de transformación y motivación</p>
+      <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4" style="text-shadow:0 2px 8px #0008">Contáctame</h1>
+      <p class="text-lg text-white">¿Tienes dudas? ¡Escríbeme!</p>
     </div>
   </section>
   <section class="py-20 bg-gray-100">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold text-center mb-2 section-title">Lo Que Dicen Mis Clientes</h2>
+    <div class="container mx-auto px-4 max-w-2xl">
+      <h2 class="text-4xl font-bold text-center mb-2 section-title">Formulario de Contacto</h2>
       <div class="divider"></div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-        <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center" data-aos="fade-up">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Testimonio 1" class="w-20 h-20 rounded-full mb-4">
-          <p class="text-gray-700 italic mb-4">"Gracias a este reto, logré cambiar mi mentalidad y mi cuerpo. ¡Nunca me sentí tan motivada!"</p>
-          <span class="font-bold text-pink-500">María G.</span>
+      <form class="bg-white rounded-2xl shadow-lg p-8 space-y-6" id="contact-form">
+        <div>
+          <label class="block mb-2 font-semibold" for="name">Nombre</label>
+          <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300" type="text" id="name" name="name" required>
         </div>
-        <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center" data-aos="fade-up" data-aos-delay="100">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Testimonio 2" class="w-20 h-20 rounded-full mb-4">
-          <p class="text-gray-700 italic mb-4">"El acompañamiento y la rutina personalizada hicieron la diferencia. ¡Recomendado!"</p>
-          <span class="font-bold text-pink-500">Carlos R.</span>
+        <div>
+          <label class="block mb-2 font-semibold" for="email">Email</label>
+          <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300" type="email" id="email" name="email" required>
         </div>
-        <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
-          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Testimonio 3" class="w-20 h-20 rounded-full mb-4">
-          <p class="text-gray-700 italic mb-4">"No solo bajé de peso, sino que gané confianza y energía. ¡Gracias por todo!"</p>
-          <span class="font-bold text-pink-500">Lucía P.</span>
+        <div>
+          <label class="block mb-2 font-semibold" for="message">Mensaje</label>
+          <textarea class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300" id="message" name="message" rows="5" required></textarea>
         </div>
+        <button type="submit" class="btn-pink w-full">Enviar Mensaje</button>
+      </form>
+      <div class="mt-8 text-center text-gray-700">
+        <p><i class="fab fa-instagram"></i> Instagram: <span class="ml-2">@elyfit</span></p>
+        <p><i class="fab fa-telegram"></i> Telegram: <span class="ml-2">+849 502 1730</span></p>
+        <p><i class="fas fa-envelope"></i> Email: <span class="ml-2">info@elyfit.com</span></p>
       </div>
     </div>
   </section>
@@ -80,5 +83,12 @@
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>AOS.init({ duration: 800, once: true, offset: 100, easing: 'ease-out-cubic' });</script>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('¡Mensaje enviado! Pronto me pondré en contacto contigo.');
+      this.reset();
+    });
+  </script>
 </body>
 </html> 
