@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Transforma tu cuerpo, potencia tu mente</title>
+  <title>ElyFit - Transforma tu cuerpo, potencia tu mente</title>
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="img/dumbbell-favicon.png">
@@ -25,330 +25,134 @@
       emailjs.init("poRtU7QHXPMl7JQZh");
     })();
   </script>
+  <style>
+    body { font-family: 'Montserrat', sans-serif; }
+    .hero-overlay { background: linear-gradient(90deg, #a78bfaee 0%, #c4b5fdcc 100%); position: absolute; inset: 0; z-index: 1; }
+    .pink-section { background: linear-gradient(90deg, #a78bfa 0%, #c4b5fd 100%); }
+    .stat { font-size: 2.5rem; font-weight: bold; color: #fff; }
+    .stat-label { color: #fff; font-size: 1rem; }
+    .section-title { color: #7c3aed; font-weight: 700; }
+    .card-img { width: 100%; height: 180px; object-fit: cover; border-radius: 1rem 1rem 0 0; }
+    .discount-section { background: linear-gradient(90deg, #a78bfa 0%, #c4b5fd 100%); color: #fff; }
+    .footer-contact { background: #18181b; color: #fff; border-radius: 1rem; }
+    .footer-contact i { color: #a78bfa; }
+    .btn-pink { background: #f472b6; color: #fff; border-radius: 9999px; padding: 0.75rem 2.5rem; font-weight: 600; transition: background 0.2s; }
+    .btn-pink:hover { background: #e879f9; }
+    .divider { width: 60px; height: 4px; background: #a78bfa; border-radius: 2px; margin: 0.5rem auto 2rem auto; }
+  </style>
 </head>
-<body class="bg-gray-900 text-white">
+<body class="bg-gray-100 text-gray-900">
   <!-- Header -->
-  <header class="header-nav fixed w-full z-50 py-4">
-    <div class="container mx-auto px-4">
-      <div class="flex items-center justify-between">
-        <div class="logo-container text-center">
-          <!-- No brand name here -->
-        </div>
-        <nav class="hidden md:block">
-          <ul class="flex space-x-8">
-            <li>
-              <a href="#entrenamientos" class="nav-link flex items-center gap-2 font-medium text-gray-300 hover:text-white transition-colors">
-                <i class="fas fa-dumbbell text-red-500"></i>
-                <span>Entrenamientos</span>
-              </a>
-            </li>
-            <li>
-              <a href="#planes" class="nav-link flex items-center gap-2 font-medium text-gray-300 hover:text-white transition-colors">
-                <i class="fas fa-crown text-red-500"></i>
-                <span>Planes</span>
-              </a>
-            </li>
-            <li>
-              <a href="testimonios.html" class="nav-link flex items-center gap-2 font-medium text-gray-300 hover:text-white transition-colors">
-                <i class="fas fa-users text-red-500"></i>
-                <span>Testimonios</span>
-              </a>
-            </li>
-            <li>
-              <a href="#contacto" class="nav-link flex items-center gap-2 font-medium text-gray-300 hover:text-white transition-colors">
-                <i class="fas fa-envelope text-red-500"></i>
-                <span>Contacto</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
+  <header class="w-full py-6 px-8 flex justify-between items-center bg-transparent absolute z-20">
+    <div class="text-2xl font-bold text-white">ElyFit.</div>
+    <nav>
+      <ul class="flex space-x-8 text-white font-medium">
+        <li><a href="#" class="hover:underline">Home</a></li>
+        <li><a href="#reto" class="hover:underline">Reto 21 Días</a></li>
+        <li><a href="#testimonios" class="hover:underline">Testimonios</a></li>
+        <li><a href="#quien" class="hover:underline">¿Quién Soy?</a></li>
+        <li><a href="#contacto" class="hover:underline">Contáctame</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero-section relative h-screen overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGhlJTIwZ3ltfGVufDB8fDB8fHww'); background-size: cover; background-position: center;">
+  <section class="relative h-screen flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=1500&q=80'); background-size: cover; background-position: center;">
     <div class="hero-overlay"></div>
-    <div class="relative z-10 h-full flex flex-col items-center justify-center text-center p-4">
-      <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6" data-aos="fade-up">TRANSFORMA TU CUERPO, POTENCIA TU MENTE</h1>
-      <p class="text-xl text-gray-300 mb-8 max-w-2xl" data-aos="fade-up" data-aos-delay="100">
-        Entrenamiento personalizado que te llevará al siguiente nivel
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 mt-8" data-aos="fade-up" data-aos-delay="200">
-        <a href="#planes" class="btn-primary text-white font-bold py-4 px-8 rounded-xl text-lg">COMENZAR AHORA</a>
-        <a href="#entrenamientos" class="bg-white text-red-500 font-bold py-4 px-8 rounded-xl hover:bg-gray-100 transition-all text-lg">VER ENTRENAMIENTOS</a>
+    <div class="relative z-10 flex flex-col items-center justify-center text-center">
+      <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-8" style="text-shadow:0 2px 8px #0008">¿Buscas El Reto?</h1>
+      <a href="#reto" class="btn-pink text-lg mt-2">¡Adquiérelo Aquí!</a>
+    </div>
+  </section>
+
+  <!-- ¿Cómo Oriento? -->
+  <section class="pink-section py-20" id="reto">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-12">
+      <div class="flex-1">
+        <h2 class="text-4xl font-bold mb-4 section-title text-white">¿Cómo Oriento?</h2>
+        <p class="text-white text-lg mb-10">Accesoria 24/7 mediante al grupo motivacional, donde conocerás personas nuevas con las mismas metas que tú.</p>
+        <div class="flex flex-row justify-center items-center gap-12 mb-8">
+          <div class="stat text-center">
+            720
+            <div class="stat-label">Clientes Satisfechos</div>
+          </div>
+          <div class="stat text-center">
+            3
+            <div class="stat-label">Años De Experiencia</div>
+          </div>
+          <div class="stat text-center">
+            100%
+            <div class="stat-label">Efectividad</div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-1 flex justify-center">
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Mujer fitness de espaldas" class="rounded-2xl shadow-xl w-80 h-96 object-cover" />
       </div>
     </div>
   </section>
 
-  <!-- Entrenamientos Section -->
-  <section id="entrenamientos" class="py-20 bg-gray-800">
+  <!-- ¿Qué Incluye El Reto? -->
+  <section class="bg-gray-100 py-20" id="incluye">
     <div class="container mx-auto px-4">
-      <h2 class="text-4xl md:text-5xl font-bold gradient-text text-center mb-12" data-aos="fade-up">ENTRENAMIENTOS</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        <!-- Entrenamiento 1 -->
-        <div class="card rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-          <div class="p-8">
-            <div class="w-16 h-16 bg-red-900 rounded-full flex items-center justify-center mb-6 mx-auto">
-              <i class="fas fa-fire text-2xl text-red-500"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-center mb-4 text-white">HIIT</h3>
-            <p class="text-gray-300 text-center">Entrenamiento de alta intensidad que quema grasa y mejora tu resistencia cardiovascular.</p>
+      <h2 class="text-4xl font-bold text-center mb-2 section-title">¿Qué Incluye El Reto?</h2>
+      <div class="divider"></div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+          <img src="https://cdn.dymatize.com/a/blog/_1200x630_crop_center-center_82_none/Gui%CC%81a-de-alimentacio%CC%81n-fitness-saludable-y-fuerte.jpg?mtime=1702431624" alt="Guía de Alimentación" class="card-img" />
+          <div class="p-6">
+            <h3 class="font-bold text-lg mb-2">Guía De Alimentación</h3>
+            <p>El consumo de una alimentación adecuada y completa ayudará mucho con el reto ya que es bien importante para nuestra salud física.</p>
           </div>
         </div>
-        
-        <!-- Entrenamiento 2 -->
-        <div class="card rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-          <div class="p-8">
-            <div class="w-16 h-16 bg-red-900 rounded-full flex items-center justify-center mb-6 mx-auto">
-              <i class="fas fa-dumbbell text-2xl text-red-500"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-center mb-4 text-white">Fuerza</h3>
-            <p class="text-gray-300 text-center">Desarrolla músculo y aumenta tu fuerza con ejercicios compuestos y progresivos.</p>
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+          <img src="https://templodelfitness.com/wp-content/uploads/2024/08/Rutinas-de-Gimnasio-para-Mujeres-con-Maquinas.jpg" alt="Rutina de Ejercicios" class="card-img" />
+          <div class="p-6">
+            <h3 class="font-bold text-lg mb-2">Rutina De Ejercicios</h3>
+            <p>Obtendrás tu rutina para realizar los ejercicios desde Casa o GYM.</p>
           </div>
         </div>
-        
-        <!-- Entrenamiento 3 -->
-        <div class="card rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-          <div class="p-8">
-            <div class="w-16 h-16 bg-red-900 rounded-full flex items-center justify-center mb-6 mx-auto">
-              <i class="fas fa-heartbeat text-2xl text-red-500"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-center mb-4 text-white">Cardio</h3>
-            <p class="text-gray-300 text-center">Mejora tu condición física y quema calorías con rutinas dinámicas y efectivas.</p>
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80" alt="Consejos Motivacionales" class="card-img" />
+          <div class="p-6">
+            <h3 class="font-bold text-lg mb-2">Consejos Motivacionales</h3>
+            <p>Los consejos motivacionales usualmente los comparto porque ayudan a mantener un enfoque que es por lo que estas aquí ;)</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden md:col-span-2">
+          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80" alt="Asistencia Inmediata" class="card-img" />
+          <div class="p-6">
+            <h3 class="font-bold text-lg mb-2">Asistencia Inmediata</h3>
+            <p>Te ayudaré de forma inmediata con cualquier duda o pregunta que tengas.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Planes Section -->
-  <section id="planes" class="py-20 bg-gray-900">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl md:text-5xl font-bold gradient-text text-center mb-12" data-aos="fade-up">PLANES</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        <!-- Plan Básico -->
-        <div class="card rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-          <div class="p-8">
-            <div class="w-16 h-16 bg-red-900 rounded-full flex items-center justify-center mb-6 mx-auto">
-              <i class="fas fa-star text-2xl text-red-500"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-center mb-4 text-white">Básico</h3>
-            <ul class="text-gray-300 space-y-4 mb-8">
-              <li class="flex items-center gap-2">
-                <i class="fas fa-check text-red-500"></i>
-                <span>2 sesiones semanales</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <i class="fas fa-check text-red-500"></i>
-                <span>Rutina personalizada</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <i class="fas fa-check text-red-500"></i>
-                <span>Acceso a la app</span>
-              </li>
-            </ul>
-            <a href="#contacto" class="btn-primary text-white font-bold py-3 px-6 rounded-xl text-lg w-full block text-center">COMENZAR</a>
-          </div>
-        </div>
-
-        <!-- Plan Pro -->
-        <div class="card rounded-2xl overflow-hidden transform scale-105" data-aos="fade-up" data-aos-delay="200">
-          <div class="p-8">
-            <div class="w-16 h-16 bg-red-900 rounded-full flex items-center justify-center mb-6 mx-auto">
-              <i class="fas fa-crown text-2xl text-red-500"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-center mb-4 text-white">Pro</h3>
-            <ul class="text-gray-300 space-y-4 mb-8">
-              <li class="flex items-center gap-2">
-                <i class="fas fa-check text-red-500"></i>
-                <span>4 sesiones semanales</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <i class="fas fa-check text-red-500"></i>
-                <span>Rutina personalizada</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <i class="fas fa-check text-red-500"></i>
-                <span>Acceso a la app</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <i class="fas fa-check text-red-500"></i>
-                <span>Asesoría nutricional</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <i class="fas fa-check text-red-500"></i>
-                <span>Acceso a clases grupales</span>
-              </li>
-            </ul>
-            <a href="#contacto" class="btn-primary text-white font-bold py-3 px-6 rounded-xl text-lg w-full block text-center">COMENZAR</a>
-          </div>
-        </div>
-
-        <!-- Plan Elite -->
-        <div class="card rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-          <div class="p-8">
-            <div class="w-16 h-16 bg-red-900 rounded-full flex items-center justify-center mb-6 mx-auto">
-              <i class="fas fa-trophy text-2xl text-red-500"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-center mb-4 text-white">Elite</h3>
-            <ul class="text-gray-300 space-y-4 mb-8">
-              <li class="flex items-center gap-2">
-                <i class="fas fa-check text-red-500"></i>
-                <span>Sesiones ilimitadas</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <i class="fas fa-check text-red-500"></i>
-                <span>Rutina personalizada</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <i class="fas fa-check text-red-500"></i>
-                <span>Acceso a la app</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <i class="fas fa-check text-red-500"></i>
-                <span>Asesoría nutricional</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <i class="fas fa-check text-red-500"></i>
-                <span>Acceso a todas las clases</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <i class="fas fa-check text-red-500"></i>
-                <span>Entrenador personal</span>
-              </li>
-            </ul>
-            <a href="#contacto" class="btn-primary text-white font-bold py-3 px-6 rounded-xl text-lg w-full block text-center">COMENZAR</a>
-          </div>
-        </div>
+  <!-- Descuento -->
+  <section class="discount-section py-16">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">¡30% De Descuento En Octubre!</h2>
+        <p class="text-lg mb-4">No estas tan lejos de conseguirlo, cliquea el botón "¡Adquirirlo Ya!" para poder proceder con el Reto 21 días.</p>
       </div>
+      <a href="#" class="btn-pink text-lg mt-4 md:mt-0">¡Adquirirlo Ya!</a>
     </div>
   </section>
-
-  <!-- Contacto Section -->
-  <section id="contacto" class="py-20 bg-gray-800">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl md:text-5xl font-bold gradient-text text-center mb-12" data-aos="fade-up">CONTACTO</h2>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div data-aos="fade-right">
-          <h3 class="text-2xl font-bold mb-6 text-red-500">¡ÚNETE A NOSOTROS!</h3>
-          <form id="plan-form" class="bg-gray-900 rounded-2xl p-8 space-y-6" onsubmit="return sendEmail(event)">
-            <div>
-              <label for="nombre" class="block text-gray-300 font-medium mb-2">Nombre completo</label>
-              <input type="text" id="nombre" name="nombre" required class="w-full px-4 py-3 rounded-xl">
-            </div>
-            <div>
-              <label for="email" class="block text-gray-300 font-medium mb-2">Correo electrónico</label>
-              <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl">
-            </div>
-            <div>
-              <label for="plan" class="block text-gray-300 font-medium mb-2">Plan de interés</label>
-              <select id="plan" name="plan" required class="w-full px-4 py-3 rounded-xl">
-                <option value="" disabled selected>Selecciona tu plan</option>
-                <option value="basico">Básico</option>
-                <option value="pro">Pro</option>
-                <option value="elite">Elite</option>
-              </select>
-            </div>
-            <div>
-              <label for="mensaje" class="block text-gray-300 font-medium mb-2">Mensaje</label>
-              <textarea id="mensaje" name="mensaje" rows="4" class="w-full px-4 py-3 rounded-xl"></textarea>
-            </div>
-            <div class="text-center">
-              <button type="submit" class="btn-primary text-white font-bold py-4 px-8 rounded-xl text-lg w-full">
-                <span>ENVIAR SOLICITUD</span>
-                <span class="loading-spinner hidden"></span>
-              </button>
-            </div>
-            <div id="form-message" class="hidden mt-4 p-4 rounded-xl text-center"></div>
-          </form>
-        </div>
-        
-        <div data-aos="fade-left" class="flex flex-col justify-between">
-          <div>
-            <h3 class="text-2xl font-bold mb-6 text-red-500">INFORMACIÓN</h3>
-            <div class="space-y-6">
-              <div class="flex items-start">
-                <div class="w-12 h-12 bg-red-900 rounded-full flex items-center justify-center">
-                  <i class="fas fa-phone text-red-500"></i>
-                </div>
-                <div class="ml-4">
-                  <h4 class="font-bold text-white">Teléfono</h4>
-                  <p class="text-gray-300">+849 502 1730</p>
-                </div>
-              </div>
-              <div class="flex items-start">
-                <div class="w-12 h-12 bg-red-900 rounded-full flex items-center justify-center">
-                  <i class="fas fa-envelope text-red-500"></i>
-                </div>
-                <div class="ml-4">
-                  <h4 class="font-bold text-white">Email</h4>
-                  <p class="text-gray-300">info@eliteforce.com</p>
-                </div>
-              </div>
-              <div class="flex items-start">
-                <div class="w-12 h-12 bg-red-900 rounded-full flex items-center justify-center">
-                  <i class="fas fa-map-marker-alt text-red-500"></i>
-                </div>
-                <div class="ml-4">
-                  <h4 class="font-bold text-white">Ubicación</h4>
-                  <p class="text-gray-300">Santiago, Rep. Dom.<br>Clases virtuales disponibles</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="mt-12">
-            <h3 class="text-2xl font-bold mb-6 text-red-500">SÍGUENOS</h3>
-            <div class="flex space-x-4">
-              <a href="javascript:void(0)" class="social-icon w-12 h-12 rounded-full flex items-center justify-center text-white">
-                <i class="fab fa-instagram text-xl"></i>
-              </a>
-              <a href="javascript:void(0)" class="social-icon w-12 h-12 rounded-full flex items-center justify-center text-white">
-                <i class="fab fa-tiktok text-xl"></i>
-              </a>
-              <a href="javascript:void(0)" class="social-icon w-12 h-12 rounded-full flex items-center justify-center text-white">
-                <i class="fab fa-youtube text-xl"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Notification -->
-  <div id="notification" class="fixed top-20 right-4 p-4 rounded-xl shadow-lg max-w-md transform translate-x-full transition-transform duration-300 z-50"></div>
 
   <!-- Footer -->
-  <footer class="bg-black text-white pt-12 pb-6">
+  <footer class="py-10 bg-gray-900 text-white">
     <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-        <div>
-          <!-- No brand name here -->
-          <p class="text-gray-400">Transformando vidas a través del fitness personalizado.</p>
-        </div>
-        <div>
-          <h4 class="text-lg font-bold mb-4 text-white">ENLACES</h4>
-          <ul class="space-y-2">
-            <li><a href="#entrenamientos" class="text-gray-400 hover:text-white transition-colors">Entrenamientos</a></li>
-            <li><a href="#planes" class="text-gray-400 hover:text-white transition-colors">Planes</a></li>
-            <li><a href="testimonios.html" class="text-gray-400 hover:text-white transition-colors">Testimonios</a></li>
-            <li><a href="#contacto" class="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-lg font-bold mb-4 text-white">LEGAL</h4>
-          <ul class="space-y-2">
-            <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Términos y condiciones</a></li>
-            <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Política de privacidad</a></li>
-          </ul>
-        </div>
+      <div class="footer-contact flex flex-col md:flex-row justify-between items-center p-6 mb-6 gap-6">
+        <div class="flex items-center gap-2"><i class="fab fa-instagram"></i> Instagram <span class="ml-2">@elyfit</span></div>
+        <div class="flex items-center gap-2"><i class="fab fa-telegram"></i> Escribir al Telegram <span class="ml-2">+849 502 1730</span></div>
+        <div class="flex items-center gap-2"><i class="fas fa-envelope"></i> Para más Info <span class="ml-2">info@elyfit.com</span></div>
+        <div class="flex items-center gap-2"><i class="fas fa-clock"></i> Asistencia <span class="ml-2">24 Horas</span></div>
       </div>
-      
-      <div class="text-center text-gray-500 text-sm">
-        <p>&copy; 2025 EliteForce. Todos los derechos reservados.</p>
+      <div class="text-center text-gray-400 text-sm">
+        <p>&copy; 2024 ElyFit. Todos los derechos reservados.</p>
+        <p>ElyFit made by Alexander Lorenzo</p>
       </div>
     </div>
   </footer>
@@ -357,7 +161,7 @@
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   
   <script>
-    // Initialize AOS with enhanced settings
+    // Initialize AOS
     AOS.init({
       duration: 800,
       once: true,
@@ -365,7 +169,7 @@
       easing: 'ease-out-cubic'
     });
 
-    // Enhanced header scroll effect
+    // Header scroll effect
     window.addEventListener('scroll', function() {
       const header = document.querySelector('.header-nav');
       const heroSection = document.querySelector('.hero-section');
@@ -378,171 +182,6 @@
         header.classList.remove('scrolled');
         heroSection.classList.remove('scrolled');
       }
-
-      // Parallax effect for hero section
-      const parallaxElements = document.querySelectorAll('.parallax');
-      parallaxElements.forEach(element => {
-        const speed = element.dataset.speed || 0.5;
-        element.style.setProperty('--parallax-offset', `${scrollPosition * speed}px`);
-      });
-    });
-
-    // Enhanced section transitions
-    const sections = document.querySelectorAll('section');
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          // Add staggered animation to child elements
-          const children = entry.target.querySelectorAll('.animate-stagger');
-          children.forEach((child, index) => {
-            child.style.animationDelay = `${index * 0.1}s`;
-          });
-        }
-      });
-    }, observerOptions);
-
-    sections.forEach(section => {
-      section.classList.add('section-transition');
-      observer.observe(section);
-    });
-
-    // Enhanced notification system
-    function showNotification(message, isSuccess = true) {
-      const notification = document.getElementById('notification');
-      notification.textContent = message;
-      notification.className = isSuccess 
-        ? 'fixed top-20 right-4 p-4 rounded-xl shadow-lg max-w-md success-message z-50' 
-        : 'fixed top-20 right-4 p-4 rounded-xl shadow-lg max-w-md error-notification z-50';
-      
-      notification.style.transform = 'translateX(0)';
-      
-      setTimeout(() => {
-        notification.style.transform = 'translateX(100%)';
-      }, 5000);
-    }
-
-    // Enhanced form validations with animations
-    const planForm = document.getElementById('plan-form');
-    planForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const submitBtn = this.querySelector('button[type="submit"]');
-      const loadingSpinner = submitBtn.querySelector('.loading-spinner');
-      
-      submitBtn.disabled = true;
-      submitBtn.querySelector('span:not(.loading-spinner)').classList.add('hidden');
-      loadingSpinner.classList.remove('hidden');
-      
-      // Simulate API call with enhanced animation
-      setTimeout(() => {
-        submitBtn.disabled = false;
-        submitBtn.querySelector('span:not(.loading-spinner)').classList.remove('hidden');
-        loadingSpinner.classList.add('hidden');
-        
-        showNotification('¡Solicitud enviada con éxito! Pronto nos pondremos en contacto contigo.');
-        planForm.reset();
-        
-        // Add success animation to form
-        planForm.classList.add('animate-success');
-        setTimeout(() => planForm.classList.remove('animate-success'), 1000);
-      }, 1500);
-    });
-
-    // Enhanced smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-          const headerHeight = document.querySelector('.header-nav').offsetHeight;
-          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-          
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-
-          // Add highlight effect to target section
-          targetElement.classList.add('highlight-section');
-          setTimeout(() => targetElement.classList.remove('highlight-section'), 1000);
-        }
-      });
-    });
-
-    // Enhanced email sending with animations
-    function sendEmail(e) {
-      e.preventDefault();
-      
-      const form = document.getElementById('plan-form');
-      const loadingSpinner = form.querySelector('.loading-spinner');
-      const formMessage = document.getElementById('form-message');
-      
-      loadingSpinner.classList.remove('hidden');
-      
-      const templateParams = {
-        from_name: document.getElementById('nombre').value,
-        from_email: document.getElementById('email').value,
-        plan: document.getElementById('plan').value,
-        mensaje: document.getElementById('mensaje').value
-      };
-
-      emailjs.send('service_04f13sv', 'template_mii5xos', templateParams)
-        .then(function(response) {
-          formMessage.classList.remove('hidden', 'bg-red-100', 'text-red-700');
-          formMessage.classList.add('bg-green-100', 'text-green-700');
-          formMessage.textContent = '¡Solicitud enviada con éxito! Nos pondremos en contacto contigo pronto.';
-          
-          form.reset();
-          
-          // Add success animation
-          form.classList.add('animate-success');
-          setTimeout(() => form.classList.remove('animate-success'), 1000);
-        })
-        .catch(function(error) {
-          formMessage.classList.remove('hidden', 'bg-green-100', 'text-green-700');
-          formMessage.classList.add('bg-red-100', 'text-red-700');
-          formMessage.textContent = 'Hubo un error al enviar la solicitud. Por favor, intenta nuevamente.';
-          
-          // Add error shake animation
-          form.classList.add('animate-error');
-          setTimeout(() => form.classList.remove('animate-error'), 1000);
-        })
-        .finally(function() {
-          loadingSpinner.classList.add('hidden');
-        });
-
-      return false;
-    }
-
-    // Add hover effects to cards
-    document.querySelectorAll('.card').forEach(card => {
-      card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px) scale(1.02)';
-      });
-      
-      card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-      });
-    });
-
-    // Add parallax effect to hero section
-    const heroSection = document.querySelector('.hero-section');
-    window.addEventListener('mousemove', function(e) {
-      const { clientX, clientY } = e;
-      const { left, top, width, height } = heroSection.getBoundingClientRect();
-      const x = (clientX - left) / width;
-      const y = (clientY - top) / height;
-      
-      heroSection.style.transform = `perspective(1000px) rotateX(${(y - 0.5) * 5}deg) rotateY(${(x - 0.5) * 5}deg)`;
     });
   </script>
 </body>

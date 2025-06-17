@@ -1,22 +1,22 @@
 :root {
-  --color-primary: #000000;
-  --color-secondary: #FF4D4D;
-  --color-accent: #FFD700;
-  --color-dark: #111111;
-  --color-gray-800: #1F2937;
-  --color-gray-700: #374151;
-  --color-gray-600: #4B5563;
-  --color-gray-300: #D1D5DB;
-  --color-darker: #0A0A0A;
+  --color-primary: #8B5CF6;  /* Pastel purple */
+  --color-secondary: #A78BFA; /* Lighter purple */
+  --color-accent: #C4B5FD;   /* Very light purple */
+  --color-dark: #1E1B4B;     /* Deep purple */
+  --color-gray-800: #312E81; /* Dark purple */
+  --color-gray-700: #4338CA; /* Medium purple */
+  --color-gray-600: #6366F1; /* Bright purple */
+  --color-gray-300: #E0E7FF; /* Light purple */
+  --color-darker: #0F172A;   /* Very dark purple */
   --color-light: #FFFFFF;
-  --color-gray: #1F1F1F;
-  --color-gray-light: #2D2D2D;
-  --color-gray-lighter: #3D3D3D;
-  --gradient-primary: linear-gradient(135deg, var(--color-secondary) 0%, #FF6B6B 100%);
+  --color-gray: #312E81;
+  --color-gray-light: #4338CA;
+  --color-gray-lighter: #6366F1;
+  --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
   --gradient-dark: linear-gradient(135deg, var(--color-dark) 0%, var(--color-darker) 100%);
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 2px 4px rgba(139, 92, 246, 0.1);
+  --shadow-md: 0 4px 6px rgba(139, 92, 246, 0.1);
+  --shadow-lg: 0 10px 15px rgba(139, 92, 246, 0.1);
   --transition: all 0.3s ease;
 }
 
@@ -30,7 +30,7 @@ body {
 }
 
 .gradient-bg {
-  background: linear-gradient(135deg, #340068, #5f00e0, #d4a3b7); /* Deep, sophisticated purple-blue to soft lavender-rose gradient */
+  background: linear-gradient(135deg, #8B5CF6, #A78BFA, #C4B5FD);
   background-size: 300% 300%;
   animation: gradient-animation 10s ease infinite;
 }
@@ -91,7 +91,7 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(45deg, var(--color-secondary), #FF6B6B);
+  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -105,7 +105,7 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, #FF6B6B, var(--color-secondary));
+  background: linear-gradient(45deg, var(--color-secondary), var(--color-primary));
   transition: all 0.4s ease;
   z-index: -1;
 }
@@ -143,8 +143,8 @@ body {
 
 .social-icon:hover {
   transform: translateY(-5px) rotate(8deg);
-  background: var(--color-secondary);
-  border-color: var(--color-secondary);
+  background: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 @keyframes gradient-animation {
@@ -206,10 +206,10 @@ body {
 
 /* Header Styles */
 .logo-container h1 {
-  background: linear-gradient(90deg, #9333ea, #7e22ce);
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  text-shadow: 2px 2px 4px rgba(139, 92, 246, 0.1);
 }
 
 /* Form Input Focus */
