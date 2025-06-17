@@ -1,67 +1,165 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ElyFit - Transforma tu cuerpo, potencia tu mente</title>
-  
+
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="img/dumbbell-favicon.png">
+  <link rel="icon" type="image/png" href="imagenes/ely-fitness-favicon.png">
 
   <!-- CDNs -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
-  
+
   <!-- EmailJS -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script type="text/javascript">
-    (function() {
+    (function () {
       emailjs.init("poRtU7QHXPMl7JQZh");
     })();
   </script>
   <style>
-    body { font-family: 'Montserrat', sans-serif; }
-    .hero-overlay { background: linear-gradient(90deg, #a78bfaee 0%, #c4b5fdcc 100%); position: absolute; inset: 0; z-index: 1; }
-    .pink-section { background: linear-gradient(90deg, #a78bfa 0%, #c4b5fd 100%); }
-    .stat { font-size: 2.5rem; font-weight: bold; color: #fff; }
-    .stat-label { color: #fff; font-size: 1rem; }
-    .section-title { color: #7c3aed; font-weight: 700; }
-    .card-img { width: 100%; height: 180px; object-fit: cover; border-radius: 1rem 1rem 0 0; }
-    .discount-section { background: linear-gradient(90deg, #a78bfa 0%, #c4b5fd 100%); color: #fff; }
-    .footer-contact { background: #18181b; color: #fff; border-radius: 1rem; }
-    .footer-contact i { color: #a78bfa; }
-    .btn-pink { background: #f472b6; color: #fff; border-radius: 9999px; padding: 0.75rem 2.5rem; font-weight: 600; transition: background 0.2s; }
-    .btn-pink:hover { background: #e879f9; }
-    .divider { width: 60px; height: 4px; background: #a78bfa; border-radius: 2px; margin: 0.5rem auto 2rem auto; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .hero-overlay {
+      background: linear-gradient(90deg, #a78bfaee 0%, #c4b5fdcc 100%);
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .pink-section {
+      background: linear-gradient(90deg, #a78bfa 0%, #c4b5fd 100%);
+    }
+
+    .stat {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .stat-label {
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .section-title {
+      color: #7c3aed;
+      font-weight: 700;
+    }
+
+    .card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 1rem 1rem 0 0;
+    }
+
+    .discount-section {
+      background: linear-gradient(90deg, #a78bfa 0%, #c4b5fd 100%);
+      color: #fff;
+    }
+
+    .footer-contact {
+      background: #18181b;
+      color: #fff;
+      border-radius: 1rem;
+    }
+
+    .footer-contact i {
+      color: #a78bfa;
+    }
+
+    .btn-pink {
+      background: #f472b6;
+      color: #fff;
+      border-radius: 9999px;
+      padding: 0.75rem 2.5rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .btn-pink:hover {
+      background: #e879f9;
+    }
+
+    .divider {
+      width: 60px;
+      height: 4px;
+      background: #a78bfa;
+      border-radius: 2px;
+      margin: 0.5rem auto 2rem auto;
+    }
+
+    @keyframes slide-in-left {
+      0% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .animate-slide-in-left {
+      animation: slide-in-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
   </style>
 </head>
+
 <body class="bg-gray-100 text-gray-900">
   <!-- Header -->
-  <header class="w-full py-6 px-8 flex justify-between items-center bg-transparent absolute z-20">
-    <div class="text-2xl font-bold text-white">ElyFit.</div>
-    <nav>
-      <ul class="flex space-x-8 text-white font-medium">
-        <li><a href="#" class="hover:underline">Home</a></li>
-        <li><a href="#reto" class="hover:underline">Reto 21 Días</a></li>
-        <li><a href="#testimonios" class="hover:underline">Testimonios</a></li>
-        <li><a href="#quien" class="hover:underline">¿Quién Soy?</a></li>
-        <li><a href="#contacto" class="hover:underline">Contáctame</a></li>
-      </ul>
-    </nav>
+  <header class="w-full py-6 px-4 md:px-8 bg-gradient-to-r from-purple-400 to-purple-200 shadow-md relative z-20">
+    <div class="flex justify-between items-center">
+      <div class="text-2xl font-bold text-white">ElyFit.</div>
+      <!-- Botón hamburguesa -->
+      <button id="menu-btn" class="md:hidden text-white text-3xl focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
+      <!-- Menú desktop -->
+      <nav class="hidden md:block">
+        <ul class="flex space-x-8 text-white font-medium items-center">
+          <li><a href="index.html" class="hover:underline">Home</a></li>
+          <li><a href="retos.html" class="hover:underline">Reto 21 Días</a></li>
+          <li><a href="testimonios.html" class="hover:underline">Testimonios</a></li>
+          <li><a href="index.html#quien" class="hover:underline">¿Quién Soy?</a></li>
+          <li><a href="index.html#contacto" class="hover:underline">Contactame</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- Menú móvil lateral -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-40 z-50 hidden">
+      <div class="bg-white w-64 h-full p-8 flex flex-col space-y-6 shadow-lg animate-slide-in-left relative">
+        <button id="close-menu" class="absolute top-4 right-4 text-2xl text-gray-700 focus:outline-none">
+          <i class="fas fa-times"></i>
+        </button>
+        <a href="index.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Home</a>
+        <a href="retos.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Reto 21 Días</a>
+        <a href="testimonios.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Testimonios</a>
+        <a href="index.html#quien" class="text-gray-900 font-medium text-lg hover:text-purple-500">¿Quién Soy?</a>
+        <a href="index.html#contacto" class="text-gray-900 font-medium text-lg hover:text-purple-500">Contactame</a>
+      </div>
+    </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="relative h-screen flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=1500&q=80'); background-size: cover; background-position: center;">
-    <div class="hero-overlay"></div>
-    <div class="relative z-10 flex flex-col items-center justify-center text-center">
-      <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-8" style="text-shadow:0 2px 8px #0008">¿Buscas El Reto?</h1>
-      <a href="#reto" class="btn-pink text-lg mt-2">¡Adquiérelo Aquí!</a>
+  <section
+    class="hero-section relative h-[450px] flex items-center justify-center bg-[url('https://uk.gymshark.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2F8urtyqugdt2l%2F1oIrMoqckYTE96ekt5ECyT%2F51471e1e09c39541c1564bc164bd9b06%2Fdesktop-how-often-to-go-to-the-gym.jpg&w=1920&q=85')] bg-cover bg-center">
+    <div class="absolute inset-0 bg-purple-700/60"></div>
+    <div class="relative z-10 text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">Bienvenido a ElyFit</h1>
+      <p class="text-lg md:text-xl text-white mb-6">¡Transforma tu vida con nuestros retos y comunidad!</p>
     </div>
   </section>
 
@@ -70,7 +168,8 @@
     <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-12">
       <div class="flex-1">
         <h2 class="text-4xl font-bold mb-4 section-title text-white">¿Cómo Oriento?</h2>
-        <p class="text-white text-lg mb-10">Accesoria 24/7 mediante al grupo motivacional, donde conocerás personas nuevas con las mismas metas que tú.</p>
+        <p class="text-white text-lg mb-10">Accesoria 24/7 mediante al grupo motivacional, donde conocerás personas
+          nuevas con las mismas metas que tú.</p>
         <div class="flex flex-row justify-center items-center gap-12 mb-8">
           <div class="stat text-center">
             720
@@ -87,7 +186,8 @@
         </div>
       </div>
       <div class="flex-1 flex justify-center">
-        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Mujer fitness de espaldas" class="rounded-2xl shadow-xl w-80 h-96 object-cover" />
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80"
+          alt="Mujer fitness de espaldas" class="rounded-2xl shadow-xl w-80 h-96 object-cover" />
       </div>
     </div>
   </section>
@@ -99,28 +199,36 @@
       <div class="divider"></div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
         <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <img src="https://cdn.dymatize.com/a/blog/_1200x630_crop_center-center_82_none/Gui%CC%81a-de-alimentacio%CC%81n-fitness-saludable-y-fuerte.jpg?mtime=1702431624" alt="Guía de Alimentación" class="card-img" />
+          <img
+            src="https://cdn.dymatize.com/a/blog/_1200x630_crop_center-center_82_none/Gui%CC%81a-de-alimentacio%CC%81n-fitness-saludable-y-fuerte.jpg?mtime=1702431624"
+            alt="Guía de Alimentación" class="card-img" />
           <div class="p-6">
             <h3 class="font-bold text-lg mb-2">Guía De Alimentación</h3>
-            <p>El consumo de una alimentación adecuada y completa ayudará mucho con el reto ya que es bien importante para nuestra salud física.</p>
+            <p>El consumo de una alimentación adecuada y completa ayudará mucho con el reto ya que es bien importante
+              para nuestra salud física.</p>
           </div>
         </div>
         <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <img src="https://templodelfitness.com/wp-content/uploads/2024/08/Rutinas-de-Gimnasio-para-Mujeres-con-Maquinas.jpg" alt="Rutina de Ejercicios" class="card-img" />
+          <img
+            src="https://templodelfitness.com/wp-content/uploads/2024/08/Rutinas-de-Gimnasio-para-Mujeres-con-Maquinas.jpg"
+            alt="Rutina de Ejercicios" class="card-img" />
           <div class="p-6">
             <h3 class="font-bold text-lg mb-2">Rutina De Ejercicios</h3>
             <p>Obtendrás tu rutina para realizar los ejercicios desde Casa o GYM.</p>
           </div>
         </div>
         <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80" alt="Consejos Motivacionales" class="card-img" />
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80"
+            alt="Consejos Motivacionales" class="card-img" />
           <div class="p-6">
             <h3 class="font-bold text-lg mb-2">Consejos Motivacionales</h3>
-            <p>Los consejos motivacionales usualmente los comparto porque ayudan a mantener un enfoque que es por lo que estas aquí ;)</p>
+            <p>Los consejos motivacionales usualmente los comparto porque ayudan a mantener un enfoque que es por lo que
+              estas aquí ;)</p>
           </div>
         </div>
         <div class="bg-white rounded-2xl shadow-lg overflow-hidden md:col-span-2">
-          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80" alt="Asistencia Inmediata" class="card-img" />
+          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80"
+            alt="Asistencia Inmediata" class="card-img" />
           <div class="p-6">
             <h3 class="font-bold text-lg mb-2">Asistencia Inmediata</h3>
             <p>Te ayudaré de forma inmediata con cualquier duda o pregunta que tengas.</p>
@@ -135,7 +243,8 @@
     <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
       <div>
         <h2 class="text-3xl md:text-4xl font-bold mb-4">¡30% De Descuento En Octubre!</h2>
-        <p class="text-lg mb-4">No estas tan lejos de conseguirlo, cliquea el botón "¡Adquirirlo Ya!" para poder proceder con el Reto 21 días.</p>
+        <p class="text-lg mb-4">No estas tan lejos de conseguirlo, cliquea el botón "¡Adquirirlo Ya!" para poder
+          proceder con el Reto 21 días.</p>
       </div>
       <a href="#" class="btn-pink text-lg mt-4 md:mt-0">¡Adquirirlo Ya!</a>
     </div>
@@ -145,10 +254,14 @@
   <footer class="py-10 bg-gray-900 text-white">
     <div class="container mx-auto px-4">
       <div class="footer-contact flex flex-col md:flex-row justify-between items-center p-6 mb-6 gap-6">
-        <div class="flex items-center gap-2"><i class="fab fa-instagram"></i> Instagram <span class="ml-2">@elyfit</span></div>
-        <div class="flex items-center gap-2"><i class="fab fa-telegram"></i> Escribir al Telegram <span class="ml-2">+849 502 1730</span></div>
-        <div class="flex items-center gap-2"><i class="fas fa-envelope"></i> Para más Info <span class="ml-2">info@elyfit.com</span></div>
-        <div class="flex items-center gap-2"><i class="fas fa-clock"></i> Asistencia <span class="ml-2">24 Horas</span></div>
+        <div class="flex items-center gap-2"><i class="fab fa-instagram"></i> Instagram <span
+            class="ml-2">@elyfit</span></div>
+        <div class="flex items-center gap-2"><i class="fab fa-telegram"></i> Escribir al Telegram <span
+            class="ml-2">+849 502 1730</span></div>
+        <div class="flex items-center gap-2"><i class="fas fa-envelope"></i> Para más Info <span
+            class="ml-2">info@elyfit.com</span></div>
+        <div class="flex items-center gap-2"><i class="fas fa-clock"></i> Asistencia <span class="ml-2">24 Horas</span>
+        </div>
       </div>
       <div class="text-center text-gray-400 text-sm">
         <p>&copy; 2024 ElyFit. Todos los derechos reservados.</p>
@@ -159,22 +272,25 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  
-  <script>
-    // Initialize AOS
-    AOS.init({
-      duration: 800,
-      once: true,
-      offset: 100,
-      easing: 'ease-out-cubic'
-    });
 
-    // Header scroll effect
-    window.addEventListener('scroll', function() {
-      const header = document.querySelector('.header-nav');
-      const heroSection = document.querySelector('.hero-section');
-      const scrollPosition = window.scrollY;
-      
+
+</body>
+<script>
+  // Initialize AOS
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 100,
+    easing: 'ease-out-cubic'
+  });
+
+  // Header scroll effect
+  window.addEventListener('scroll', function () {
+    const header = document.querySelector('.header-nav');
+    const heroSection = document.querySelector('.hero-section');
+    const scrollPosition = window.scrollY;
+
+    if (header && heroSection) {
       if (scrollPosition > 10) {
         header.classList.add('scrolled');
         heroSection.classList.add('scrolled');
@@ -182,7 +298,28 @@
         header.classList.remove('scrolled');
         heroSection.classList.remove('scrolled');
       }
+    }
+  });
+
+  // Menú hamburguesa lateral
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const closeMenu = document.getElementById('close-menu');
+
+  if (menuBtn && mobileMenu && closeMenu) {
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
     });
-  </script>
-</body>
+    closeMenu.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+    // Cerrar menú al hacer click fuera del panel
+    mobileMenu.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+  }
+</script>
+
 </html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 21 Días | ElyFit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+      <link rel="icon" type="image/png" href="imagenes/ely-fitness-favicon.png">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .day-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 32px #a78bfa55;
+        }
+
+        @keyframes slide-in-left {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .animate-slide-in-left {
+            animation: slide-in-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Header -->
+    <header class="w-full py-6 px-4 md:px-8 bg-gradient-to-r from-purple-400 to-purple-200 shadow-md relative z-20">
+        <div class="flex justify-between items-center">
+            <div class="text-2xl font-bold text-white">ElyFit.</div>
+            <!-- Botón hamburguesa -->
+            <button id="menu-btn" class="md:hidden text-white text-3xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+            <!-- Menú desktop -->
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8 text-white font-medium items-center">
+                    <li><a href="index.html" class="hover:underline">Home</a></li>
+                    <li><a href="retos.html" class="hover:underline">Reto 21 Días</a></li>
+                    <li><a href="testimonios.html" class="hover:underline">Testimonios</a></li>
+                    <li><a href="index.html#quien" class="hover:underline">¿Quién Soy?</a></li>
+                    <li><a href="index.html#contacto" class="hover:underline">Contáctame</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Menú móvil lateral -->
+        <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-40 z-50 hidden">
+            <div class="bg-white w-64 h-full p-8 flex flex-col space-y-6 shadow-lg animate-slide-in-left relative">
+                <button id="close-menu" class="absolute top-4 right-4 text-2xl text-gray-700 focus:outline-none">
+                    <i class="fas fa-times"></i>
+                </button>
+                <a href="index.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Home</a>
+                <a href="retos.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Reto 21 Días</a>
+                <a href="testimonios.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Testimonios</a>
+                <a href="index.html#quien" class="text-gray-900 font-medium text-lg hover:text-purple-500">¿Quién Soy?</a>
+                <a href="index.html#contacto" class="text-gray-900 font-medium text-lg hover:text-purple-500">Contactame</a>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        // Menú hamburguesa lateral
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+        // Cerrar menú al hacer click fuera del panel
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+
+    <!-- Hero con imagen debajo del menú -->
+    <section
+        class="relative h-56 sm:h-72 md:h-[400px] flex items-center justify-center bg-[url('https://old.bodytechperu.com/uploads/post/c619914292454736be2bace4d07e114e/alimentacion-saludable-antes-y-despues-de-entrenar_ZYuK7QQ.jpg')] bg-cover bg-center">
+        <div class="absolute inset-0 bg-purple-700/60"></div>
+        <div class="relative z-10 text-center px-2">
+            <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white mb-2 sm:mb-4 drop-shadow-lg">Reto 21
+                Días ElyFit</h1>
+            <p class="text-base sm:text-lg md:text-xl text-white mb-2 sm:mb-6">¡Transforma tu cuerpo y mente con
+                rutinas, alimentación y comunidad!</p>
+        </div>
+    </section>
+
+    <!-- Selección de objetivo -->
+    <section class="py-8 sm:py-12 bg-white">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-purple-700 mb-4">¿Cuál es tu objetivo?</h2>
+            <div class="flex flex-col md:flex-row justify-center gap-4 sm:gap-8 mb-6">
+                <div
+                    class="flex-1 bg-purple-100 rounded-xl p-4 sm:p-6 shadow hover:shadow-lg transition cursor-pointer mb-4 md:mb-0">
+                    <label class="font-semibold text-purple-700 text-base sm:text-lg cursor-pointer">Bajar de
+                        Peso</label>
+                    <p class="text-gray-600 mt-2 text-sm sm:text-base">Rutinas y comidas enfocadas en la quema de grasa
+                        y definición.</p>
+                </div>
+                <div
+                    class="flex-1 bg-purple-100 rounded-xl p-4 sm:p-6 shadow hover:shadow-lg transition cursor-pointer">
+                    <label class="font-semibold text-purple-700 text-base sm:text-lg cursor-pointer">Aumentar Masa
+                        Muscular</label>
+                    <p class="text-gray-600 mt-2 text-sm sm:text-base">Entrenamientos y menú diseñados para ganar
+                        músculo y fuerza.</p>
+                </div>
+            </div>
+            <p class="text-purple-700 font-medium text-sm sm:text-base">¡Tu plan de alimentación será adaptado según tu
+                objetivo!</p>
+        </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="py-10 sm:py-16 bg-gradient-to-r from-purple-100 to-pink-100">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center text-purple-700 mb-6 sm:mb-10">¿Qué incluye el reto?
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                <div class="bg-white rounded-xl p-4 sm:p-6 text-center shadow">
+                    <i class="fas fa-dumbbell text-2xl sm:text-3xl text-purple-500 mb-2 sm:mb-4"></i>
+                    <h3 class="font-bold text-base sm:text-lg mb-1 sm:mb-2">Rutinas Diarias</h3>
+                    <p class="text-sm sm:text-base">Entrenamientos guiados en video para todos los niveles, sin
+                        necesidad de gimnasio.</p>
+                </div>
+                <div class="bg-white rounded-xl p-4 sm:p-6 text-center shadow">
+                    <i class="fas fa-apple-alt text-2xl sm:text-3xl text-purple-500 mb-2 sm:mb-4"></i>
+                    <h3 class="font-bold text-base sm:text-lg mb-1 sm:mb-2">Plan de Alimentación</h3>
+                    <p class="text-sm sm:text-base">Menú semanal personalizado según tu objetivo y preferencias.</p>
+                </div>
+                <div class="bg-white rounded-xl p-4 sm:p-6 text-center shadow">
+                    <i class="fas fa-users text-2xl sm:text-3xl text-purple-500 mb-2 sm:mb-4"></i>
+                    <h3 class="font-bold text-base sm:text-lg mb-1 sm:mb-2">Comunidad y Soporte</h3>
+                    <p class="text-sm sm:text-base">Grupo privado, seguimiento diario y motivación constante.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendario visual de 21 días -->
+    <section class="py-10 sm:py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center text-purple-700 mb-6 sm:mb-10">Calendario del Reto
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 gap-2 sm:gap-4">
+                <!-- Días 1 al 21 -->
+                <div
+                    class="bg-purple-100 rounded-xl p-2 sm:p-4 text-center shadow day-card font-bold text-purple-700 text-xs sm:text-base">
+                    Día 1</div>
+                <div
+                    class="bg-purple-100 rounded-xl p-2 sm:p-4 text-center shadow day-card font-bold text-purple-700 text-xs sm:text-base">
+                    Día 2</div>
+                <div
+                    class="bg-purple-100 rounded-xl p-2 sm:p-4 text-center shadow day-card font-bold text-purple-700 text-xs sm:text-base">
+                    Día 3</div>
+                <div
+                    class="bg-purple-100 rounded-xl p-2 sm:p-4 text-center shadow day-card font-bold text-purple-700 text-xs sm:text-base">
+                    Día 4</div>
+                <div
+                    class="bg-purple-100 rounded-xl p-2 sm:p-4 text-center shadow day-card font-bold text-purple-700 text-xs sm:text-base">
+                    Día 5</div>
+                <div
+                    class="bg-purple-100 rounded-xl p-2 sm:p-4 text-center shadow day-card font-bold text-purple-700 text-xs sm:text-base">
+                    Día 6</div>
+                <div
+                    class="bg-purple-100 rounded-xl p-2 sm:p-4 text-center shadow day-card font-bold text-purple-700 text-xs sm:text-base">
+                    Día 7</div>
+                <div
+                    class="bg-purple-100 rounded-xl p-2 sm:p-4 text-center shadow day-card font-bold text-purple-700 text-xs sm:text-base">
+                    Día 8</div>
+                <div
+                    class="bg-purple-100 rounded-xl p-2 sm:p-4 text-center shadow day-card font-bold text-purple-700 text-xs sm:text-base">
+                    Día 9</div>
+                <div
+                    class="bg-purple-100 rounded-xl p-2 sm:p-4 text-center shadow day-card font-bold text-purple-700 text-xs sm:text-base">
+                    Día 10</div>
+                <div
+                    class="bg-purple-100 rounded-xl p-2 sm:p-4 text-center shadow day-card font-bold text-purple-700 text-xs sm:text-base">
+                    Día 11</div>
+                <div
+                    class="bg-purple-100 rounded-xl p-2 sm:p-4 text-center shadow day-card font-bold text-purple-700 text-xs sm:text-base">
+                    Día 12</div>
+                <div
+                    class="bg-purple-100 rounded-xl p-2 sm:p-4 text-center shadow day-card font-bold text-purple-700 text-xs sm:text-base">
+                    Día 13</div>
+                <div
+                    class="bg-purple-100 rounded-xl p-2 sm:p-4 text-center shadow day-card font-bold text-purple-700 text-xs sm:text-base">
+                    Día 14</div>
+                <div
+                    class="bg-purple-100 rounded-xl p-2 sm:p-4 text-center shadow day-card font-bold text-purple-700 text-xs sm:text-base">
+                    Día 15</div>
+                <div
+                    class="bg-purple-100 rounded-xl p-2 sm:p-4 text-center shadow day-card font-bold text-purple-700 text-xs sm:text-base">
+                    Día 16</div>
+                <div
+                    class="bg-purple-100 rounded-xl p-2 sm:p-4 text-center shadow day-card font-bold text-purple-700 text-xs sm:text-base">
+                    Día 17</div>
+                <div
+                    class="bg-purple-100 rounded-xl p-2 sm:p-4 text-center shadow day-card font-bold text-purple-700 text-xs sm:text-base">
+                    Día 18</div>
+                <div
+                    class="bg-purple-100 rounded-xl p-2 sm:p-4 text-center shadow day-card font-bold text-purple-700 text-xs sm:text-base">
+                    Día 19</div>
+                <div
+                    class="bg-purple-100 rounded-xl p-2 sm:p-4 text-center shadow day-card font-bold text-purple-700 text-xs sm:text-base">
+                    Día 20</div>
+                <div
+                    class="bg-purple-100 rounded-xl p-2 sm:p-4 text-center shadow day-card font-bold text-purple-700 text-xs sm:text-base">
+                    Día 21</div>
+            </div>
+            <p class="text-center text-purple-700 mt-4 sm:mt-8 text-xs sm:text-base">¡Marca cada día completado y
+                comparte tu avance en la comunidad ElyFit!</p>
+        </div>
+    </section>
+
+    <!-- Preguntas frecuentes -->
+    <section class="py-10 sm:py-16 bg-gradient-to-r from-purple-100 to-pink-100">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center text-purple-700 mb-6 sm:mb-10">Preguntas Frecuentes
+            </h2>
+            <div class="space-y-4 sm:space-y-6">
+                <div class="bg-white rounded-xl p-4 sm:p-6 shadow">
+                    <h3 class="font-semibold text-purple-700 mb-1 sm:mb-2">¿Necesito experiencia previa?</h3>
+                    <p class="text-gray-700 text-sm sm:text-base">No, el reto está diseñado para todos los niveles. Las
+                        rutinas tienen opciones para principiantes y avanzados.</p>
+                </div>
+                <div class="bg-white rounded-xl p-4 sm:p-6 shadow">
+                    <h3 class="font-semibold text-purple-700 mb-1 sm:mb-2">¿Qué pasa si no puedo hacer un ejercicio?
+                    </h3>
+                    <p class="text-gray-700 text-sm sm:text-base">Siempre tendrás alternativas y puedes preguntar en el
+                        grupo para recibir ayuda personalizada.</p>
+                </div>
+                <div class="bg-white rounded-xl p-4 sm:p-6 shadow">
+                    <h3 class="font-semibold text-purple-700 mb-1 sm:mb-2">¿Cómo recibo el plan de alimentación?</h3>
+                    <p class="text-gray-700 text-sm sm:text-base">Al inscribirte, te enviamos el menú adaptado a tu
+                        objetivo y preferencias.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Método de Pago y Precio -->
+    <section class="py-10 sm:py-12 bg-white">
+        <div class="max-w-xl mx-auto px-4 text-center">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-purple-700 mb-4">Precio y Método de Pago</h2>
+            <div class="mb-4 sm:mb-6">
+                <p class="text-2xl sm:text-3xl font-extrabold text-pink-500 mb-1 sm:mb-2">$20 USD</p>
+                <p class="text-lg sm:text-xl font-bold text-purple-700 mb-1 sm:mb-2">o RD$1,000</p>
+                <span class="text-gray-700 text-sm sm:text-base">Pago único por el reto completo</span>
+            </div>
+            <div class="bg-purple-100 rounded-xl p-4 sm:p-6 shadow flex flex-col items-center">
+                <img src="imagenes/image.png" alt="Banco BHD León" class="w-32 sm:w-40 mb-4 rounded-xl shadow">
+                <p class="text-base sm:text-lg font-semibold text-purple-700 mb-2">Banco BHD León</p>
+                <p class="text-gray-700 text-sm sm:text-base"><span class="font-bold">Depósito / Transferencia</span>
+                </p>
+                <p class="text-gray-700 text-sm sm:text-base"><span class="font-bold">Cuenta En Pesos (RD$):</span>
+                    1234567890</p>
+                <p class="text-gray-700 text-sm sm:text-base"><span class="font-bold">A nombre de:</span> Elianny
+                    Vásquez Morel</p>
+                <p class="text-gray-700 text-sm sm:text-base"><span class="font-bold">Tipo de cuenta:</span> Cuenta de
+                    Ahorros</p>
+                <p class="text-gray-700 mt-2 text-sm sm:text-base">Recuerden hacer la transferencia <span
+                        class="font-bold">"Pago Al Instante"</span>.</p>
+                <p class="text-gray-700 mt-2 text-sm sm:text-base">Automáticamente haya realizado el pago usted debe
+                    enviar el voucher de transferencia vía <span class="font-bold text-blue-500">Telegram</span>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inscripción -->
+    <section id="inscripcion" class="py-10 sm:py-16 bg-gradient-to-r from-pink-400 to-purple-400 text-white">
+        <div class="max-w-2xl mx-auto px-4 text-center">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4">¿Listo para comenzar?</h2>
+            <p class="mb-4 sm:mb-6 text-base sm:text-lg">Inscríbete ahora y recibe acceso inmediato al grupo, rutinas y
+                guía de alimentación personalizada.</p>
+            <a href="mailto:info@elyfit.com"
+                class="bg-white text-pink-500 font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-full shadow-lg hover:bg-pink-100 transition text-base sm:text-lg">Quiero
+                Unirme</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 sm:py-8 bg-gray-900 text-white text-center">
+        <div class="mb-2">
+            <span class="mr-2 sm:mr-4"><i class="fab fa-instagram text-pink-400"></i> @elyfit</span>
+            <span class="mr-2 sm:mr-4"><i class="fab fa-telegram text-blue-400"></i> +849 502 1730</span>
+            <span><i class="fas fa-envelope text-purple-400"></i> info@elyfit.com</span>
+        </div>
+        <p class="text-gray-400 text-xs sm:text-sm">&copy; 2025 ElyFit. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- FontAwesome CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+
+</html>
