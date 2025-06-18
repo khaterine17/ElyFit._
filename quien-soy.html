@@ -71,15 +71,29 @@
 
   <!-- ¿Quién Soy? -->
   <section class="relative py-20 bg-gradient-to-r from-purple-200 to-purple-100 flex items-center justify-center min-h-screen">
-    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 px-4">
-      <!-- Imagen Elianny -->
-      <div class="flex-1 flex justify-center">
-        <div class="w-64 h-80 md:w-80 md:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-purple-300 bg-white flex items-center justify-center">
-          <img src="imagenes/elianny.png" alt="Elianny Vásquez" class="w-full h-full object-cover rounded-2xl transition-transform duration-300 hover:scale-105">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 px-4">
+      <!-- Carrusel de imágenes Elianny -->
+      <div class="flex-1 flex flex-col items-center">
+        <div class="w-full max-w-md">
+          <div id="elianny-carousel" class="relative">
+            <div class="overflow-hidden rounded-3xl shadow-2xl border-4 border-transparent bg-gradient-to-br from-purple-300/60 to-purple-100/60">
+              <img id="elianny-img" src="imagenes/elianny/Untitled.jpg" alt="Elianny Vásquez" class="w-full h-96 md:h-[40rem] object-contain rounded-2xl transition-transform duration-700 ease-in-out" style="background: transparent; box-shadow: 0 0 40px 0 rgba(168,139,250,0.25);">
+            </div>
+            <!-- Flechas -->
+            <button onclick="eliannyPrev()" class="absolute left-2 top-1/2 -translate-y-1/2 bg-purple-500 hover:bg-purple-700 text-white rounded-full p-3 shadow-lg z-10"><i class="fas fa-chevron-left"></i></button>
+            <button onclick="eliannyNext()" class="absolute right-2 top-1/2 -translate-y-1/2 bg-purple-500 hover:bg-purple-700 text-white rounded-full p-3 shadow-lg z-10"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          <!-- Miniaturas -->
+          <div class="flex gap-4 justify-center mt-6">
+            <img src="imagenes/elianny/Untitled.jpg" onclick="eliannyGo(0)" id="elianny-thumb-0" class="w-24 h-24 md:w-28 md:h-28 object-contain rounded-xl border-4 border-transparent bg-gradient-to-br from-purple-200/60 to-purple-100/60 cursor-pointer hover:border-purple-500 transition">
+            <img src="imagenes/elianny/Untitled2.jpg" onclick="eliannyGo(1)" id="elianny-thumb-1" class="w-24 h-24 md:w-28 md:h-28 object-contain rounded-xl border-4 border-transparent bg-gradient-to-br from-purple-200/60 to-purple-100/60 cursor-pointer hover:border-purple-500 transition">
+            <img src="imagenes/elianny/Untitled3.jpg" onclick="eliannyGo(2)" id="elianny-thumb-2" class="w-24 h-24 md:w-28 md:h-28 object-contain rounded-xl border-4 border-transparent bg-gradient-to-br from-purple-200/60 to-purple-100/60 cursor-pointer hover:border-purple-500 transition">
+            <img src="imagenes/elianny/Untitled4.jpg" onclick="eliannyGo(3)" id="elianny-thumb-3" class="w-24 h-24 md:w-28 md:h-28 object-contain rounded-xl border-4 border-transparent bg-gradient-to-br from-purple-200/60 to-purple-100/60 cursor-pointer hover:border-purple-500 transition">
+          </div>
         </div>
       </div>
       <!-- Info -->
-      <div class="flex-1 flex flex-col justify-center">
+      <div class="flex-1 flex flex-col justify-center mt-10 md:mt-0">
         <h2 class="text-4xl md:text-5xl font-extrabold text-purple-700 mb-2 drop-shadow">¿Quién Soy?</h2>
         <div class="w-20 h-1 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full mb-6"></div>
         <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Elianny Vásquez</h3>
@@ -93,6 +107,65 @@
         <a href="index.html#contacto" class="inline-block mt-2 px-8 py-3 bg-gradient-to-r from-pink-400 to-purple-400 text-white font-bold rounded-full shadow-lg hover:scale-105 transition-transform">¿Estás lista para comenzar?</a>
       </div>
     </div>
+    <script>
+      const eliannyImgs = [
+        'imagenes/elianny/Untitled.jpg',
+        'imagenes/elianny/Untitled2.jpg',
+        'imagenes/elianny/Untitled3.jpg',
+        'imagenes/elianny/Untitled4.jpg',
+      ];
+      let eliannyIndex = 0;
+      let eliannyInterval = null;
+      const mainImg = document.getElementById('elianny-img');
+      function updateGlow() {
+        for (let i = 0; i < eliannyImgs.length; i++) {
+          const thumb = document.getElementById('elianny-thumb-' + i);
+          if (thumb) {
+            if (i === eliannyIndex) {
+              thumb.classList.add('ring-4', 'ring-purple-400', 'ring-opacity-60');
+            } else {
+              thumb.classList.remove('ring-4', 'ring-purple-400', 'ring-opacity-60');
+            }
+          }
+        }
+      }
+      function eliannyGo(idx) {
+        eliannyIndex = idx;
+        mainImg.classList.remove('scale-100');
+        mainImg.classList.add('scale-90');
+        setTimeout(() => {
+          mainImg.src = eliannyImgs[eliannyIndex];
+          mainImg.classList.remove('scale-90');
+          mainImg.classList.add('scale-100');
+          updateGlow();
+        }, 200);
+      }
+      function eliannyPrev() {
+        eliannyIndex = (eliannyIndex - 1 + eliannyImgs.length) % eliannyImgs.length;
+        eliannyGo(eliannyIndex);
+      }
+      function eliannyNext() {
+        eliannyIndex = (eliannyIndex + 1) % eliannyImgs.length;
+        eliannyGo(eliannyIndex);
+      }
+      function startEliannyAuto() {
+        if (eliannyInterval) clearInterval(eliannyInterval);
+        eliannyInterval = setInterval(() => {
+          eliannyNext();
+        }, 3000);
+      }
+      function stopEliannyAuto() {
+        if (eliannyInterval) clearInterval(eliannyInterval);
+      }
+      mainImg.addEventListener('mouseenter', stopEliannyAuto);
+      mainImg.addEventListener('mouseleave', startEliannyAuto);
+      document.getElementById('elianny-carousel').addEventListener('mouseenter', stopEliannyAuto);
+      document.getElementById('elianny-carousel').addEventListener('mouseleave', startEliannyAuto);
+      // Inicializa
+      mainImg.classList.add('scale-100');
+      updateGlow();
+      startEliannyAuto();
+    </script>
   </section>
 
   <!-- Footer -->
