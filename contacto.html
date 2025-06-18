@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ElyFit | Contacto</title>
+  <link rel="icon" type="image/png" href="imagenes/ely-fitness-favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-100 text-gray-900 font-montserrat">
+
+  <!-- Header -->
+  <header class="header-nav w-full py-6 px-4 md:px-8 bg-gradient-to-r from-purple-400 to-purple-200 shadow-md relative z-20">
+    <div class="flex justify-between items-center">
+      <div class="text-2xl font-bold text-white">ElyFit.</div>
+      <!-- Botón hamburguesa -->
+      <button id="menu-btn" class="md:hidden text-white text-3xl focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
+      <!-- Menú desktop -->
+      <nav class="hidden md:block">
+        <ul class="flex space-x-8 text-white font-medium items-center">
+          <li><a href="index.html" class="hover:underline">Home</a></li>
+          <li><a href="retos.html" class="hover:underline">Reto 21 Días</a></li>
+          <li><a href="testimonios.html" class="hover:underline">Testimonios</a></li>
+          <li><a href="quien-soy.html" class="hover:underline">¿Quién Soy?</a></li>
+          <li><a href="contacto.html" class="hover:underline">Contáctame</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- Menú móvil lateral -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-40 z-50 hidden">
+      <div class="bg-white w-64 h-full pt-12 p-8 flex flex-col space-y-6 shadow-lg animate-slide-in-left relative">
+        <button id="close-menu" class="absolute top-4 right-4 text-2xl text-gray-700 focus:outline-none">
+          <i class="fas fa-times"></i>
+        </button>
+        <a href="index.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Home</a>
+        <a href="retos.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Reto 21 Días</a>
+        <a href="testimonios.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Testimonios</a>
+        <a href="quien-soy.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">¿Quién Soy?</a>
+        <a href="contacto.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Contáctame</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sección de Contacto siguiendo el estilo de tu index.html -->
+  <section id="contacto" class="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-100 via-white to-blue-50 py-12 px-4">
+    <div class="w-full max-w-5xl bg-white rounded-2xl shadow-2xl flex flex-col md:flex-row overflow-hidden">
+      <!-- Lado izquierdo: info de contacto -->
+      <div class="md:w-1/2 bg-gradient-to-br from-purple-400 to-blue-400 p-10 flex flex-col justify-center text-white">
+        <h2 class="text-3xl font-extrabold mb-4">Contáctame</h2>
+        <p class="mb-8 text-lg">¿Tienes dudas o quieres iniciar tu cambio? ¡Escríbeme y te responderé lo antes posible!</p>
+        <div class="space-y-4 text-base">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-envelope text-xl"></i>
+            <span>info@elyfit.com</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <i class="fab fa-telegram text-xl"></i>
+            <span>+849 502 1730</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <i class="fab fa-instagram text-xl"></i>
+            <a href="https://instagram.com/elyfit" target="_blank" class="underline hover:text-blue-100">@elyfit</a>
+          </div>
+        </div>
+        <div class="mt-10">
+          <p class="text-sm">Horario de atención: <span class="font-semibold">24/7</span></p>
+        </div>
+      </div>
+      <!-- Lado derecho: formulario -->
+      <div class="md:w-1/2 p-10 flex flex-col justify-center bg-white">
+        <form class="space-y-6" autocomplete="off">
+          <div>
+            <label for="nombre" class="block text-gray-700 font-semibold mb-1">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-300 outline-none transition" placeholder="Tu nombre">
+          </div>
+          <div>
+            <label for="email" class="block text-gray-700 font-semibold mb-1">Correo electrónico</label>
+            <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-300 outline-none transition" placeholder="tucorreo@email.com">
+          </div>
+          <div>
+            <label for="mensaje" class="block text-gray-700 font-semibold mb-1">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-300 outline-none transition" placeholder="¿En qué puedo ayudarte?"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold py-3 rounded-lg shadow hover:from-purple-600 hover:to-blue-600 transition">Enviar mensaje</button>
+          <p class="text-sm text-gray-400 mt-2">Te responderé lo antes posible. ¡Gracias por tu interés!</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-gray-900 text-white text-center">
+    <div class="mb-2">
+      <span class="mr-4"><i class="fab fa-instagram text-pink-400"></i> @elyfit</span>
+      <span class="mr-4"><i class="fab fa-telegram text-blue-400"></i> +849 502 1730</span>
+      <span><i class="fas fa-envelope text-purple-400"></i> info@elyfit.com</span>
+    </div>
+    <p class="text-gray-400 text-sm">&copy; 2025 ElyFit. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const closeMenu = document.getElementById('close-menu');
+      if (menuBtn && mobileMenu && closeMenu) {
+        menuBtn.addEventListener('click', () => {
+          mobileMenu.classList.remove('hidden');
+        });
+        closeMenu.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+        mobileMenu.addEventListener('click', (e) => {
+          if (e.target === mobileMenu) {
+            mobileMenu.classList.add('hidden');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
