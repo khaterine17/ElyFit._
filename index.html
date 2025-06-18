@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ElyFit - Transforma tu cuerpo, potencia tu mente</title>
-
+  
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="imagenes/ely-fitness-favicon.png">
 
@@ -16,10 +16,10 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
-
+  
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
-
+  
   <!-- EmailJS -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script type="text/javascript">
@@ -147,7 +147,7 @@
           <li><a href="index.html" class="hover:underline drop-shadow">Home</a></li>
           <li><a href="retos.html" class="hover:underline drop-shadow">Reto 21 Días</a></li>
           <li><a href="testimonios.html" class="hover:underline drop-shadow">Testimonios</a></li>
-          <li><a href="index.html#quien" class="hover:underline drop-shadow">¿Quién Soy?</a></li>
+          <li><a href="quien-soy.html" class="hover:underline drop-shadow">¿Quién Soy?</a></li>
           <li><a href="index.html#contacto" class="hover:underline drop-shadow">Contáctame</a></li>
         </ul>
       </nav>
@@ -161,7 +161,7 @@
         <a href="index.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Home</a>
         <a href="retos.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Reto 21 Días</a>
         <a href="testimonios.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Testimonios</a>
-        <a href="index.html#quien" class="text-gray-900 font-medium text-lg hover:text-purple-500">¿Quién Soy?</a>
+        <a href="quien-soy.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">¿Quién Soy?</a>
         <a href="index.html#contacto" class="text-gray-900 font-medium text-lg hover:text-purple-500">Contactame</a>
       </div>
     </div>
@@ -192,11 +192,11 @@
           <div class="stat text-center">
             3
             <div class="stat-label">Años De Experiencia</div>
-          </div>
+        </div>
           <div class="stat text-center">
             100%
             <div class="stat-label">Efectividad</div>
-          </div>
+        </div>
         </div>
       </div>
       <div class="flex-1 flex justify-center">
@@ -255,7 +255,7 @@
   <!-- Descuento -->
   <section class="discount-section py-16">
     <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-      <div>
+            <div>
         <h2 class="text-3xl md:text-4xl font-bold mb-4">¡30% De Descuento En Octubre!</h2>
         <p class="text-lg mb-4">No estas tan lejos de conseguirlo, cliquea el botón "¡Adquirirlo Ya!" para poder
           proceder con el Reto 21 días.</p>
@@ -286,22 +286,22 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
+  
   <div id="page-transition" class="page-transition-overlay"></div>
 
 </body>
 <script>
-  // Initialize AOS
-  AOS.init({
-    duration: 800,
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
     once: true,
     offset: 100,
     easing: 'ease-out-cubic'
-  });
+    });
 
-  // Header scroll effect
+    // Header scroll effect
   window.addEventListener('scroll', function () {
-    const header = document.querySelector('.header-nav');
+      const header = document.querySelector('.header-nav');
     const heroSection = document.querySelector('.hero-section');
     const scrollPosition = window.scrollY;
 
@@ -354,12 +354,12 @@
     link.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
       if (href && !href.startsWith('http') && !href.startsWith('mailto:') && !href.startsWith('#')) {
-        e.preventDefault();
+      e.preventDefault();
         addPageTransition();
         setTimeout(() => { window.location.href = href; }, 500);
       }
     });
-  });
-</script>
+    });
+  </script>
 
 </html>

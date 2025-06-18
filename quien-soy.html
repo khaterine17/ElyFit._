@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ElyFit | ¿Quién Soy?</title>
+  <link rel="icon" type="image/png" href="imagenes/ely-fitness-favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-transition-overlay {
+      position: fixed;
+      inset: 0;
+      background: #fff;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 9999;
+      transition: opacity 0.5s cubic-bezier(0.4,0,0.2,1);
+    }
+    .page-transition-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <!-- Header -->
+  <header class="w-full py-6 px-4 md:px-8 bg-gradient-to-r from-purple-400 to-purple-200 shadow-md relative z-20">
+    <div class="flex justify-between items-center">
+      <div class="text-4xl font-extrabold text-white drop-shadow">ElyFit.</div>
+      <!-- Botón hamburguesa -->
+      <button id="menu-btn" class="md:hidden text-white text-3xl focus:outline-none drop-shadow">
+        <i class="fas fa-bars"></i>
+      </button>
+      <!-- Menú desktop -->
+      <nav class="hidden md:block">
+        <ul class="flex space-x-10 text-white font-bold text-xl items-center drop-shadow">
+          <li><a href="index.html" class="hover:underline drop-shadow">Home</a></li>
+          <li><a href="retos.html" class="hover:underline drop-shadow">Reto 21 Días</a></li>
+          <li><a href="testimonios.html" class="hover:underline drop-shadow">Testimonios</a></li>
+          <li><a href="quien-soy.html" class="hover:underline drop-shadow">¿Quién Soy?</a></li>
+          <li><a href="index.html#contacto" class="hover:underline drop-shadow">Contáctame</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- Menú móvil lateral -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-40 z-50 hidden">
+      <div class="bg-white w-64 h-full p-8 flex flex-col space-y-6 shadow-lg animate-slide-in-left relative">
+        <button id="close-menu" class="absolute top-4 right-4 text-2xl text-gray-700 focus:outline-none">
+          <i class="fas fa-times"></i>
+        </button>
+        <a href="index.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Home</a>
+        <a href="retos.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Reto 21 Días</a>
+        <a href="testimonios.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Testimonios</a>
+        <a href="quien-soy.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">¿Quién Soy?</a>
+        <a href="index.html#contacto" class="text-gray-900 font-medium text-lg hover:text-purple-500">Contactame</a>
+      </div>
+    </div>
+    <style>
+      @keyframes slide-in-left {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(0); }
+      }
+      .animate-slide-in-left {
+        animation: slide-in-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    </style>
+  </header>
+
+  <!-- ¿Quién Soy? -->
+  <section class="relative py-20 bg-gradient-to-r from-purple-200 to-purple-100 flex items-center justify-center min-h-screen">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 px-4">
+      <!-- Imagen Elianny -->
+      <div class="flex-1 flex justify-center">
+        <div class="w-64 h-80 md:w-80 md:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-purple-300 bg-white flex items-center justify-center">
+          <img src="imagenes/elianny.png" alt="Elianny Vásquez" class="w-full h-full object-cover rounded-2xl transition-transform duration-300 hover:scale-105">
+        </div>
+      </div>
+      <!-- Info -->
+      <div class="flex-1 flex flex-col justify-center">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-purple-700 mb-2 drop-shadow">¿Quién Soy?</h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full mb-6"></div>
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Elianny Vásquez</h3>
+        <p class="text-lg font-semibold text-purple-600 mb-4">Entrenadora Personal | Especialista en Biomecánica y Nutrición</p>
+        <p class="text-gray-800 text-base md:text-lg mb-6 leading-relaxed">
+          Hola, soy Elianny Vásquez. Hace un tiempo pesaba 190 libras y, con una estatura de 5'3, sentía que cada paso era más difícil de dar, no solo físicamente, sino también emocionalmente. No me sentía bien con mi cuerpo, ni con mi estilo de vida. Fue entonces cuando decidí cambiar mi historia.<br><br>
+          Comencé a estudiar, a entender mi cuerpo, a comprometerme con el proceso. Me certifiqué en Biomecánica, en elaboración y diseño de dietas, entrenamiento personal y bootcamp. Con disciplina, enfoque y constancia, logré bajar a 155 libras de forma saludable, construyendo fuerza, confianza y una mentalidad completamente nueva.<br><br>
+          Hoy, mi misión es ayudarte a ti a lograr lo mismo: transformar tu cuerpo y tu mente, desde el conocimiento y el amor propio. Ya sea que estés comenzando o quieras llevar tu progreso al siguiente nivel, quiero que sepas que sí se puede, y que no estás sola.<br><br>
+          <span class="font-bold text-purple-700">Este no es solo un cambio físico. Es una evolución total.</span>
+        </p>
+        <a href="index.html#contacto" class="inline-block mt-2 px-8 py-3 bg-gradient-to-r from-pink-400 to-purple-400 text-white font-bold rounded-full shadow-lg hover:scale-105 transition-transform">¿Estás lista para comenzar?</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-gray-900 text-white text-center">
+    <div class="mb-2">
+      <span class="mr-4"><i class="fab fa-instagram text-pink-400"></i> @elyfit</span>
+      <span class="mr-4"><i class="fab fa-telegram text-blue-400"></i> +849 502 1730</span>
+      <span><i class="fas fa-envelope text-purple-400"></i> info@elyfit.com</span>
+    </div>
+    <p class="text-gray-400 text-sm">&copy; 2025 ElyFit. Todos los derechos reservados.</p>
+  </footer>
+
+  <div id="page-transition" class="page-transition-overlay"></div>
+  <script>
+    // Menú hamburguesa lateral
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const closeMenu = document.getElementById('close-menu');
+      if (menuBtn && mobileMenu && closeMenu) {
+        menuBtn.addEventListener('click', () => {
+          mobileMenu.classList.remove('hidden');
+        });
+        closeMenu.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+        mobileMenu.addEventListener('click', (e) => {
+          if (e.target === mobileMenu) {
+            mobileMenu.classList.add('hidden');
+          }
+        });
+      }
+    });
+    // Transición de página
+    function addPageTransition() {
+      const overlay = document.getElementById('page-transition');
+      if (!overlay) return;
+      overlay.classList.add('active');
+    }
+    function removePageTransition() {
+      const overlay = document.getElementById('page-transition');
+      if (!overlay) return;
+      overlay.classList.remove('active');
+    }
+    // Fade in al cargar
+    window.addEventListener('DOMContentLoaded', removePageTransition);
+    // Fade out al navegar
+    document.querySelectorAll('nav a, #mobile-menu a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && !href.startsWith('http') && !href.startsWith('mailto:') && !href.startsWith('#')) {
+          e.preventDefault();
+          addPageTransition();
+          setTimeout(() => { window.location.href = href; }, 500);
+        }
+      });
+    });
+  </script>
+</body>
+</html> 
