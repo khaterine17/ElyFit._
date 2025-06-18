@@ -13,21 +13,21 @@
 <body class="bg-gray-100 text-gray-900 font-montserrat">
 
   <!-- Header -->
-  <header class="header-nav w-full py-6 px-4 md:px-8 bg-gradient-to-r from-purple-400 to-purple-200 shadow-md relative z-20">
+  <header class="w-full py-6 px-4 md:px-8 bg-gradient-to-r from-purple-400 to-purple-200 shadow-md relative z-20">
     <div class="flex justify-between items-center">
-      <div class="text-2xl font-bold text-white">ElyFit.</div>
+      <div class="text-4xl font-extrabold text-white drop-shadow">ElyFit.</div>
       <!-- Botón hamburguesa -->
-      <button id="menu-btn" class="md:hidden text-white text-3xl focus:outline-none">
+      <button id="menu-btn" class="md:hidden text-white text-3xl focus:outline-none drop-shadow">
         <i class="fas fa-bars"></i>
       </button>
       <!-- Menú desktop -->
       <nav class="hidden md:block">
-        <ul class="flex space-x-8 text-white font-medium items-center">
-          <li><a href="index.html" class="hover:underline">Home</a></li>
-          <li><a href="retos.html" class="hover:underline">Reto 21 Días</a></li>
-          <li><a href="testimonios.html" class="hover:underline">Testimonios</a></li>
-          <li><a href="quien-soy.html" class="hover:underline">¿Quién Soy?</a></li>
-          <li><a href="contacto.html" class="hover:underline">Contáctame</a></li>
+        <ul class="flex space-x-10 text-white font-bold text-xl items-center drop-shadow">
+          <li><a href="index.html" class="hover:underline drop-shadow">Home</a></li>
+          <li><a href="retos.html" class="hover:underline drop-shadow">Reto 21 Días</a></li>
+          <li><a href="testimonios.html" class="hover:underline drop-shadow">Testimonios</a></li>
+          <li><a href="quien-soy.html" class="hover:underline drop-shadow">¿Quién Soy?</a></li>
+          <li><a href="contacto.html" class="hover:underline drop-shadow">Contáctame</a></li>
         </ul>
       </nav>
     </div>
@@ -44,27 +44,89 @@
         <a href="contacto.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Contáctame</a>
       </div>
     </div>
+    <style>
+      @keyframes slide-in-left {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(0); }
+      }
+      .animate-slide-in-left {
+        animation: slide-in-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    </style>
   </header>
 
-  <!-- Sección de Contacto siguiendo el estilo de tu index.html -->
-  <section id="contacto" class="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-100 via-white to-blue-50 py-12 px-4">
-    <div class="w-full max-w-5xl bg-white rounded-2xl shadow-2xl flex flex-col md:flex-row overflow-hidden">
+  <!-- Transición de página -->
+  <style>
+    .page-transition-overlay {
+      position: fixed;
+      inset: 0;
+      background: #fff;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 9999;
+      transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .page-transition-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 1s cubic-bezier(0.4,0,0.2,1) 0.2s forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .btn-animated {
+      background: linear-gradient(90deg, #a78bfa 0%, #c4b5fd 100%);
+      color: #fff;
+      font-weight: bold;
+      border-radius: 9999px;
+      padding: 0.75rem 2.5rem;
+      box-shadow: 0 4px 24px #a78bfa44;
+      transition: background 0.2s, transform 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-animated:hover {
+      background: linear-gradient(90deg, #c4b5fd 0%, #a78bfa 100%);
+      transform: scale(1.04) translateY(-2px);
+      box-shadow: 0 8px 32px #a78bfa55;
+    }
+  </style>
+  <div id="page-transition" class="page-transition-overlay"></div>
+
+  <!-- Hero de Contacto -->
+  <section class="relative h-72 md:h-96 flex items-center justify-center bg-[url('https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center">
+    <div class="absolute inset-0 bg-purple-700/70"></div>
+    <div class="relative z-10 text-center w-full flex flex-col items-center justify-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">Contáctame</h1>
+      <p class="text-lg md:text-xl text-white mb-2">¿Tienes dudas o quieres iniciar tu cambio? ¡Escríbeme y te responderé lo antes posible!</p>
+    </div>
+  </section>
+
+  <!-- Sección de Contacto -->
+  <section id="contacto" class="w-full flex items-center justify-center relative py-12 px-4 bg-gradient-to-r from-[#b6aee9] to-[#e0d7f8]">
+    <div class="w-full max-w-5xl bg-gradient-to-r from-[#cfc7f6] to-[#e0d7f8] rounded-2xl shadow-2xl flex flex-col md:flex-row overflow-hidden fade-in-up relative z-10">
       <!-- Lado izquierdo: info de contacto -->
-      <div class="md:w-1/2 bg-gradient-to-br from-purple-400 to-blue-400 p-10 flex flex-col justify-center text-white">
-        <h2 class="text-3xl font-extrabold mb-4">Contáctame</h2>
-        <p class="mb-8 text-lg">¿Tienes dudas o quieres iniciar tu cambio? ¡Escríbeme y te responderé lo antes posible!</p>
+      <div class="md:w-1/2 bg-gradient-to-br from-[#b6aee9] to-[#cfc7f6] p-10 flex flex-col justify-center text-gray-900">
+        <h2 class="text-2xl font-bold mb-4">Información de contacto</h2>
         <div class="space-y-4 text-base">
           <div class="flex items-center gap-3">
-            <i class="fas fa-envelope text-xl"></i>
+            <i class="fas fa-envelope text-xl animate-pulse text-purple-500"></i>
             <span>info@elyfit.com</span>
           </div>
           <div class="flex items-center gap-3">
-            <i class="fab fa-telegram text-xl"></i>
+            <i class="fab fa-telegram text-xl animate-bounce text-blue-500"></i>
             <span>+849 502 1730</span>
           </div>
           <div class="flex items-center gap-3">
-            <i class="fab fa-instagram text-xl"></i>
-            <a href="https://instagram.com/elyfit" target="_blank" class="underline hover:text-blue-100">@elyfit</a>
+            <i class="fab fa-instagram text-xl animate-spin-slow text-pink-400"></i>
+            <a href="https://instagram.com/elyfit" target="_blank" class="underline hover:text-blue-700">@elyfit</a>
           </div>
         </div>
         <div class="mt-10">
@@ -72,22 +134,32 @@
         </div>
       </div>
       <!-- Lado derecho: formulario -->
-      <div class="md:w-1/2 p-10 flex flex-col justify-center bg-white">
-        <form class="space-y-6" autocomplete="off">
+      <div class="md:w-1/2 p-10 flex flex-col justify-center bg-gradient-to-br from-[#e0d7f8] to-[#cfc7f6]">
+        <form class="space-y-6" id="contact-form" autocomplete="off">
           <div>
             <label for="nombre" class="block text-gray-700 font-semibold mb-1">Nombre</label>
-            <input type="text" id="nombre" name="nombre" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-300 outline-none transition" placeholder="Tu nombre">
+            <div class="relative">
+              <input type="text" id="nombre" name="nombre" required class="w-full px-4 py-3 rounded-lg border border-purple-200 focus:ring-2 focus:ring-purple-300 outline-none transition pl-10 bg-white/60 text-gray-900 placeholder-gray-400" placeholder="Tu nombre">
+              <i class="fas fa-user absolute left-3 top-1/2 -translate-y-1/2 text-purple-300"></i>
+            </div>
           </div>
           <div>
             <label for="email" class="block text-gray-700 font-semibold mb-1">Correo electrónico</label>
-            <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-300 outline-none transition" placeholder="tucorreo@email.com">
+            <div class="relative">
+              <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-purple-200 focus:ring-2 focus:ring-purple-300 outline-none transition pl-10 bg-white/60 text-gray-900 placeholder-gray-400" placeholder="tucorreo@email.com">
+              <i class="fas fa-envelope absolute left-3 top-1/2 -translate-y-1/2 text-purple-300"></i>
+            </div>
           </div>
           <div>
             <label for="mensaje" class="block text-gray-700 font-semibold mb-1">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" rows="4" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-300 outline-none transition" placeholder="¿En qué puedo ayudarte?"></textarea>
+            <div class="relative">
+              <textarea id="mensaje" name="mensaje" rows="4" required class="w-full px-4 py-3 rounded-lg border border-purple-200 focus:ring-2 focus:ring-purple-300 outline-none transition pl-10 bg-white/60 text-gray-900 placeholder-gray-400" placeholder="¿En qué puedo ayudarte?"></textarea>
+              <i class="fas fa-comment-dots absolute left-3 top-4 text-purple-300"></i>
+            </div>
           </div>
-          <button type="submit" class="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold py-3 rounded-lg shadow hover:from-purple-600 hover:to-blue-600 transition">Enviar mensaje</button>
-          <p class="text-sm text-gray-400 mt-2">Te responderé lo antes posible. ¡Gracias por tu interés!</p>
+          <button type="submit" class="w-full btn-animated text-lg">Enviar mensaje</button>
+          <p class="text-sm text-gray-500 mt-2">Te responderé lo antes posible. ¡Gracias por tu interés!</p>
+          <div id="form-feedback" class="text-center text-green-600 font-bold mt-2 hidden">¡Mensaje enviado! Pronto me pondré en contacto contigo.</div>
         </form>
       </div>
     </div>
@@ -103,7 +175,6 @@
     <p class="text-gray-400 text-sm">&copy; 2025 ElyFit. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Scripts -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const menuBtn = document.getElementById('menu-btn');
@@ -120,6 +191,50 @@
           if (e.target === mobileMenu) {
             mobileMenu.classList.add('hidden');
           }
+        });
+      }
+      // Transición de página
+      function addPageTransition() {
+        const overlay = document.getElementById('page-transition');
+        if (!overlay) return;
+        overlay.classList.add('active');
+      }
+      function removePageTransition() {
+        const overlay = document.getElementById('page-transition');
+        if (!overlay) return;
+        overlay.classList.remove('active');
+      }
+      window.addEventListener('DOMContentLoaded', removePageTransition);
+      document.querySelectorAll('nav a, #mobile-menu a').forEach(link => {
+        link.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href && !href.startsWith('http') && !href.startsWith('mailto:') && !href.startsWith('#')) {
+            e.preventDefault();
+            addPageTransition();
+            setTimeout(() => { window.location.href = href; }, 500);
+          }
+        });
+      });
+      // Animación de entrada
+      setTimeout(() => {
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+          el.style.opacity = 1;
+          el.style.transform = 'translateY(0)';
+        });
+      }, 100);
+      // Feedback animado al enviar
+      const form = document.getElementById('contact-form');
+      const feedback = document.getElementById('form-feedback');
+      if (form && feedback) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          feedback.classList.remove('hidden');
+          feedback.classList.add('animate-bounce');
+          setTimeout(() => {
+            feedback.classList.remove('animate-bounce');
+            feedback.classList.add('hidden');
+            form.reset();
+          }, 2000);
         });
       }
     });
