@@ -123,8 +123,9 @@
       opacity: 0;
       pointer-events: none;
       z-index: 9999;
-      transition: opacity 0.5s cubic-bezier(0.4,0,0.2,1);
+      transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
+
     .page-transition-overlay.active {
       opacity: 1;
       pointer-events: all;
@@ -177,31 +178,52 @@
     </div>
   </section>
 
-  <!-- ¿Cómo Oriento? -->
-  <section class="pink-section py-20" id="reto">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-12">
-      <div class="flex-1">
-        <h2 class="text-4xl font-bold mb-4 section-title text-white">¿Cómo Oriento?</h2>
-        <p class="text-white text-lg mb-10">Accesoria 24/7 mediante al grupo motivacional, donde conocerás personas
-          nuevas con las mismas metas que tú.</p>
-        <div class="flex flex-row justify-center items-center gap-12 mb-8">
-          <div class="stat text-center">
-            720
-            <div class="stat-label">Clientes Satisfechos</div>
+  <!-- Planes Personalizados: ocupa pantalla completa, icono y foto -->
+  <section
+    class="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 via-white to-blue-50 py-12 md:py-0">
+    <div class="w-full max-w-6xl flex flex-col md:flex-row items-center gap-12 px-4 md:px-10">
+      <!-- Lado izquierdo: icono y foto -->
+      <div class="flex flex-col items-center flex-1">
+        <div class="bg-blue-200 rounded-full p-8 shadow-lg mb-6">
+          <i class="fas fa-dumbbell text-6xl text-blue-600"></i>
+        </div>
+        <img src="imagenes/ely-fitness-favicon.png" alt="ElyFit"
+          class="w-56 h-56 object-contain rounded-xl shadow-lg border-4 border-blue-200 bg-white" />
+      </div>
+      <!-- Lado derecho: contenido -->
+      <div class="flex-1 flex flex-col justify-center">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-blue-700 mb-6 text-left">Planes Personalizados</h2>
+        <p class="text-lg md:text-xl text-gray-700 mb-8 text-left">
+          Obtén un plan de <span class="font-semibold text-blue-600">entrenamiento</span> y <span
+            class="font-semibold text-blue-600">nutrición</span> hecho a tu medida, adaptado a tus objetivos, nivel y
+          estilo de vida.<br>
+          <span class="inline-block mt-2">¡Cada semana revisamos tu progreso y ajustamos tu rutina para que logres los
+            mejores resultados!</span>
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl shadow p-6 hover:shadow-xl transition">
+            <div class="flex items-center mb-3">
+              <i class="fas fa-running text-2xl text-blue-500 mr-3"></i>
+              <h3 class="text-xl font-bold text-blue-600">Entrenamiento</h3>
+            </div>
+            <ul class="text-gray-600 text-left list-disc list-inside space-y-1">
+              <li>Rutinas adaptadas a tu nivel</li>
+              <li>Actualización semanal</li>
+              <li>Soporte y seguimiento</li>
+            </ul>
           </div>
-          <div class="stat text-center">
-            3
-            <div class="stat-label">Años De Experiencia</div>
-          </div>
-          <div class="stat text-center">
-            100%
-            <div class="stat-label">Efectividad</div>
+          <div class="bg-white rounded-xl shadow p-6 hover:shadow-xl transition">
+            <div class="flex items-center mb-3">
+              <i class="fas fa-apple-alt text-2xl text-blue-500 mr-3"></i>
+              <h3 class="text-xl font-bold text-blue-600">Nutrición</h3>
+            </div>
+            <ul class="text-gray-600 text-left list-disc list-inside space-y-1">
+              <li>Plan alimenticio personalizado</li>
+              <li>Recetas y tips saludables</li>
+              <li>Revisión y ajustes semanales</li>
+            </ul>
           </div>
         </div>
-      </div>
-      <div class="flex-1 flex justify-center">
-        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80"
-          alt="Mujer fitness de espaldas" class="rounded-2xl shadow-xl w-80 h-96 object-cover" />
       </div>
     </div>
   </section>
@@ -252,18 +274,6 @@
     </div>
   </section>
 
-  <!-- Descuento -->
-  <section class="discount-section py-16">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-      <div>
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">¡30% De Descuento En Octubre!</h2>
-        <p class="text-lg mb-4">No estas tan lejos de conseguirlo, cliquea el botón "¡Adquirirlo Ya!" para poder
-          proceder con el Reto 21 días.</p>
-      </div>
-      <a href="#" class="btn-pink text-lg mt-4 md:mt-0">¡Adquirirlo Ya!</a>
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer class="py-10 bg-gray-900 text-white">
     <div class="container mx-auto px-4">
@@ -279,7 +289,6 @@
       </div>
       <div class="text-center text-gray-400 text-sm">
         <p>&copy; 2024 ElyFit. Todos los derechos reservados.</p>
-        <p>ElyFit made by Alexander Lorenzo</p>
       </div>
     </div>
   </footer>
@@ -351,7 +360,7 @@
   window.addEventListener('DOMContentLoaded', removePageTransition);
   // Fade out al navegar
   document.querySelectorAll('nav a, #mobile-menu a').forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
       if (href && !href.startsWith('http') && !href.startsWith('mailto:') && !href.startsWith('#')) {
         e.preventDefault();
