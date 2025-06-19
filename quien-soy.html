@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,7 +8,8 @@
   <link rel="icon" type="image/png" href="imagenes/ely-fitness-favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
     .page-transition-overlay {
@@ -17,14 +19,16 @@
       opacity: 0;
       pointer-events: none;
       z-index: 9999;
-      transition: opacity 0.5s cubic-bezier(0.4,0,0.2,1);
+      transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
+
     .page-transition-overlay.active {
       opacity: 1;
       pointer-events: all;
     }
   </style>
 </head>
+
 <body class="bg-gray-100 text-gray-900">
   <!-- Header -->
   <header class="w-full py-6 px-4 md:px-8 bg-gradient-to-r from-purple-400 to-purple-200 shadow-md relative z-20">
@@ -55,14 +59,20 @@
         <a href="retos.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Reto 21 Días</a>
         <a href="testimonios.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Testimonios</a>
         <a href="quien-soy.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">¿Quién Soy?</a>
-        <a href="index.html#contacto" class="text-gray-900 font-medium text-lg hover:text-purple-500">Contactame</a>
+        <a href="contacto.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Contactame</a>
       </div>
     </div>
     <style>
       @keyframes slide-in-left {
-        0% { transform: translateX(-100%); }
-        100% { transform: translateX(0); }
+        0% {
+          transform: translateX(-100%);
+        }
+
+        100% {
+          transform: translateX(0);
+        }
       }
+
       .animate-slide-in-left {
         animation: slide-in-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
@@ -70,25 +80,37 @@
   </header>
 
   <!-- ¿Quién Soy? -->
-  <section class="relative py-20 bg-gradient-to-r from-purple-200 to-purple-100 flex items-center justify-center min-h-screen">
+  <section
+    class="relative py-20 bg-gradient-to-r from-purple-200 to-purple-100 flex items-center justify-center min-h-screen">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 px-4">
       <!-- Carrusel de imágenes Elianny -->
       <div class="flex-1 flex flex-col items-center">
         <div class="w-full max-w-md">
           <div id="elianny-carousel" class="relative">
-            <div class="overflow-hidden rounded-3xl shadow-2xl border-4 border-transparent bg-gradient-to-br from-purple-300/60 to-purple-100/60">
-              <img id="elianny-img" src="imagenes/elianny/Untitled.jpg" alt="Elianny Vásquez" class="w-full h-96 md:h-[40rem] object-contain rounded-2xl transition-transform duration-700 ease-in-out" style="background: transparent; box-shadow: 0 0 40px 0 rgba(168,139,250,0.25);">
+            <div
+              class="overflow-hidden rounded-3xl shadow-2xl border-4 border-transparent bg-gradient-to-br from-purple-300/60 to-purple-100/60">
+              <img id="elianny-img" src="imagenes/elianny/Untitled.jpg" alt="Elianny Vásquez"
+                class="w-full h-96 md:h-[40rem] object-contain rounded-2xl transition-transform duration-700 ease-in-out"
+                style="background: transparent; box-shadow: 0 0 40px 0 rgba(168,139,250,0.25);">
             </div>
             <!-- Flechas -->
-            <button onclick="eliannyPrev()" class="absolute left-2 top-1/2 -translate-y-1/2 bg-purple-500 hover:bg-purple-700 text-white rounded-full p-3 shadow-lg z-10"><i class="fas fa-chevron-left"></i></button>
-            <button onclick="eliannyNext()" class="absolute right-2 top-1/2 -translate-y-1/2 bg-purple-500 hover:bg-purple-700 text-white rounded-full p-3 shadow-lg z-10"><i class="fas fa-chevron-right"></i></button>
+            <button onclick="eliannyPrev()"
+              class="absolute left-2 top-1/2 -translate-y-1/2 bg-purple-500 hover:bg-purple-700 text-white rounded-full p-3 shadow-lg z-10"><i
+                class="fas fa-chevron-left"></i></button>
+            <button onclick="eliannyNext()"
+              class="absolute right-2 top-1/2 -translate-y-1/2 bg-purple-500 hover:bg-purple-700 text-white rounded-full p-3 shadow-lg z-10"><i
+                class="fas fa-chevron-right"></i></button>
           </div>
           <!-- Miniaturas -->
           <div class="flex gap-4 justify-center mt-6">
-            <img src="imagenes/elianny/Untitled.jpg" onclick="eliannyGo(0)" id="elianny-thumb-0" class="w-24 h-24 md:w-28 md:h-28 object-contain rounded-xl border-4 border-transparent bg-gradient-to-br from-purple-200/60 to-purple-100/60 cursor-pointer hover:border-purple-500 transition">
-            <img src="imagenes/elianny/Untitled2.jpg" onclick="eliannyGo(1)" id="elianny-thumb-1" class="w-24 h-24 md:w-28 md:h-28 object-contain rounded-xl border-4 border-transparent bg-gradient-to-br from-purple-200/60 to-purple-100/60 cursor-pointer hover:border-purple-500 transition">
-            <img src="imagenes/elianny/Untitled3.jpg" onclick="eliannyGo(2)" id="elianny-thumb-2" class="w-24 h-24 md:w-28 md:h-28 object-contain rounded-xl border-4 border-transparent bg-gradient-to-br from-purple-200/60 to-purple-100/60 cursor-pointer hover:border-purple-500 transition">
-            <img src="imagenes/elianny/Untitled4.jpg" onclick="eliannyGo(3)" id="elianny-thumb-3" class="w-24 h-24 md:w-28 md:h-28 object-contain rounded-xl border-4 border-transparent bg-gradient-to-br from-purple-200/60 to-purple-100/60 cursor-pointer hover:border-purple-500 transition">
+            <img src="imagenes/elianny/Untitled.jpg" onclick="eliannyGo(0)" id="elianny-thumb-0"
+              class="w-24 h-24 md:w-28 md:h-28 object-contain rounded-xl border-4 border-transparent bg-gradient-to-br from-purple-200/60 to-purple-100/60 cursor-pointer hover:border-purple-500 transition">
+            <img src="imagenes/elianny/Untitled2.jpg" onclick="eliannyGo(1)" id="elianny-thumb-1"
+              class="w-24 h-24 md:w-28 md:h-28 object-contain rounded-xl border-4 border-transparent bg-gradient-to-br from-purple-200/60 to-purple-100/60 cursor-pointer hover:border-purple-500 transition">
+            <img src="imagenes/elianny/Untitled3.jpg" onclick="eliannyGo(2)" id="elianny-thumb-2"
+              class="w-24 h-24 md:w-28 md:h-28 object-contain rounded-xl border-4 border-transparent bg-gradient-to-br from-purple-200/60 to-purple-100/60 cursor-pointer hover:border-purple-500 transition">
+            <img src="imagenes/elianny/Untitled4.jpg" onclick="eliannyGo(3)" id="elianny-thumb-3"
+              class="w-24 h-24 md:w-28 md:h-28 object-contain rounded-xl border-4 border-transparent bg-gradient-to-br from-purple-200/60 to-purple-100/60 cursor-pointer hover:border-purple-500 transition">
           </div>
         </div>
       </div>
@@ -97,16 +119,23 @@
         <h2 class="text-4xl md:text-5xl font-extrabold text-purple-700 mb-2 drop-shadow">¿Quién Soy?</h2>
         <div class="w-20 h-1 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full mb-6"></div>
         <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Elianny Vásquez</h3>
-        <p class="text-lg font-semibold text-purple-600 mb-4">Entrenadora Personal | Especialista en Biomecánica y Nutrición</p>
+        <p class="text-lg font-semibold text-purple-600 mb-4">Entrenadora Personal | Especialista en Biomecánica y
+          Nutrición</p>
         <p class="text-gray-800 text-base md:text-lg mb-6 leading-relaxed">
-          Hola, soy Elianny Vásquez. Hace un tiempo pesaba 190 libras y, con una estatura de 5'3, sentía que cada paso era más difícil de dar, no solo físicamente, sino también emocionalmente. No me sentía bien con mi cuerpo, ni con mi estilo de vida. Fue entonces cuando decidí cambiar mi historia.<br><br>
-          Comencé a estudiar, a entender mi cuerpo, a comprometerme con el proceso. Me certifiqué en Biomecánica, en elaboración y diseño de dietas, entrenamiento personal y bootcamp. Con disciplina, enfoque y constancia, logré bajar a 155 libras de forma saludable, construyendo fuerza, confianza y una mentalidad completamente nueva.<br><br>
-          Hoy, mi misión es ayudarte a ti a lograr lo mismo: transformar tu cuerpo y tu mente, desde el conocimiento y el amor propio. Ya sea que estés comenzando o quieras llevar tu progreso al siguiente nivel, quiero que sepas que sí se puede, y que no estás sola.<br><br>
+          Hola, soy Elianny Vásquez. Hace un tiempo pesaba 190 libras y, con una estatura de 5'3, sentía que cada paso
+          era más difícil de dar, no solo físicamente, sino también emocionalmente. No me sentía bien con mi cuerpo, ni
+          con mi estilo de vida. Fue entonces cuando decidí cambiar mi historia.<br><br>
+          Comencé a estudiar, a entender mi cuerpo, a comprometerme con el proceso. Me certifiqué en Biomecánica, en
+          elaboración y diseño de dietas, entrenamiento personal y bootcamp. Con disciplina, enfoque y constancia, logré
+          bajar a 155 libras de forma saludable, construyendo fuerza, confianza y una mentalidad completamente
+          nueva.<br><br>
+          Hoy, mi misión es ayudarte a ti a lograr lo mismo: transformar tu cuerpo y tu mente, desde el conocimiento y
+          el amor propio. Ya sea que estés comenzando o quieras llevar tu progreso al siguiente nivel, quiero que sepas
+          que sí se puede, y que no estás sola.<br><br>
           <span class="font-bold text-purple-700">Este no es solo un cambio físico. Es una evolución total.</span>
         </p>
-        <a href="https://wa.me/18495021730?text=¡Hola!%20Estoy%20listo%20para%20comenzar%20con%20ElyFit" 
-           target="_blank"
-           class="inline-block bg-gradient-to-r from-purple-500 to-purple-700 text-white font-bold py-3 px-8 rounded-lg shadow hover:from-purple-600 hover:to-purple-800 transition">
+        <a href="https://wa.me/18495021730?text=¡Hola!%20Estoy%20listo%20para%20comenzar%20con%20ElyFit" target="_blank"
+          class="inline-block bg-gradient-to-r from-purple-500 to-purple-700 text-white font-bold py-3 px-8 rounded-lg shadow hover:from-purple-600 hover:to-purple-800 transition">
           ¿Estás listo para comenzar?
         </a>
       </div>
@@ -175,7 +204,7 @@
   <!-- Footer -->
   <footer class="py-8 bg-gray-900 text-white text-center">
     <div class="mb-2">
-      <span class="mr-4"><i class="fab fa-instagram text-pink-400"></i> @elyfit</span>
+      <span class="mr-4"><i class="fab fa-instagram text-pink-400"></i> @ely_fitness08</span>
       <span class="mr-4"><i class="fab fa-telegram text-blue-400"></i> +849 502 1730</span>
       <span><i class="fas fa-envelope text-purple-400"></i> info@elyfit.com</span>
     </div>
@@ -218,7 +247,7 @@
     window.addEventListener('DOMContentLoaded', removePageTransition);
     // Fade out al navegar
     document.querySelectorAll('nav a, #mobile-menu a').forEach(link => {
-      link.addEventListener('click', function(e) {
+      link.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
         if (href && !href.startsWith('http') && !href.startsWith('mailto:') && !href.startsWith('#')) {
           e.preventDefault();
@@ -229,4 +258,5 @@
     });
   </script>
 </body>
+
 </html>
