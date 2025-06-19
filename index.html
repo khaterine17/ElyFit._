@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ElyFit - Transforma tu cuerpo, potencia tu mente</title>
-
+  
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="imagenes/ely-fitness-favicon.png">
 
@@ -16,10 +16,10 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
-
+  
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
-
+  
   <!-- EmailJS -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script type="text/javascript">
@@ -81,17 +81,22 @@
       color: #a78bfa;
     }
 
-    .btn-pink {
-      background: #f472b6;
+    .btn-gradient {
+      background: linear-gradient(90deg, #f472b6 0%, #a78bfa 100%);
       color: #fff;
-      border-radius: 9999px;
-      padding: 0.75rem 2.5rem;
-      font-weight: 600;
-      transition: background 0.2s;
+      border-radius: 1.5rem;
+      font-size: 2rem;
+      font-weight: 700;
+      padding: 1.2rem 0;
+      box-shadow: 0 6px 32px #a78bfa44;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.01em;
     }
 
-    .btn-pink:hover {
-      background: #e879f9;
+    .btn-gradient:hover {
+      background: linear-gradient(90deg, #a78bfa 0%, #f472b6 100%);
+      transform: scale(1.04) translateY(-2px);
+      box-shadow: 0 12px 40px #a78bfa55;
     }
 
     .divider {
@@ -178,29 +183,32 @@
     </div>
   </section>
 
+  <!-- GRAN SEPARACIÓN Y ORDEN VISUAL ANTES DE PLANES PERSONALIZADOS -->
+  <div class="w-full" style="height: 80px;"></div>
+
   <!-- Planes Personalizados con morado en vez de azul -->
   <section
     class="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-100 via-white to-purple-50 py-12 md:py-0">
     <div class="w-full max-w-6xl flex flex-col md:flex-row items-center gap-12 px-4 md:px-10">
       <!-- Lado izquierdo: icono y foto -->
       <div class="flex flex-col items-center flex-1">
-        <div class="bg-purple-200 rounded-full p-8 shadow-lg mb-6">
+        <div class="bg-purple-200 rounded-full p-8 shadow-lg mb-10 mt-8">
           <i class="fas fa-dumbbell text-6xl text-purple-600"></i>
         </div>
         <img src="imagenes/ely-fitness-favicon.png" alt="ElyFit"
-          class="w-56 h-56 object-contain rounded-xl shadow-lg border-4 border-purple-200 bg-white" />
+          class="w-56 h-56 object-contain rounded-xl shadow-lg border-4 border-purple-200 bg-white mb-4" />
       </div>
       <!-- Lado derecho: contenido -->
-      <div class="flex-1 flex flex-col justify-center">
-        <h2 class="text-4xl md:text-5xl font-extrabold text-purple-700 mb-6 text-left">Planes Personalizados</h2>
-        <p class="text-lg md:text-xl text-gray-700 mb-8 text-left">
+      <div class="flex-1 flex flex-col justify-center mt-8">
+        <h2 class="text-5xl md:text-6xl font-extrabold text-purple-700 mb-8 text-left tracking-tight">Planes Personalizados</h2>
+        <p class="text-xl md:text-2xl text-gray-700 mb-12 text-left leading-relaxed max-w-2xl">
           Obtén un plan de <span class="font-semibold text-purple-600">entrenamiento</span> y <span
             class="font-semibold text-purple-600">nutrición</span> hecho a tu medida, adaptado a tus objetivos, nivel y
           estilo de vida.<br>
-          <span class="inline-block mt-2">¡Cada semana revisamos tu progreso y ajustamos tu rutina para que logres los
+          <span class="inline-block mt-4">¡Cada semana revisamos tu progreso y ajustamos tu rutina para que logres los
             mejores resultados!</span>
         </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mt-6">
           <div class="bg-white rounded-xl shadow p-6 hover:shadow-xl transition">
             <div class="flex items-center mb-3">
               <i class="fas fa-running text-2xl text-purple-500 mr-3"></i>
@@ -223,6 +231,54 @@
               <li>Revisión y ajustes semanales</li>
             </ul>
           </div>
+          <!-- Nuevo: Online + Alimentación -->
+          <div class="bg-white rounded-xl shadow p-6 hover:shadow-xl transition flex flex-col justify-between">
+            <div>
+              <div class="flex items-center mb-3">
+                <i class="fas fa-laptop-house text-2xl text-purple-500 mr-3"></i>
+                <h3 class="text-xl font-bold text-purple-600">Online + Alimentación</h3>
+              </div>
+              <ul class="text-gray-600 text-left list-disc list-inside space-y-1 mb-4">
+                <li>Entrenamiento 100% online</li>
+                <li>Plan alimenticio personalizado</li>
+                <li>Soporte y seguimiento digital</li>
+                <li class="font-bold text-purple-700 mt-2">RD$2,500</li>
+              </ul>
+            </div>
+            <a href="https://wa.me/18495021730?text=Hola!%20Quiero%20unirme%20al%20plan%20Online%20%2B%20Alimentaci%C3%B3n%20de%20ElyFit%20por%20RD%242%2C500" target="_blank" class="mt-2 btn-gradient text-center block w-full text-base py-2 px-2 rounded-lg">Quiero unirme</a>
+          </div>
+          <!-- Nuevo: Presencial + Alimentación -->
+          <div class="bg-white rounded-xl shadow p-6 hover:shadow-xl transition flex flex-col justify-between">
+            <div>
+              <div class="flex items-center mb-3">
+                <i class="fas fa-user-friends text-2xl text-purple-500 mr-3"></i>
+                <h3 class="text-xl font-bold text-purple-600">Presencial + Alimentación</h3>
+              </div>
+              <ul class="text-gray-600 text-left list-disc list-inside space-y-1 mb-4">
+                <li>Entrenamiento presencial personalizado</li>
+                <li>Plan alimenticio incluido</li>
+                <li>Soporte y seguimiento presencial</li>
+                <li class="font-bold text-purple-700 mt-2">RD$3,000</li>
+              </ul>
+            </div>
+            <a href="https://wa.me/18495021730?text=Hola!%20Quiero%20unirme%20al%20plan%20Presencial%20%2B%20Alimentaci%C3%B3n%20de%20ElyFit%20por%20RD%243%2C000" target="_blank" class="mt-2 btn-gradient text-center block w-full text-base py-2 px-2 rounded-lg">Quiero unirme</a>
+          </div>
+          <!-- Nuevo: 3 meses Online -->
+          <div class="bg-white rounded-xl shadow p-6 hover:shadow-xl transition flex flex-col justify-between">
+            <div>
+              <div class="flex items-center mb-3">
+                <i class="fas fa-calendar-alt text-2xl text-purple-500 mr-3"></i>
+                <h3 class="text-xl font-bold text-purple-600">3 meses Online</h3>
+              </div>
+              <ul class="text-gray-600 text-left list-disc list-inside space-y-1 mb-4">
+                <li>Entrenamiento online por 3 meses</li>
+                <li>Plan alimenticio personalizado</li>
+                <li>Soporte y seguimiento digital</li>
+                <li class="font-bold text-purple-700 mt-2">RD$5,000</li>
+              </ul>
+            </div>
+            <a href="https://wa.me/18495021730?text=Hola!%20Quiero%20unirme%20al%20plan%203%20meses%20Online%20de%20ElyFit%20por%20RD%245%2C000" target="_blank" class="mt-2 btn-gradient text-center block w-full text-base py-2 px-2 rounded-lg">Quiero unirme</a>
+          </div>
         </div>
       </div>
     </div>
@@ -242,7 +298,7 @@
             <h3 class="font-bold text-lg mb-2">Guía De Alimentación</h3>
             <p>El consumo de una alimentación adecuada y completa ayudará mucho con el reto ya que es bien importante
               para nuestra salud física.</p>
-          </div>
+            </div>
         </div>
         <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
           <img
@@ -251,8 +307,8 @@
           <div class="p-6">
             <h3 class="font-bold text-lg mb-2">Rutina De Ejercicios</h3>
             <p>Obtendrás tu rutina para realizar los ejercicios desde Casa o GYM.</p>
-          </div>
-        </div>
+              </div>
+            </div>
         <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
           <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80"
             alt="Consejos Motivacionales" class="card-img" />
@@ -261,7 +317,7 @@
             <p>Los consejos motivacionales usualmente los comparto porque ayudan a mantener un enfoque que es por lo que
               estas aquí ;)</p>
           </div>
-        </div>
+            </div>
         <div class="bg-white rounded-2xl shadow-lg overflow-hidden md:col-span-2">
           <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80"
             alt="Asistencia Inmediata" class="card-img" />
@@ -274,8 +330,6 @@
     </div>
   </section>
 
-
-
   <!-- Footer -->
   <footer class="py-10 bg-gray-900 text-white">
     <div class="container mx-auto px-4">
@@ -285,7 +339,7 @@
         <div class="flex items-center gap-2"><i class="fab fa-telegram"></i> Escribir al Telegram <span
             class="ml-2">+849 502 1730</span></div>
         <div class="flex items-center gap-2"><i class="fas fa-envelope"></i> Para más Info <span
-            class="ml-2">info@elyfit.com</span></div>
+            class="ml-2">infoelyfitness@gmail.com</span></div>
         <div class="flex items-center gap-2"><i class="fas fa-clock"></i> Asistencia <span class="ml-2">24 Horas</span>
         </div>
       </div>
@@ -297,22 +351,22 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
+  
   <div id="page-transition" class="page-transition-overlay"></div>
 
 </body>
 <script>
-  // Initialize AOS
-  AOS.init({
-    duration: 800,
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
     once: true,
     offset: 100,
     easing: 'ease-out-cubic'
-  });
+    });
 
-  // Header scroll effect
+    // Header scroll effect
   window.addEventListener('scroll', function () {
-    const header = document.querySelector('.header-nav');
+      const header = document.querySelector('.header-nav');
     const heroSection = document.querySelector('.hero-section');
     const scrollPosition = window.scrollY;
 
@@ -365,12 +419,12 @@
     link.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
       if (href && !href.startsWith('http') && !href.startsWith('mailto') && !href.startsWith('#')) {
-        e.preventDefault();
+      e.preventDefault();
         addPageTransition();
         setTimeout(() => { window.location.href = href; }, 500);
       }
     });
-  });
-</script>
+    });
+  </script>
 
 </html>
