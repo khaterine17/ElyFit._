@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ElyFit - Transforma tu cuerpo, potencia tu mente</title>
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="imagenes/ely-fitness-favicon.png">
 
@@ -16,10 +16,10 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
-  
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
-  
+
   <!-- EmailJS -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script type="text/javascript">
@@ -178,24 +178,24 @@
     </div>
   </section>
 
-  <!-- Planes Personalizados: ocupa pantalla completa, icono y foto -->
+  <!-- Planes Personalizados con morado en vez de azul -->
   <section
-    class="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 via-white to-blue-50 py-12 md:py-0">
+    class="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-100 via-white to-purple-50 py-12 md:py-0">
     <div class="w-full max-w-6xl flex flex-col md:flex-row items-center gap-12 px-4 md:px-10">
       <!-- Lado izquierdo: icono y foto -->
       <div class="flex flex-col items-center flex-1">
-        <div class="bg-blue-200 rounded-full p-8 shadow-lg mb-6">
-          <i class="fas fa-dumbbell text-6xl text-blue-600"></i>
+        <div class="bg-purple-200 rounded-full p-8 shadow-lg mb-6">
+          <i class="fas fa-dumbbell text-6xl text-purple-600"></i>
         </div>
         <img src="imagenes/ely-fitness-favicon.png" alt="ElyFit"
-          class="w-56 h-56 object-contain rounded-xl shadow-lg border-4 border-blue-200 bg-white" />
+          class="w-56 h-56 object-contain rounded-xl shadow-lg border-4 border-purple-200 bg-white" />
       </div>
       <!-- Lado derecho: contenido -->
       <div class="flex-1 flex flex-col justify-center">
-        <h2 class="text-4xl md:text-5xl font-extrabold text-blue-700 mb-6 text-left">Planes Personalizados</h2>
+        <h2 class="text-4xl md:text-5xl font-extrabold text-purple-700 mb-6 text-left">Planes Personalizados</h2>
         <p class="text-lg md:text-xl text-gray-700 mb-8 text-left">
-          Obtén un plan de <span class="font-semibold text-blue-600">entrenamiento</span> y <span
-            class="font-semibold text-blue-600">nutrición</span> hecho a tu medida, adaptado a tus objetivos, nivel y
+          Obtén un plan de <span class="font-semibold text-purple-600">entrenamiento</span> y <span
+            class="font-semibold text-purple-600">nutrición</span> hecho a tu medida, adaptado a tus objetivos, nivel y
           estilo de vida.<br>
           <span class="inline-block mt-2">¡Cada semana revisamos tu progreso y ajustamos tu rutina para que logres los
             mejores resultados!</span>
@@ -203,8 +203,8 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="bg-white rounded-xl shadow p-6 hover:shadow-xl transition">
             <div class="flex items-center mb-3">
-              <i class="fas fa-running text-2xl text-blue-500 mr-3"></i>
-              <h3 class="text-xl font-bold text-blue-600">Entrenamiento</h3>
+              <i class="fas fa-running text-2xl text-purple-500 mr-3"></i>
+              <h3 class="text-xl font-bold text-purple-600">Entrenamiento</h3>
             </div>
             <ul class="text-gray-600 text-left list-disc list-inside space-y-1">
               <li>Rutinas adaptadas a tu nivel</li>
@@ -214,8 +214,8 @@
           </div>
           <div class="bg-white rounded-xl shadow p-6 hover:shadow-xl transition">
             <div class="flex items-center mb-3">
-              <i class="fas fa-apple-alt text-2xl text-blue-500 mr-3"></i>
-              <h3 class="text-xl font-bold text-blue-600">Nutrición</h3>
+              <i class="fas fa-apple-alt text-2xl text-purple-500 mr-3"></i>
+              <h3 class="text-xl font-bold text-purple-600">Nutrición</h3>
             </div>
             <ul class="text-gray-600 text-left list-disc list-inside space-y-1">
               <li>Plan alimenticio personalizado</li>
@@ -274,17 +274,7 @@
     </div>
   </section>
 
-  <!-- Descuento -->
-  <section class="discount-section py-16">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-      <div>
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">¡30% De Descuento En Octubre!</h2>
-        <p class="text-lg mb-4">No estas tan lejos de conseguirlo, cliquea el botón "¡Adquirirlo Ya!" para poder
-          proceder con el Reto 21 días.</p>
-      </div>
-      <a href="#" class="btn-pink text-lg mt-4 md:mt-0">¡Adquirirlo Ya!</a>
-    </div>
-  </section>
+
 
   <!-- Footer -->
   <footer class="py-10 bg-gray-900 text-white">
@@ -307,22 +297,22 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  
+
   <div id="page-transition" class="page-transition-overlay"></div>
 
 </body>
 <script>
-    // Initialize AOS
-    AOS.init({
-      duration: 800,
+  // Initialize AOS
+  AOS.init({
+    duration: 800,
     once: true,
     offset: 100,
     easing: 'ease-out-cubic'
-    });
+  });
 
-    // Header scroll effect
+  // Header scroll effect
   window.addEventListener('scroll', function () {
-      const header = document.querySelector('.header-nav');
+    const header = document.querySelector('.header-nav');
     const heroSection = document.querySelector('.hero-section');
     const scrollPosition = window.scrollY;
 
@@ -374,13 +364,13 @@
   document.querySelectorAll('nav a, #mobile-menu a').forEach(link => {
     link.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
-      if (href && !href.startsWith('http') && !href.startsWith('mailto:') && !href.startsWith('#')) {
-      e.preventDefault();
+      if (href && !href.startsWith('http') && !href.startsWith('mailto') && !href.startsWith('#')) {
+        e.preventDefault();
         addPageTransition();
         setTimeout(() => { window.location.href = href; }, 500);
       }
     });
-    });
-  </script>
+  });
+</script>
 
 </html>

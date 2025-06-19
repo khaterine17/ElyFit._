@@ -7,7 +7,7 @@
     <title>Reto 21 Días | ElyFit</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-      <link rel="icon" type="image/png" href="imagenes/ely-fitness-favicon.png">
+    <link rel="icon" type="image/png" href="imagenes/ely-fitness-favicon.png">
 
     <style>
         body {
@@ -40,8 +40,9 @@
             opacity: 0;
             pointer-events: none;
             z-index: 9999;
-            transition: opacity 0.5s cubic-bezier(0.4,0,0.2,1);
+            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
         .page-transition-overlay.active {
             opacity: 1;
             pointer-events: all;
@@ -78,9 +79,11 @@
                 </button>
                 <a href="index.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Home</a>
                 <a href="retos.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Reto 21 Días</a>
-                <a href="testimonios.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">Testimonios</a>
+                <a href="testimonios.html"
+                    class="text-gray-900 font-medium text-lg hover:text-purple-500">Testimonios</a>
                 <a href="quien-soy.html" class="text-gray-900 font-medium text-lg hover:text-purple-500">¿Quién Soy?</a>
-                <a href="index.html#contacto" class="text-gray-900 font-medium text-lg hover:text-purple-500">Contactame</a>
+                <a href="index.html#contacto"
+                    class="text-gray-900 font-medium text-lg hover:text-purple-500">Contactame</a>
             </div>
         </div>
     </header>
@@ -120,7 +123,7 @@
         window.addEventListener('DOMContentLoaded', removePageTransition);
         // Fade out al navegar
         document.querySelectorAll('nav a, #mobile-menu a').forEach(link => {
-            link.addEventListener('click', function(e) {
+            link.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
                 if (href && !href.startsWith('http') && !href.startsWith('mailto:') && !href.startsWith('#')) {
                     e.preventDefault();
@@ -194,17 +197,18 @@
         </div>
     </section>
 
-        <!-- Rutinas semanales destacado -->
-<section class="max-w-2xl mx-auto my-12 bg-purple-100 rounded-xl shadow-lg p-8 flex flex-col items-center text-center">
-  <i class="fas fa-calendar-week text-5xl text-purple-500 mb-4"></i>
-  <h2 class="text-2xl font-bold mb-2 text-purple-700">¡Rutinas Semanales!</h2>
-  <p class="text-lg text-gray-700">
-    Las rutinas se actualizan cada semana para que siempre tengas nuevos desafíos y sigas progresando. 
-    ¡No te aburrirás y tu cuerpo lo agradecerá!
-  </p>
-  <!-- <a href="retos.html" class="mt-4 bg-purple-700 text-white font-semibold py-2 px-4 rounded-full shadow hover:bg-purple-800 transition">Ver Rutinas</a> -->
-</section>
-    
+    <!-- Rutinas semanales destacado -->
+    <section
+        class="max-w-2xl mx-auto my-12 bg-purple-100 rounded-xl shadow-lg p-8 flex flex-col items-center text-center">
+        <i class="fas fa-calendar-week text-5xl text-purple-500 mb-4"></i>
+        <h2 class="text-2xl font-bold mb-2 text-purple-700">¡Rutinas Semanales!</h2>
+        <p class="text-lg text-gray-700">
+            Las rutinas se actualizan cada semana para que siempre tengas nuevos desafíos y sigas progresando.
+            ¡No te aburrirás y tu cuerpo lo agradecerá!
+        </p>
+        <!-- <a href="retos.html" class="mt-4 bg-purple-700 text-white font-semibold py-2 px-4 rounded-full shadow hover:bg-purple-800 transition">Ver Rutinas</a> -->
+    </section>
+
 
     <!-- Preguntas frecuentes -->
     <section class="py-10 sm:py-16 bg-gradient-to-r from-purple-100 to-pink-100">
@@ -266,10 +270,11 @@
             <h2 class="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4">¿Listo para comenzar?</h2>
             <p class="mb-4 sm:mb-6 text-base sm:text-lg">Inscríbete ahora y recibe acceso inmediato al grupo, rutinas y
                 guía de alimentación personalizada.</p>
-            <a href="mailto:info@elyfit.com"
-                class="bg-white text-pink-500 font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-full shadow-lg hover:bg-pink-100 transition text-base sm:text-lg">Quiero
-                Unirme</a>
-        </div>
+            <a href="https://wa.me/18495021730?text=¡Hola!%20Quiero%20unirme%20al%20Reto%2021%20Días%20de%20ElyFit"
+                target="_blank"
+                class="inline-block bg-gradient-to-r from-purple-500 to-purple-700 text-white font-bold py-3 px-8 rounded-lg shadow hover:from-purple-600 hover:to-purple-800 transition">
+                Quiero unirme
+            </a>
     </section>
 
     <!-- Footer -->
