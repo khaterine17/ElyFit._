@@ -13,6 +13,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
@@ -74,6 +76,7 @@
       .animate-slide-in-left {
         animation: slide-in-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
+
       .page-transition-overlay {
         position: fixed;
         inset: 0;
@@ -81,18 +84,76 @@
         opacity: 0;
         pointer-events: none;
         z-index: 9999;
-        transition: opacity 0.5s cubic-bezier(0.4,0,0.2,1);
+        transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       }
+
       .page-transition-overlay.active {
         opacity: 1;
         pointer-events: all;
+      }
+
+      /* Estilos personalizados para el carrusel */
+      .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: #8b5cf6;
+        background: rgba(255, 255, 255, 0.9);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+      }
+
+      .swiper-button-next:hover,
+      .swiper-button-prev:hover {
+        background: white;
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .swiper-pagination-bullet {
+        background: #8b5cf6;
+        opacity: 0.5;
+        transition: all 0.3s ease;
+      }
+
+      .swiper-pagination-bullet-active {
+        opacity: 1;
+        transform: scale(1.2);
+        background: #7c3aed;
+      }
+
+      /* Asegurar que el carrusel sea visible */
+      .swiper {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .swiper-slide img {
+        max-width: 100%;
+        height: auto;
+        display: block;
       }
     </style>
   </header>
 
   <!-- Hero con texto animado tipo máquina de escribir -->
-  <section class="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-400 to-purple-200">
-    <div class="absolute inset-0 bg-gradient-to-r from-purple-400 to-purple-200"></div>
+  <section
+    class="relative h-[900px] flex items-center justify-center bg-[url('imagenes/elianny/ft3.jpg')] bg-cover bg-center">
+    <div class="absolute inset-0 bg-purple-700/60"></div>
     <div class="relative z-10 text-center flex flex-col items-center justify-center w-full">
       <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">
         <span id="typewriter"></span><span class="border-r-2 border-purple-200 animate-pulse ml-1"></span>
@@ -103,46 +164,67 @@
     </div>
   </section>
 
-  <!-- Carrusel SOLO FOTOS -->
+  <!-- Carrusel SOLO FOTOS con Swiper.js -->
   <section class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-4">
+    <div class="max-w-7xl mx-auto px-4">
       <h2 class="text-3xl font-bold text-center text-purple-700 mb-10">Pérdida de Peso</h2>
-      <div class="relative">
-        <div id="carousel-fotos" class="flex overflow-x-auto snap-x snap-mandatory gap-12 pb-4 scroll-smooth">
-          <!-- Foto 1 -->
-          <div class="min-w-[320px] max-w-md bg-white rounded-3xl shadow-2xl p-4 snap-center flex-shrink-0 flex flex-col items-center transition-transform duration-300 hover:scale-105 group">
-            <div class="w-72 h-96 rounded-2xl overflow-hidden border-4 border-transparent group-hover:border-purple-400 bg-gradient-to-br from-purple-300 to-purple-100 shadow-xl transition-all duration-300">
-              <img src="imagenes/perdida1.png" alt="Testimonio ElyFit" class="w-full h-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-300">
+      <!-- Carrusel Swiper -->
+      <div class="swiper my-12">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="flex justify-center">
+              <img src="imagenes/perdida1.png" alt="Testimonio ElyFit"
+                class="max-w-full max-h-[500px] w-auto h-auto object-contain rounded-2xl shadow-xl" />
             </div>
           </div>
-          <!-- Foto 2 -->
-          <div class="min-w-[320px] max-w-md bg-white rounded-3xl shadow-2xl p-4 snap-center flex-shrink-0 flex flex-col items-center transition-transform duration-300 hover:scale-105 group">
-            <div class="w-72 h-96 rounded-2xl overflow-hidden border-4 border-transparent group-hover:border-purple-400 bg-gradient-to-br from-purple-300 to-purple-100 shadow-xl transition-all duration-300">
-              <img src="imagenes/perdida2.png" alt="Testimonio ElyFit" class="w-full h-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-300">
+          <div class="swiper-slide">
+            <div class="flex justify-center">
+              <img src="imagenes/perdida2.png" alt="Testimonio ElyFit"
+                class="max-w-full max-h-[500px] w-auto h-auto object-contain rounded-2xl shadow-xl" />
             </div>
           </div>
-          <!-- Foto 3 -->
-          <div class="min-w-[320px] max-w-md bg-white rounded-3xl shadow-2xl p-4 snap-center flex-shrink-0 flex flex-col items-center transition-transform duration-300 hover:scale-105 group">
-            <div class="w-72 h-96 rounded-2xl overflow-hidden border-4 border-transparent group-hover:border-purple-400 bg-gradient-to-br from-purple-300 to-purple-100 shadow-xl transition-all duration-300">
-              <img src="imagenes/perdida3.png" alt="Testimonio ElyFit" class="w-full h-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-300">
+          <div class="swiper-slide">
+            <div class="flex justify-center">
+              <img src="imagenes/perdida3.png" alt="Testimonio ElyFit"
+                class="max-w-full max-h-[500px] w-auto h-auto object-contain rounded-2xl shadow-xl" />
             </div>
           </div>
-          <!-- Foto 4 -->
-          <div class="min-w-[320px] max-w-md bg-white rounded-3xl shadow-2xl p-4 snap-center flex-shrink-0 flex flex-col items-center transition-transform duration-300 hover:scale-105 group">
-            <div class="w-72 h-96 rounded-2xl overflow-hidden border-4 border-transparent group-hover:border-purple-400 bg-gradient-to-br from-purple-300 to-purple-100 shadow-xl transition-all duration-300">
-              <img src="imagenes/perdida4.png" alt="Testimonio ElyFit" class="w-full h-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-300">
+          <div class="swiper-slide">
+            <div class="flex justify-center">
+              <img src="imagenes/perdida4.png" alt="Testimonio ElyFit"
+                class="max-w-full max-h-[500px] w-auto h-auto object-contain rounded-2xl shadow-xl" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="flex justify-center">
+              <img src="imagenes/perdida5.jpg" alt="Testimonio ElyFit"
+                class="max-w-full max-h-[500px] w-auto h-auto object-contain rounded-2xl shadow-xl" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="flex justify-center">
+              <img src="imagenes/perdida6.jpg" alt="Testimonio ElyFit"
+                class="max-w-full max-h-[500px] w-auto h-auto object-contain rounded-2xl shadow-xl" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="flex justify-center">
+              <img src="imagenes/perdida7.jpg" alt="Testimonio ElyFit"
+                class="max-w-full max-h-[500px] w-auto h-auto object-contain rounded-2xl shadow-xl" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="flex justify-center">
+              <img src="imagenes/perdida8.jpg" alt="Testimonio ElyFit"
+                class="max-w-full max-h-[500px] w-auto h-auto object-contain rounded-2xl shadow-xl" />
             </div>
           </div>
         </div>
-        <!-- Flechas para el carrusel -->
-        <button onclick="document.getElementById('carousel-fotos').scrollBy({left: -340, behavior: 'smooth'})"
-          class="absolute left-0 top-1/2 -translate-y-1/2 bg-purple-500 hover:bg-purple-700 text-white rounded-full p-3 shadow-lg z-10">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <button onclick="document.getElementById('carousel-fotos').scrollBy({left: 340, behavior: 'smooth'})"
-          class="absolute right-0 top-1/2 -translate-y-1/2 bg-purple-500 hover:bg-purple-700 text-white rounded-full p-3 shadow-lg z-10">
-          <i class="fas fa-chevron-right"></i>
-        </button>
+        <!-- Flechas -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <!-- Paginación -->
+        <div class="swiper-pagination"></div>
       </div>
     </div>
   </section>
@@ -154,33 +236,48 @@
       <div class="relative">
         <div id="carousel-aumento" class="flex overflow-x-auto snap-x snap-mandatory gap-12 pb-4 scroll-smooth">
           <!-- Foto 1 -->
-          <div class="min-w-[320px] max-w-md bg-white rounded-3xl shadow-2xl p-4 snap-center flex-shrink-0 flex flex-col items-center transition-transform duration-300 hover:scale-105 group">
-            <div class="w-72 h-96 rounded-2xl overflow-hidden border-4 border-transparent group-hover:border-pink-400 bg-gradient-to-br from-pink-200 to-purple-100 shadow-xl transition-all duration-300">
-              <img src="imagenes/aumento1.png" alt="Aumento de Masa ElyFit" class="w-full h-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-300">
+          <div
+            class="min-w-[320px] max-w-md bg-white rounded-3xl shadow-2xl p-4 snap-center flex-shrink-0 flex flex-col items-center transition-transform duration-300 hover:scale-105 group">
+            <div
+              class="w-72 h-96 rounded-2xl overflow-hidden border-4 border-transparent group-hover:border-pink-400 bg-gradient-to-br from-pink-200 to-purple-100 shadow-xl transition-all duration-300">
+              <img src="imagenes/aumento1.png" alt="Aumento de Masa ElyFit"
+                class="w-full h-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-300">
             </div>
           </div>
           <!-- Foto 2 -->
-          <div class="min-w-[320px] max-w-md bg-white rounded-3xl shadow-2xl p-4 snap-center flex-shrink-0 flex flex-col items-center transition-transform duration-300 hover:scale-105 group">
-            <div class="w-72 h-96 rounded-2xl overflow-hidden border-4 border-transparent group-hover:border-pink-400 bg-gradient-to-br from-pink-200 to-purple-100 shadow-xl transition-all duration-300">
-              <img src="imagenes/aumento2.png" alt="Aumento de Masa ElyFit" class="w-full h-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-300">
+          <div
+            class="min-w-[320px] max-w-md bg-white rounded-3xl shadow-2xl p-4 snap-center flex-shrink-0 flex flex-col items-center transition-transform duration-300 hover:scale-105 group">
+            <div
+              class="w-72 h-96 rounded-2xl overflow-hidden border-4 border-transparent group-hover:border-pink-400 bg-gradient-to-br from-pink-200 to-purple-100 shadow-xl transition-all duration-300">
+              <img src="imagenes/aumento2.png" alt="Aumento de Masa ElyFit"
+                class="w-full h-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-300">
             </div>
           </div>
           <!-- Foto 3 -->
-          <div class="min-w-[320px] max-w-md bg-white rounded-3xl shadow-2xl p-4 snap-center flex-shrink-0 flex flex-col items-center transition-transform duration-300 hover:scale-105 group">
-            <div class="w-72 h-96 rounded-2xl overflow-hidden border-4 border-transparent group-hover:border-pink-400 bg-gradient-to-br from-pink-200 to-purple-100 shadow-xl transition-all duration-300">
-              <img src="imagenes/aumento3.png" alt="Aumento de Masa ElyFit" class="w-full h-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-300">
+          <!-- <div
+            class="min-w-[320px] max-w-md bg-white rounded-3xl shadow-2xl p-4 snap-center flex-shrink-0 flex flex-col items-center transition-transform duration-300 hover:scale-105 group">
+            <div
+              class="w-72 h-96 rounded-2xl overflow-hidden border-4 border-transparent group-hover:border-pink-400 bg-gradient-to-br from-pink-200 to-purple-100 shadow-xl transition-all duration-300">
+              <img src="imagenes/aumento3.png" alt="Aumento de Masa ElyFit"
+                class="w-full h-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-300">
             </div>
-          </div>
+          </div> -->
           <!-- Foto 4 -->
-          <div class="min-w-[320px] max-w-md bg-white rounded-3xl shadow-2xl p-4 snap-center flex-shrink-0 flex flex-col items-center transition-transform duration-300 hover:scale-105 group">
-            <div class="w-72 h-96 rounded-2xl overflow-hidden border-4 border-transparent group-hover:border-pink-400 bg-gradient-to-br from-pink-200 to-purple-100 shadow-xl transition-all duration-300">
-              <img src="imagenes/aumento4.png" alt="Aumento de Masa ElyFit" class="w-full h-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-300">
+          <div
+            class="min-w-[320px] max-w-md bg-white rounded-3xl shadow-2xl p-4 snap-center flex-shrink-0 flex flex-col items-center transition-transform duration-300 hover:scale-105 group">
+            <div
+              class="w-72 h-96 rounded-2xl overflow-hidden border-4 border-transparent group-hover:border-pink-400 bg-gradient-to-br from-pink-200 to-purple-100 shadow-xl transition-all duration-300">
+              <img src="imagenes/aumento4.png" alt="Aumento de Masa ElyFit"
+                class="w-full h-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-300">
             </div>
           </div>
           <!-- Foto 5 -->
-          <div class="min-w-[320px] max-w-md bg-white rounded-3xl shadow-2xl p-4 snap-center flex-shrink-0 flex flex-col items-center transition-transform duration-300 hover:scale-105 group">
-            <div class="w-72 h-96 rounded-2xl overflow-hidden border-4 border-transparent group-hover:border-pink-400 bg-gradient-to-br from-pink-200 to-purple-100 shadow-xl transition-all duration-300">
-              <img src="imagenes/aumento5.jpg" alt="Aumento de Masa ElyFit" class="w-full h-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-300">
+          <div
+            class="min-w-[320px] max-w-md bg-white rounded-3xl shadow-2xl p-4 snap-center flex-shrink-0 flex flex-col items-center transition-transform duration-300 hover:scale-105 group">
+            <div
+              class="w-72 h-96 rounded-2xl overflow-hidden border-4 border-transparent group-hover:border-pink-400 bg-gradient-to-br from-pink-200 to-purple-100 shadow-xl transition-all duration-300">
+              <img src="imagenes/aumento5.jpg" alt="Aumento de Masa ElyFit"
+                class="w-full h-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-300">
             </div>
           </div>
         </div>
@@ -212,6 +309,8 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
     // Initialize AOS
     AOS.init({
@@ -289,7 +388,7 @@
     window.addEventListener('DOMContentLoaded', removePageTransition);
     // Fade out al navegar
     document.querySelectorAll('nav a, #mobile-menu a').forEach(link => {
-      link.addEventListener('click', function(e) {
+      link.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
         if (href && !href.startsWith('http') && !href.startsWith('mailto:') && !href.startsWith('#')) {
           e.preventDefault();
@@ -297,6 +396,72 @@
           setTimeout(() => { window.location.href = href; }, 500);
         }
       });
+    });
+
+    // Swiper JS - Inicialización dentro de DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', function () {
+      // Verificar que Swiper esté disponible
+      if (typeof Swiper !== 'undefined') {
+        try {
+          // Inicializar Swiper
+          const swiper = new Swiper('.swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            centeredSlides: true,
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev'
+            },
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+              dynamicBullets: true
+            },
+            autoplay: {
+              delay: 4000,
+              disableOnInteraction: false,
+            },
+            effect: 'slide',
+            speed: 600,
+            breakpoints: {
+              640: { 
+                slidesPerView: 1,
+                spaceBetween: 40
+              },
+              768: { 
+                slidesPerView: 1,
+                spaceBetween: 50
+              },
+              1024: { 
+                slidesPerView: 1,
+                spaceBetween: 60
+              }
+            }
+          });
+
+          // Verificar que Swiper se inicializó correctamente
+          console.log('Swiper inicializado correctamente:', swiper);
+          
+          // Agregar indicadores visuales de que está funcionando
+          document.querySelector('.swiper').style.opacity = '1';
+          
+        } catch (error) {
+          console.error('Error al inicializar Swiper:', error);
+          // Fallback: mostrar mensaje de error
+          const swiperContainer = document.querySelector('.swiper');
+          if (swiperContainer) {
+            swiperContainer.innerHTML = '<div class="text-center py-8 text-red-500">Error al cargar el carrusel. Por favor, recarga la página.</div>';
+          }
+        }
+      } else {
+        console.error('Swiper no está disponible');
+        // Fallback: mostrar mensaje de error
+        const swiperContainer = document.querySelector('.swiper');
+        if (swiperContainer) {
+          swiperContainer.innerHTML = '<div class="text-center py-8 text-red-500">Error: Librería Swiper no cargada. Por favor, recarga la página.</div>';
+        }
+      }
     });
   </script>
   <div id="page-transition" class="page-transition-overlay"></div>
