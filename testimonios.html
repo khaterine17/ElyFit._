@@ -230,66 +230,48 @@
   </section>
 
   <!-- Carrusel aumento de Peso -->
-  <section class="py-12 bg-white">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl sm:text-3xl font-bold text-center text-pink-500 mb-8">Aumento de masa Muscular</h2>
-      <div class="relative">
-        <div id="carousel-aumento" class="flex overflow-x-auto snap-x snap-mandatory gap-12 pb-4 scroll-smooth">
-          <!-- Foto 1 -->
-          <div
-            class="min-w-[320px] max-w-md bg-white rounded-3xl shadow-2xl p-4 snap-center flex-shrink-0 flex flex-col items-center transition-transform duration-300 hover:scale-105 group">
-            <div
-              class="w-72 h-96 rounded-2xl overflow-hidden border-4 border-transparent group-hover:border-pink-400 bg-gradient-to-br from-pink-200 to-purple-100 shadow-xl transition-all duration-300">
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-pink-500 mb-10">Aumento de masa Muscular</h2>
+      <!-- Carrusel Swiper -->
+      <div class="swiper my-12" id="swiper-aumento">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="flex justify-center">
               <img src="imagenes/aumento1.png" alt="Aumento de Masa ElyFit"
-                class="w-full h-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-300">
+                class="max-w-full max-h-[500px] w-auto h-auto object-contain rounded-2xl shadow-xl" />
             </div>
           </div>
-          <!-- Foto 2 -->
-          <div
-            class="min-w-[320px] max-w-md bg-white rounded-3xl shadow-2xl p-4 snap-center flex-shrink-0 flex flex-col items-center transition-transform duration-300 hover:scale-105 group">
-            <div
-              class="w-72 h-96 rounded-2xl overflow-hidden border-4 border-transparent group-hover:border-pink-400 bg-gradient-to-br from-pink-200 to-purple-100 shadow-xl transition-all duration-300">
+          <div class="swiper-slide">
+            <div class="flex justify-center">
               <img src="imagenes/aumento2.png" alt="Aumento de Masa ElyFit"
-                class="w-full h-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-300">
+                class="max-w-full max-h-[500px] w-auto h-auto object-contain rounded-2xl shadow-xl" />
             </div>
           </div>
-          <!-- Foto 3 -->
-          <!-- <div
-            class="min-w-[320px] max-w-md bg-white rounded-3xl shadow-2xl p-4 snap-center flex-shrink-0 flex flex-col items-center transition-transform duration-300 hover:scale-105 group">
-            <div
-              class="w-72 h-96 rounded-2xl overflow-hidden border-4 border-transparent group-hover:border-pink-400 bg-gradient-to-br from-pink-200 to-purple-100 shadow-xl transition-all duration-300">
+          <div class="swiper-slide">
+            <div class="flex justify-center">
               <img src="imagenes/aumento3.png" alt="Aumento de Masa ElyFit"
-                class="w-full h-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-300">
-            </div>
-          </div> -->
-          <!-- Foto 4 -->
-          <div
-            class="min-w-[320px] max-w-md bg-white rounded-3xl shadow-2xl p-4 snap-center flex-shrink-0 flex flex-col items-center transition-transform duration-300 hover:scale-105 group">
-            <div
-              class="w-72 h-96 rounded-2xl overflow-hidden border-4 border-transparent group-hover:border-pink-400 bg-gradient-to-br from-pink-200 to-purple-100 shadow-xl transition-all duration-300">
-              <img src="imagenes/aumento4.png" alt="Aumento de Masa ElyFit"
-                class="w-full h-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-300">
+                class="max-w-full max-h-[500px] w-auto h-auto object-contain rounded-2xl shadow-xl" />
             </div>
           </div>
-          <!-- Foto 5 -->
-          <div
-            class="min-w-[320px] max-w-md bg-white rounded-3xl shadow-2xl p-4 snap-center flex-shrink-0 flex flex-col items-center transition-transform duration-300 hover:scale-105 group">
-            <div
-              class="w-72 h-96 rounded-2xl overflow-hidden border-4 border-transparent group-hover:border-pink-400 bg-gradient-to-br from-pink-200 to-purple-100 shadow-xl transition-all duration-300">
+          <div class="swiper-slide">
+            <div class="flex justify-center">
+              <img src="imagenes/aumento4.png" alt="Aumento de Masa ElyFit"
+                class="max-w-full max-h-[500px] w-auto h-auto object-contain rounded-2xl shadow-xl" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="flex justify-center">
               <img src="imagenes/aumento5.jpg" alt="Aumento de Masa ElyFit"
-                class="w-full h-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-300">
+                class="max-w-full max-h-[500px] w-auto h-auto object-contain rounded-2xl shadow-xl" />
             </div>
           </div>
         </div>
         <!-- Flechas -->
-        <button onclick="document.getElementById('carousel-aumento').scrollBy({left: -340, behavior: 'smooth'})"
-          class="absolute left-0 top-1/2 -translate-y-1/2 bg-pink-500 hover:bg-pink-600 text-white rounded-full p-3 shadow-lg z-10">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <button onclick="document.getElementById('carousel-aumento').scrollBy({left: 340, behavior: 'smooth'})"
-          class="absolute right-0 top-1/2 -translate-y-1/2 bg-pink-500 hover:bg-pink-600 text-white rounded-full p-3 shadow-lg z-10">
-          <i class="fas fa-chevron-right"></i>
-        </button>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <!-- Paginación -->
+        <div class="swiper-pagination"></div>
       </div>
     </div>
   </section>
@@ -441,10 +423,55 @@
           });
 
           // Verificar que Swiper se inicializó correctamente
-          console.log('Swiper inicializado correctamente:', swiper);
+          console.log('Swiper pérdida de peso inicializado correctamente:', swiper);
           
           // Agregar indicadores visuales de que está funcionando
           document.querySelector('.swiper').style.opacity = '1';
+
+          // Inicializar el segundo Swiper para aumento de masa muscular
+          try {
+            const swiperAumento = new Swiper('#swiper-aumento', {
+              slidesPerView: 1,
+              spaceBetween: 30,
+              loop: true,
+              centeredSlides: true,
+              navigation: {
+                nextEl: '#swiper-aumento .swiper-button-next',
+                prevEl: '#swiper-aumento .swiper-button-prev'
+              },
+              pagination: {
+                el: '#swiper-aumento .swiper-pagination',
+                clickable: true,
+                dynamicBullets: true
+              },
+              autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+              },
+              effect: 'slide',
+              speed: 600,
+              breakpoints: {
+                640: { 
+                  slidesPerView: 1,
+                  spaceBetween: 40
+                },
+                768: { 
+                  slidesPerView: 1,
+                  spaceBetween: 50
+                },
+                1024: { 
+                  slidesPerView: 1,
+                  spaceBetween: 60
+                }
+              }
+            });
+
+            console.log('Swiper aumento de masa inicializado correctamente:', swiperAumento);
+            document.querySelector('#swiper-aumento').style.opacity = '1';
+            
+          } catch (error) {
+            console.error('Error al inicializar Swiper de aumento de masa:', error);
+          }
           
         } catch (error) {
           console.error('Error al inicializar Swiper:', error);
